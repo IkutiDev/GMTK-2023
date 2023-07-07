@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=10 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
 [ext_resource type="Texture2D" uid="uid://xqkayebx7bcj" path="res://icon.svg" id="2_3jy1g"]
 [ext_resource type="Script" path="res://interactable.gd" id="3_35wrr"]
-[ext_resource type="Resource" path="res://timelines/interact_with_item_example.dtl" id="4_5lcd7"]
+[ext_resource type="Resource" uid="uid://cauxog3km4h6m" path="res://Inventory/Items/test_item_res.tres" id="5_igkqt"]
+[ext_resource type="Resource" uid="uid://b7i4k3bpmw82g" path="res://Inventory/Items/empty_item_res.tres" id="6_f3mfo"]
+[ext_resource type="PackedScene" uid="uid://b2hfq46adswvq" path="res://Inventory/inventory.tscn" id="6_poo6d"]
+[ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="7_a550o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b053"]
 size = Vector2(128, 130)
@@ -24,7 +27,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(421, 173)
 texture = ExtResource("2_3jy1g")
 script = ExtResource("3_35wrr")
-timeline = ExtResource("4_5lcd7")
+item_data = ExtResource("5_igkqt")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 monitoring = false
@@ -32,3 +35,36 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_7b053")
+
+[node name="ClearItem" type="Sprite2D" parent="."]
+position = Vector2(680, 178)
+script = ExtResource("3_35wrr")
+item_data = ExtResource("6_f3mfo")
+
+[node name="Area2D" type="Area2D" parent="ClearItem"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClearItem/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7b053")
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("inventory_view")]
+script = ExtResource("7_a550o")
+inventory_view = NodePath("InventoryInterface/PlayerInventory")
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_poo6d")]
+layout_mode = 1
+offset_top = -128.0
+offset_right = 128.0

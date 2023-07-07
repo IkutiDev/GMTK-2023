@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dydqu7qg8w4n"]
+
+[ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="1_maj02"]
+[ext_resource type="Texture2D" uid="uid://c0vyjom0ias5j" path="res://Sprites/SquareBorder.png" id="2_nuaej"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_maj02")
+
+[node name="InHandUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContainerBackground" type="NinePatchRect" parent="InHandUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 100.0
+grow_vertical = 0
+texture = ExtResource("2_nuaej")
+
+[node name="Control" type="Control" parent="InHandUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 100.0
+grow_vertical = 0
+
+[node name="ItemInHand" type="Sprite2D" parent="InHandUI/Control"]
+position = Vector2(50, 50)
+scale = Vector2(0.7, 0.7)

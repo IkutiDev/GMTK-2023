@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=4 format=3 uid="uid://dmv8q7f1mffiu"]
+
+[ext_resource type="Resource" uid="uid://cauxog3km4h6m" path="res://Inventory/Items/test_item_res.tres" id="1_c7da4"]
+[ext_resource type="Script" path="res://Inventory/inventory_data.gd" id="1_k1jrt"]
+[ext_resource type="Resource" uid="uid://b7i4k3bpmw82g" path="res://Inventory/Items/empty_item_res.tres" id="2_xw17n"]
+
+[resource]
+resource_name = "EmptyInventory"
+script = ExtResource("1_k1jrt")
+item_data = Array[Resource("res://Inventory/item_data.gd")]([ExtResource("1_c7da4"), ExtResource("2_xw17n")])

@@ -2,6 +2,7 @@ class_name Interactable
 extends Sprite2D
 
 @export var timeline : DialogicTimeline
+@export var item_data : ItemData
 
 func run_timeline() -> void:
 	print(timeline)

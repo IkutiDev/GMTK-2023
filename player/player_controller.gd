@@ -11,6 +11,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and current_interactable != null:
 		print("interact")
 		current_interactable.run_timeline()
+		PlayerInventory.set_in_hand(current_interactable.item_data)
+		
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 
 func _physics_process(delta: float) -> void:
 
