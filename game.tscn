@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://xyb1217ay4u6"]
+
+[ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
+[ext_resource type="Texture2D" uid="uid://xqkayebx7bcj" path="res://icon.svg" id="2_3jy1g"]
+
+[node name="Game" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_8dyyb")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCharacter"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(421, 173)
+texture = ExtResource("2_3jy1g")

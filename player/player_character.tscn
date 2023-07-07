@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm7i7bsvuges1"]
+
+[ext_resource type="Script" path="res://player/player_controller.gd" id="1_afbaa"]
+[ext_resource type="SpriteFrames" uid="uid://dmcgx1fquamx" path="res://player/player_sprite_frames.tres" id="1_m87x0"]
+[ext_resource type="Script" path="res://player/player_visual.gd" id="3_tbfbs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4cbdd"]
+
+[node name="PlayerCharacter" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_afbaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4cbdd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player_controller")]
+sprite_frames = ExtResource("1_m87x0")
+animation = &"interact_front"
+autoplay = "idle_front"
+script = ExtResource("3_tbfbs")
+player_controller = NodePath("..")
