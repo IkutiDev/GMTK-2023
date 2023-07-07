@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=7 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
+[ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
 [ext_resource type="Texture2D" uid="uid://xqkayebx7bcj" path="res://icon.svg" id="2_3jy1g"]
+[ext_resource type="Script" path="res://interactable.gd" id="3_35wrr"]
+[ext_resource type="Resource" path="res://timelines/interact_with_item_example.dtl" id="4_5lcd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b053"]
+size = Vector2(128, 130)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_m0js2")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_8dyyb")]
 
@@ -16,3 +23,12 @@ scale = Vector2(0.5, 0.5)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(421, 173)
 texture = ExtResource("2_3jy1g")
+script = ExtResource("3_35wrr")
+timeline = ExtResource("4_5lcd7")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7b053")
