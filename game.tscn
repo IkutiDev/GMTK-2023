@@ -26,13 +26,13 @@
 [ext_resource type="Resource" path="res://timelines/intro_timeline.dtl" id="24_ow254"]
 [ext_resource type="Resource" path="res://timelines/interact_all_classroom_timeline.dtl" id="25_5anyo"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_reoys"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fai1s"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xiaj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsho5"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -80,12 +80,12 @@ position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
 visible = false
-material = SubResource("ShaderMaterial_reoys")
+material = SubResource("ShaderMaterial_fai1s")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
 visible = false
-material = SubResource("ShaderMaterial_1xiaj")
+material = SubResource("ShaderMaterial_dsho5")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]

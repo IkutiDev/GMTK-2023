@@ -216,7 +216,11 @@ expand_margin_bottom = 5.0
 scale = Vector2(0.25, 0.25)
 transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 script = ExtResource("1_ut1ls")
+text_size = 40
+box_size = Vector2(1000, 200)
+name_label_font_size = 40
 name_label_box_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+name_label_box_offset = Vector2(0, -25)
 
 [node name="DialogicNode_BackgroundHolder" type="CanvasLayer" parent="."]
 layer = -1

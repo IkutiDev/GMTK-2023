@@ -7,7 +7,7 @@ if {TrashAct} == 0:
 	VAR {TrashAct} = -act} = 1
 elif {FinishedExamAll} == "1":
 	player_timeline_character: Can’t move this, but I can totally put something in it.
-	<i> [ASSIGNED KEY] to place item.</i>
+	[i] [ASSIGNED KEY] to place item.[/i]
 else:
 	player_timeline_character: I've already looked at this trash.
 [end_timeline]

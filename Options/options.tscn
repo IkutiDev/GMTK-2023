@@ -6,8 +6,15 @@
 [node name="Options" type="CanvasLayer"]
 script = ExtResource("1_cabl1")
 
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(500, 31)
+custom_minimum_size = Vector2(250, 31)
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
@@ -22,7 +29,7 @@ alignment = 1
 
 [node name="MusicLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 20
 text = "Music"
 horizontal_alignment = 1
 uppercase = true
@@ -37,7 +44,7 @@ bus_name = "Music"
 
 [node name="SFXLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 20
 text = "Sound Effects"
 horizontal_alignment = 1
 uppercase = true
@@ -52,25 +59,25 @@ bus_name = "SFX"
 initial_value = 1.0
 
 [node name="BackButton" type="Button" parent="."]
-custom_minimum_size = Vector2(200, 100)
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 40
+custom_minimum_size = Vector2(100, 50)
+offset_right = 120.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 35
 text = "Back"
 
 [node name="QuitButton" type="Button" parent="."]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(100, 50)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
+offset_left = -70.0
+offset_top = -63.0
+offset_right = 70.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 text = "Quit"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
