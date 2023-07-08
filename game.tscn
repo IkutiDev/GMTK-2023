@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=10 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
@@ -8,9 +8,11 @@
 [ext_resource type="Resource" uid="uid://b7i4k3bpmw82g" path="res://Inventory/Items/empty_item_res.tres" id="6_f3mfo"]
 [ext_resource type="PackedScene" uid="uid://b2hfq46adswvq" path="res://Inventory/inventory.tscn" id="6_poo6d"]
 [ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="7_a550o"]
+[ext_resource type="PackedScene" uid="uid://cgyohedl6f7oi" path="res://Options/options.tscn" id="9_6ps0n"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("options")]
 script = ExtResource("1_m0js2")
+options = NodePath("Options")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_8dyyb")]
 
@@ -49,3 +51,6 @@ grow_vertical = 2
 layout_mode = 1
 offset_top = -128.0
 offset_right = 128.0
+
+[node name="Options" parent="." instance=ExtResource("9_6ps0n")]
+visible = false
