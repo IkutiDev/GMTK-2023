@@ -16,6 +16,26 @@ func clear_timeline() -> void:
 		return
 	Dialogic.clear(Dialogic.ClearFlags.KeepVariables)
 	Dialogic.timeline_ended.disconnect(clear_timeline)
+	
+	if Dialogic.VAR.FinishedExamAll == 1:
+		return
+	if Dialogic.VAR.BlackboardAct == 0:
+		return
+	if Dialogic.VAR.CompAct == 0:
+		return
+	if Dialogic.VAR.CuteGirlAct == 0:
+		return
+	if Dialogic.VAR.DoorAct == 0:
+		return
+	if Dialogic.VAR.FishAct == 0:
+		return
+	if Dialogic.VAR.NoticeAct == 0:
+		return
+	if Dialogic.VAR.TrashAct == 0:
+		return
+	
+	Dialogic.VAR.FinishedExamAll = 1
+	TimelineController.controller.play_exam_timeline()
 
 
 func on_player_enter():
