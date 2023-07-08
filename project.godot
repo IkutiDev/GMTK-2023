@@ -33,9 +33,7 @@ variables={
 "notice-act": "0",
 "trash-act": "0"
 },
-"TargetOneGroup": {
 "HasTargetOneItem": "0"
-}
 }
 layout/mode=1
 layout/layout_scene="res://DialogicDefaultLayout_Custom.tscn"

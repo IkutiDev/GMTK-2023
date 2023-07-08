@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cw0kyepndt660" path="res://Sounds/Music/dating_music_chiptune.mp3" id="10_3jcig"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/library.tscn" id="11_ut05g"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qoshs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7fq8"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -54,7 +54,7 @@ remote_path = NodePath("../../../Camera2D")
 position = Vector2(976, 610)
 
 [node name="WorldItem2" parent="WorldHolder/Items" instance=ExtResource("6_sq24e")]
-material = SubResource("ShaderMaterial_qoshs")
+material = SubResource("ShaderMaterial_x7fq8")
 position = Vector2(3422, 615)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -93,6 +93,16 @@ offset_right = 80.0
 offset_bottom = 357.41
 grow_vertical = 1
 
+[node name="Button" type="Button" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+action_mode = 0
+text = "RESET"
+
 [node name="Options" parent="." instance=ExtResource("9_6ps0n")]
 visible = false
 
@@ -102,3 +112,5 @@ visible = false
 stream = ExtResource("10_3jcig")
 autoplay = true
 bus = &"Music"
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

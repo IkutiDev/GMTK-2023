@@ -14,7 +14,7 @@ func run_timeline() -> void:
 func clear_timeline() -> void:
 	if timeline == null:
 		return
-	Dialogic.clear()
+	Dialogic.clear(Dialogic.ClearFlags.KeepVariables)
 	Dialogic.timeline_ended.disconnect(clear_timeline)
 
 

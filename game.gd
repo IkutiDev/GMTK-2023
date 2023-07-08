@@ -4,6 +4,8 @@ class_name Game
 @export var options : CanvasLayer
 @export var player_controller : PlayerController
 
+
+
 var showing_options : bool
 
 # Called when the node enters the scene tree for the first time.
@@ -47,3 +49,11 @@ func recieve_event_signal(argument:String) -> void:
 	
 func recieve_text_signal(argument:String) -> void:
 	print("[Dialogic] Encountered a signal in text: ", argument)
+
+func reset_game() -> void:
+	Dialogic.VAR.clear_game_state(Dialogic.ClearFlags.FullClear)
+	get_tree().reload_current_scene()
+
+
+func _on_button_pressed() -> void:
+	reset_game()
