@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgyohedl6f7oi"]
 
-[ext_resource type="Script" path="res://Options/main_menu.gd" id="1_cabl1"]
+[ext_resource type="Script" path="res://Options/options.gd" id="1_cabl1"]
 [ext_resource type="Script" path="res://Options/sound_slider.gd" id="1_lrebl"]
 
 [node name="Options" type="CanvasLayer"]
@@ -34,7 +34,6 @@ max_value = 1.0
 step = 0.001
 script = ExtResource("1_lrebl")
 bus_name = "Music"
-initial_value = 0.1
 
 [node name="SFXLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2

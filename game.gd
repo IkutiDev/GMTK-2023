@@ -4,8 +4,6 @@ class_name Game
 @export var options : CanvasLayer
 @export var player_controller : PlayerController
 
-
-
 var showing_options : bool
 
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +33,7 @@ func _input(event):
 		return
 	
 	if showing_options == false:
-		options.show_menu()
+		options.show_menu(self)
 		showing_options = true
 		player_controller.set_in_menu(true)
 	else:
@@ -43,6 +41,8 @@ func _input(event):
 			showing_options = false
 			player_controller.set_in_menu(false)
 		
+func receive_close_options():
+	showing_options = false
 
 func recieve_event_signal(argument:String) -> void:
 	print("[Dialogic] Encountered a signal event: ", argument)
