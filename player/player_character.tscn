@@ -1,24 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm7i7bsvuges1"]
+[gd_scene load_steps=10 format=3 uid="uid://dm7i7bsvuges1"]
 
 [ext_resource type="Script" path="res://player/player_controller.gd" id="1_afbaa"]
 [ext_resource type="SpriteFrames" uid="uid://dmcgx1fquamx" path="res://player/player_sprite_frames.tres" id="1_m87x0"]
 [ext_resource type="Script" path="res://player/player_visual.gd" id="3_tbfbs"]
+[ext_resource type="Script" path="res://player/walk_sounds.gd" id="4_331bb"]
+[ext_resource type="AudioStream" uid="uid://ymbn8sal776v" path="res://Sounds/SFX/Walk/footstep_L3.wav" id="5_rimha"]
+[ext_resource type="AudioStream" uid="uid://di2wi7o8lypj" path="res://Sounds/SFX/Walk/footstep_L4.wav" id="6_v3pbn"]
+[ext_resource type="AudioStream" uid="uid://ca411o68cejws" path="res://Sounds/SFX/Walk/footstep_L5.wav" id="7_wtnro"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4cbdd"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5m5hr"]
+radius = 54.0
+height = 184.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpnrn"]
-size = Vector2(164, 158)
+size = Vector2(164, 176)
 
-[node name="PlayerCharacter" type="CharacterBody2D"]
+[node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("walk_sound")]
 scale = Vector2(0.5, 0.5)
+collision_layer = 3
 script = ExtResource("1_afbaa")
+walk_sound = NodePath("WalkSoundEffects")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_4cbdd")
+shape = SubResource("CapsuleShape2D_5m5hr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player_controller")]
+scale = Vector2(4, 4)
 sprite_frames = ExtResource("1_m87x0")
-animation = &"walk_back"
+animation = &"idle_back"
 autoplay = "idle_front"
 script = ExtResource("3_tbfbs")
 player_controller = NodePath("..")
@@ -27,8 +36,13 @@ player_controller = NodePath("..")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 83)
 shape = SubResource("RectangleShape2D_wpnrn")
+
+[node name="WalkSoundEffects" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+script = ExtResource("4_331bb")
+sound_list = Array[AudioStream]([ExtResource("5_rimha"), ExtResource("6_v3pbn"), ExtResource("7_wtnro")])
+repeat_time = 0.7
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_area_2d_area_shape_exited"]
