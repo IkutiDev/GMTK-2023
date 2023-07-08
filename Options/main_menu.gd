@@ -19,7 +19,6 @@ func try_hide()-> bool :
 
 func _on_back_button_pressed():
 	is_showing = false
-	print ("Test 2")
 	hide()
 
 
