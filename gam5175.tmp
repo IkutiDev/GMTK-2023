@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cw0kyepndt660" path="res://Sounds/Music/dating_music_chiptune.mp3" id="10_3jcig"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/library.tscn" id="11_ut05g"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qoshs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4icfy"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -54,7 +54,7 @@ remote_path = NodePath("../../../Camera2D")
 position = Vector2(976, 610)
 
 [node name="WorldItem2" parent="WorldHolder/Items" instance=ExtResource("6_sq24e")]
-material = SubResource("ShaderMaterial_qoshs")
+material = SubResource("ShaderMaterial_4icfy")
 position = Vector2(3422, 615)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -67,7 +67,7 @@ exit_point = NodePath("../WorldHolder/Library/Marker2D2")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="InventoryInterface" type="Control" parent="UI" node_paths=PackedStringArray("items_container", "inventory_view")]
+[node name="InventoryInterface" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,8 +79,6 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_a550o")
-items_container = NodePath("../../WorldHolder/Items")
-inventory_view = NodePath("PlayerInventory")
 
 [node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_poo6d")]
 layout_mode = 1
@@ -92,6 +90,7 @@ offset_top = 6.0
 offset_right = 80.0
 offset_bottom = 357.41
 grow_vertical = 1
+slot = null
 
 [node name="Options" parent="." instance=ExtResource("9_6ps0n")]
 visible = false

@@ -7,3 +7,5 @@
 script = ExtResource("1_qgonp")
 name = "TestItem"
 texture = ExtResource("2_ak763")
+dialogic_variable_name = "TargetOneGroup.HasTargetOneItem"
+item_pickable_packed_scene_path = "res://Inventory/item_1.tscn"

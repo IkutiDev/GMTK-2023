@@ -3,6 +3,7 @@ extends Interactable
 const PLAYER_GROUP_NAME = "Player"
 
 @export var exit_point : Node2D
+@export var exit_at_timeline_end : bool
 
 func run_timeline() -> void:
 	
@@ -11,7 +12,10 @@ func run_timeline() -> void:
 		return
 	super()
 	
-	
+func clear_timeline() -> void:
+	super()
+	if exit_at_timeline_end:
+		teleport_player()
 	
 func teleport_player() -> void:
 	for n in get_tree().get_nodes_in_group(PLAYER_GROUP_NAME):
