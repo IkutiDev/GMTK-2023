@@ -25,11 +25,13 @@ func _input(event: InputEvent) -> void:
 	if interact and PlayerInventory.has_item_in_hand():
 		PlayerInventory.set_in_hand(null)
 		current_item_interactable.show()
+		Dialogic.VAR.TargetOneGroup.HasTargetOneItem = 0
 		
 	elif interact and current_item_interactable != null:
 		current_item_interactable.run_timeline()
 		
 		PlayerInventory.set_in_hand(current_item_interactable.item_data)
+		Dialogic.VAR.TargetOneGroup.HasTargetOneItem = 1
 		current_item_interactable.hide()
 
 func _physics_process(delta: float) -> void:

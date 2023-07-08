@@ -21,7 +21,11 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 [dialogic]
 
-variables={}
+variables={
+"TargetOneGroup": {
+"HasTargetOneItem": "0"
+}
+}
 layout/mode=1
 layout/layout_scene="res://DialogicDefaultLayout_Custom.tscn"
 glossary/default_case_sensitive=true

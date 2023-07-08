@@ -37,3 +37,4 @@ func on_player_exit():
 		return
 	
 	shader_material.material.set_shader_parameter("line_thickness", 0)
+	
