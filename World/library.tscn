@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ci3o6gy32bxt1" path="res://World/Library/Objects/back_shelf.tscn" id="5_urmkl"]
 [ext_resource type="PackedScene" uid="uid://bv8eacifliwlv" path="res://World/Library/Objects/middle_shelf.tscn" id="6_ysgya"]
 [ext_resource type="PackedScene" uid="uid://deuqug5hg0awm" path="res://World/Library/Objects/front_shelf.tscn" id="7_trwir"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="9_ec3tu"]
 [ext_resource type="Material" uid="uid://b4n65qfi6heap" path="res://Shaders/outline_material.tres" id="10_d56h4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g06o"]
