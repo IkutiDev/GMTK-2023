@@ -1,10 +1,10 @@
 Join player_timeline_character
-if {Classroom.trash-act} == 0:
+if {trash-act} == 0:
 	player_timeline_character: Sometimes I want to dive in and stay for a while.
 	player_timeline_character: I think it could fit me. It *is* quite large.
 	player_timeline_character: ...
 	player_timeline_character: No. Self control, Pel.
-	VAR {Classroom.trash-act} = 1
+	VAR {trash-act} = 1
 elif {Classroom.finished-exam} == "1":
 	player_timeline_character: Can’t move this, but I can totally put something in it.
 	<i> [ASSIGNED KEY] to place item.</i>

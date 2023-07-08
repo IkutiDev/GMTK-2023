@@ -23,17 +23,17 @@ Events="*res://events.gd"
 [dialogic]
 
 variables={
-"Classroom": {
-"blackboar-act": "0",
+"TargetOneGroup": {
+"HasTargetOneItem": "0"
+},
+"blackboard-act": "0",
 "comp-act": "0",
 "cute_girl-act": "0",
 "door-act": "0",
-"finished-exam": "0",
+"finished-exam-all": "0",
 "fish-act": "0",
 "notice-act": "0",
 "trash-act": "0"
-},
-"HasTargetOneItem": "0"
 }
 layout/mode=1
 layout/layout_scene="res://DialogicDefaultLayout_Custom.tscn"
