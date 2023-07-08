@@ -3,7 +3,7 @@ class_name Interactable
 
 @export var timeline : DialogicTimeline
 @export var visual : Sprite2D
-@export var outline_thickness : float
+@export var outline_thickness : float = 1.7
 
 func run_timeline() -> void:
 	if timeline == null:

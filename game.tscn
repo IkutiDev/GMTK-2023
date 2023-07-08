@@ -1,19 +1,40 @@
-[gd_scene load_steps=15 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=24 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
 [ext_resource type="PackedScene" uid="uid://bfa140llfivte" path="res://Inventory/item_1.tscn" id="3_xeypn"]
+[ext_resource type="PackedScene" uid="uid://o0j3rpfnicok" path="res://World/Hallway/Objects/door_right.tscn" id="5_djmel"]
 [ext_resource type="PackedScene" uid="uid://csk2urcg16wmj" path="res://World/Classroom/class_room.tscn" id="5_riu0p"]
 [ext_resource type="PackedScene" uid="uid://ddy4y8usf6xx1" path="res://World/CommonRoom/common_room.tscn" id="6_8uynk"]
 [ext_resource type="PackedScene" uid="uid://budh30q4e8bp1" path="res://World/Hallway/hallway.tscn" id="6_30vrr"]
 [ext_resource type="PackedScene" uid="uid://ddj6085q7c80v" path="res://World/Library/Objects/library_door.tscn" id="6_jix5c"]
 [ext_resource type="PackedScene" uid="uid://b2hfq46adswvq" path="res://Inventory/inventory.tscn" id="6_poo6d"]
 [ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="7_a550o"]
+[ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="7_fdtu7"]
 [ext_resource type="PackedScene" uid="uid://dvsdo4d5483vq" path="res://World/NurseOffice/nurse_office.tscn" id="7_hja4d"]
+[ext_resource type="PackedScene" uid="uid://ctfxtvexw4u2i" path="res://World/Hallway/Objects/door_left.tscn" id="7_kskif"]
 [ext_resource type="PackedScene" uid="uid://b368vn8gqjhim" path="res://World/PrincipalOffice/principal_office.tscn" id="8_jk3xg"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="8_qbkrc"]
 [ext_resource type="PackedScene" uid="uid://cgyohedl6f7oi" path="res://Options/options.tscn" id="9_6ps0n"]
+[ext_resource type="Script" path="res://gateway.gd" id="9_p7d5e"]
 [ext_resource type="AudioStream" uid="uid://cw0kyepndt660" path="res://Sounds/Music/dating_music_chiptune.mp3" id="10_3jcig"]
+[ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17w1s"]
+resource_local_to_scene = true
+shader = ExtResource("7_fdtu7")
+shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
+shader_parameter/line_thickness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx3ni"]
+resource_local_to_scene = true
+shader = ExtResource("7_fdtu7")
+shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
+shader_parameter/line_thickness = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v7dt"]
+size = Vector2(22.4988, 33.4782)
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("options", "player_controller")]
 script = ExtResource("1_m0js2")
@@ -25,19 +46,71 @@ y_sort_enabled = true
 
 [node name="Library" parent="WorldHolder" instance=ExtResource("11_ut05g")]
 
-[node name="Library_Door" parent="WorldHolder/Library" instance=ExtResource("6_jix5c")]
+[node name="Library_Door" parent="WorldHolder/Library" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
+exit_point = NodePath("../../Hallway/Hallway_Enter")
 
-[node name="Marker2D2" type="Marker2D" parent="WorldHolder/Library"]
+[node name="Library_Enter" type="Marker2D" parent="WorldHolder/Library"]
 position = Vector2(972, 561)
 
 [node name="Hallway" parent="WorldHolder" instance=ExtResource("6_30vrr")]
 position = Vector2(3000, 0)
 
+[node name="Hallway_Enter" type="Marker2D" parent="WorldHolder/Hallway"]
+position = Vector2(1004, 620)
+
+[node name="Hallway_Enter2" type="Marker2D" parent="WorldHolder/Hallway"]
+position = Vector2(889, 575)
+
+[node name="Hallway_Enter3" type="Marker2D" parent="WorldHolder/Hallway"]
+position = Vector2(936, 525)
+
+[node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
+material = SubResource("ShaderMaterial_17w1s")
+exit_point = NodePath("../../Library/Library_Enter")
+
+[node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
+material = SubResource("ShaderMaterial_kx3ni")
+exit_point = NodePath("../../Classroom/Classroom_Enter")
+
+[node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
+y_sort_enabled = true
+material = ExtResource("8_qbkrc")
+position = Vector2(967, 533)
+texture = ExtResource("10_ll23k")
+offset = Vector2(-3.005, 14.615)
+script = ExtResource("9_p7d5e")
+exit_point = NodePath("../../CommonRoom/CommonRoom_Enter")
+visual = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="WorldHolder/Hallway/Banister"]
+position = Vector2(-18, 18)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldHolder/Hallway/Banister/Area2D"]
+position = Vector2(7.07813, -8.14038)
+rotation = 1.06891
+shape = SubResource("RectangleShape2D_1v7dt")
+
 [node name="Classroom" parent="WorldHolder" instance=ExtResource("5_riu0p")]
+modulate = Color(0.294118, 0.294118, 0.294118, 1)
 position = Vector2(6000, 0)
 
+[node name="Classroom_Enter" type="Marker2D" parent="WorldHolder/Classroom"]
+position = Vector2(956, 564)
+
+[node name="Library_Door2" parent="WorldHolder/Classroom" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
+position = Vector2(1, 0)
+exit_point = NodePath("../../Hallway/Hallway_Enter2")
+
 [node name="CommonRoom" parent="WorldHolder" instance=ExtResource("6_8uynk")]
+modulate = Color(1, 1, 0.6, 1)
 position = Vector2(0, 3000)
+
+[node name="CommonRoom_Enter" type="Marker2D" parent="WorldHolder/CommonRoom"]
+position = Vector2(945, 559)
+
+[node name="Library_Door3" parent="WorldHolder/CommonRoom" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
+exit_point = NodePath("../../Hallway/Hallway_Enter3")
 
 [node name="NurseOffice" parent="WorldHolder" instance=ExtResource("7_hja4d")]
 position = Vector2(3000, 3000)

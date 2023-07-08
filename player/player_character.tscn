@@ -25,8 +25,9 @@ walk_sound = NodePath("WalkSoundEffects")
 y_sort_enabled = true
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("1_m87x0")
-animation = &"walk_back"
+animation = &"walk_front"
 autoplay = "idle_front"
+frame_progress = 0.911735
 script = ExtResource("3_tbfbs")
 player_controller = NodePath("..")
 

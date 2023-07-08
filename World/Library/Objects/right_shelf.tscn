@@ -14,7 +14,6 @@ position = Vector2(5, -76)
 script = ExtResource("1_78i8h")
 timeline = ExtResource("2_ecwgw")
 visual = NodePath("Visual")
-outline_thickness = 1.7
 
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true

@@ -1,19 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://budh30q4e8bp1"]
+[gd_scene load_steps=9 format=3 uid="uid://budh30q4e8bp1"]
 
-[ext_resource type="Texture2D" uid="uid://cllh7eb5f4ykg" path="res://World/Library/Sprites/library.png" id="1_q6cw5"]
-[ext_resource type="PackedScene" uid="uid://bw3a75dc3scv6" path="res://World/Library/Objects/table.tscn" id="2_y7vc6"]
-[ext_resource type="PackedScene" uid="uid://5f4g1qkjhodv" path="res://World/Library/Objects/right_shelf.tscn" id="3_fmlxu"]
-[ext_resource type="PackedScene" uid="uid://h7cdep1ctkdb" path="res://World/Library/Objects/couches.tscn" id="4_myje3"]
-[ext_resource type="PackedScene" uid="uid://ci3o6gy32bxt1" path="res://World/Library/Objects/back_shelf.tscn" id="5_hn0g2"]
-[ext_resource type="PackedScene" uid="uid://bv8eacifliwlv" path="res://World/Library/Objects/middle_shelf.tscn" id="6_p2gnr"]
-[ext_resource type="PackedScene" uid="uid://deuqug5hg0awm" path="res://World/Library/Objects/front_shelf.tscn" id="7_ewurl"]
-[ext_resource type="Script" path="res://interactable.gd" id="8_b2y67"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="9_pis63"]
-[ext_resource type="Material" uid="uid://b4n65qfi6heap" path="res://Shaders/outline_material.tres" id="10_dmqwm"]
-[ext_resource type="Texture2D" uid="uid://2op0bi1wdy6d" path="res://World/NPC/target_one.png" id="11_omlcw"]
+[ext_resource type="Texture2D" uid="uid://cwafyt8o7pasl" path="res://World/Hallway/Sprites/bg.PNG" id="1_dn7hc"]
+[ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="2_qltyj"]
+[ext_resource type="PackedScene" uid="uid://oc7oyee7ggm7" path="res://World/Hallway/Objects/lockers.tscn" id="3_1m7qe"]
+[ext_resource type="PackedScene" uid="uid://vqboimvybw8v" path="res://World/Hallway/Objects/seat.tscn" id="4_74pps"]
+[ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="4_c8dfw"]
+[ext_resource type="Resource" path="res://World/Library/Objects/right_shelf_library.dtl" id="5_n60dj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g06o"]
-size = Vector2(67, 128)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb5e3"]
+resource_local_to_scene = true
+shader = ExtResource("4_c8dfw")
+shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
+shader_parameter/line_thickness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_176qc"]
+resource_local_to_scene = true
+shader = ExtResource("4_c8dfw")
+shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
+shader_parameter/line_thickness = 0.0
 
 [node name="Hallway" type="Node2D"]
 y_sort_enabled = true
@@ -21,48 +25,28 @@ y_sort_enabled = true
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -999
 position = Vector2(964, 547)
-texture = ExtResource("1_q6cw5")
+texture = ExtResource("1_dn7hc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
-visible = false
 build_mode = 1
-polygon = PackedVector2Array(-6, -16, 27, -35, 145, 23, -43, 130, -146, 72)
+polygon = PackedVector2Array(-25, -32, 9, -15, -30, 8, 47, 52, 76, 35, 121, 61, 20, 119, -120, 38, -92, 22, -101, 13)
 
 [node name="Furniture" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(1032, 579)
+position = Vector2(1021, 613)
 
-[node name="Table" parent="Furniture" instance=ExtResource("2_y7vc6")]
-position = Vector2(0, 0)
+[node name="Banister" type="Sprite2D" parent="Furniture"]
+visible = false
+y_sort_enabled = true
+position = Vector2(-54, -80)
+texture = ExtResource("2_qltyj")
+offset = Vector2(-3.005, 14.615)
 
-[node name="RightShelf" parent="Furniture" instance=ExtResource("3_fmlxu")]
+[node name="Lockers" parent="Furniture" instance=ExtResource("3_1m7qe")]
+material = SubResource("ShaderMaterial_rb5e3")
 
-[node name="Couches" parent="Furniture" instance=ExtResource("4_myje3")]
-
-[node name="BackShelf" parent="Furniture" instance=ExtResource("5_hn0g2")]
-
-[node name="MiddleShelf" parent="Furniture" instance=ExtResource("6_p2gnr")]
-
-[node name="FrontShelf" parent="Furniture" instance=ExtResource("7_ewurl")]
-
-[node name="NPC" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
-position = Vector2(1047, 524)
-scale = Vector2(0.45, 0.45)
-script = ExtResource("8_b2y67")
-timeline = ExtResource("9_pis63")
-visual = NodePath("TargetOne")
-outline_thickness = 10.0
-
-[node name="Area2D" type="Area2D" parent="NPC"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
-position = Vector2(32.5, 65)
-shape = SubResource("RectangleShape2D_2g06o")
-
-[node name="TargetOne" type="Sprite2D" parent="NPC"]
-material = ExtResource("10_dmqwm")
-position = Vector2(32, 64)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("11_omlcw")
+[node name="Seat" parent="Furniture" instance=ExtResource("4_74pps")]
+material = SubResource("ShaderMaterial_176qc")
+timeline = ExtResource("5_n60dj")

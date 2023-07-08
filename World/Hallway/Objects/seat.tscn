@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://vqboimvybw8v"]
+
+[ext_resource type="Script" path="res://interactable.gd" id="1_mwlgn"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_tg7y0"]
+[ext_resource type="Texture2D" uid="uid://coa6xspv7jp5" path="res://World/Hallway/Sprites/seat.PNG" id="4_76u7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vrqm"]
+size = Vector2(21.939, 35.761)
+
+[node name="Seat" type="Sprite2D" node_paths=PackedStringArray("visual")]
+material = ExtResource("3_tg7y0")
+position = Vector2(-131, -60)
+texture = ExtResource("4_76u7j")
+offset = Vector2(18.385, 26.99)
+script = ExtResource("1_mwlgn")
+visual = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-36, 17)
+rotation = 0.966684
+shape = SubResource("RectangleShape2D_5vrqm")

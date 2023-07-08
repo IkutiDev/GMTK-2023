@@ -16,7 +16,6 @@ item_data = ExtResource("2_7bkew")
 pickup_item_at_timeline_end = true
 timeline = ExtResource("3_3nvkk")
 visual = NodePath("Sprite2D")
-outline_thickness = 1.7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("3_kdj6g")

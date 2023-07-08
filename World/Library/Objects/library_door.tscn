@@ -10,7 +10,6 @@ size = Vector2(75.8733, 23.4019)
 [node name="Library_Door" type="Node2D" node_paths=PackedStringArray("visual")]
 script = ExtResource("1_5mipx")
 visual = NodePath("Visual")
-outline_thickness = 1.7
 
 [node name="Visual" type="Sprite2D" parent="."]
 z_index = -998
