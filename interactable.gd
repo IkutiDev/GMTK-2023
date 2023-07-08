@@ -1,8 +1,12 @@
+extends Control
 class_name Interactable
-extends Sprite2D
 
 @export var timeline : DialogicTimeline
 @export var item_data : ItemData
+@export var item_texture : TextureRect
+
+func _ready():
+	item_texture.set_texture(item_data.texture)
 
 func run_timeline() -> void:
 	print(timeline)
