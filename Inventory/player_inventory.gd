@@ -10,6 +10,7 @@ const PLAYER_GROUP_NAME = "Player"
 func _ready() -> void:
 	Events.picked_up_item.connect(add_item_to_invetory)
 	Events.drop_item.connect(drop_item_from_invetory)
+	
 
 func add_item_to_invetory(item_data : ItemData) -> void:
 	Dialogic.VAR.set_variable(item_data.dialogic_variable_name, 1)
@@ -22,7 +23,8 @@ func drop_item_from_invetory(item_data : ItemData) -> void:
 	item_instance.global_position = (get_tree().get_nodes_in_group(PLAYER_GROUP_NAME)[0] as Node2D).global_position
 	Dialogic.VAR.set_variable(item_data.dialogic_variable_name, 0)
 
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		drop_item_from_invetory(inventory_view.get_latest_item().item_data)
+func _input(event):
+	if Input.is_action_just_pressed("put_down_item"):
+		var slot = inventory_view.get_latest_item()
+		Events.drop_item.emit(slot.item_data)
+		slot.clear_object()

@@ -8,3 +8,6 @@ class_name SlotView
 func _on_drop_button_pressed() -> void:
 	Events.drop_item.emit(item_data)
 	queue_free()
+	
+func clear_object():
+	queue_free()
