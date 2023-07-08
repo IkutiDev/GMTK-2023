@@ -23,6 +23,15 @@ Events="*res://events.gd"
 [dialogic]
 
 variables={
+"Classroom": {
+"blackboar-act": "0",
+"comp-act": "0",
+"cure_girl-act": "0",
+"door-act": "0",
+"fish-act": "0",
+"notice-act": "0",
+"trash-act": "0"
+},
 "TargetOneGroup": {
 "HasTargetOneItem": "0"
 }
