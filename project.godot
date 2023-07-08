@@ -29,10 +29,8 @@ variables={
 "DoorAct": "0",
 "FinishedExamAll": "0",
 "FishAct": "0",
+"HasTargetOneItem": "",
 "NoticeAct": "0",
-"TargetOneGroup": {
-"HasTargetOneItem": "0"
-},
 "TrashAct": "0"
 }
 layout/mode=1
