@@ -1,8 +1,8 @@
 Join player_timeline_character
-if {blackboard-act} == 0:
+if {BlackboardAct} == 0:
 	player_timeline_character: You would think a trained teacher would be able to write more neatly.
 	player_timeline_character: Detention. *Sigh* What a hellscape.
-	VAR {blackboard-act} = 1
+	VAR {BlackboardAct} = 1
 else:
 	player_timeline_character: I've already looked at this.
 [end_timeline]
