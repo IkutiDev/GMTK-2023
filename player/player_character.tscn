@@ -8,9 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://di2wi7o8lypj" path="res://Sounds/SFX/Walk/footstep_L4.wav" id="6_v3pbn"]
 [ext_resource type="AudioStream" uid="uid://ca411o68cejws" path="res://Sounds/SFX/Walk/footstep_L5.wav" id="7_wtnro"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5m5hr"]
-radius = 54.0
-height = 184.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqo7q"]
+height = 52.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpnrn"]
 size = Vector2(164, 176)
@@ -21,16 +20,19 @@ collision_layer = 3
 script = ExtResource("1_afbaa")
 walk_sound = NodePath("WalkSoundEffects")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_5m5hr")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player_controller")]
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("1_m87x0")
-animation = &"idle_back"
+animation = &"walk_back"
 autoplay = "idle_front"
 script = ExtResource("3_tbfbs")
 player_controller = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 66)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sqo7q")
+debug_color = Color(0.262745, 0.635294, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false

@@ -15,7 +15,7 @@
 "offset": Vector2(0, 0),
 "portraits": {
 "default": {
-"image": "res://World/Targets/target_one.png",
+"image": "res://World/NPC/target_one.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,

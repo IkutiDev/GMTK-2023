@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du1oqj4ptqiau"
-path="res://.godot/imported/couches.PNG-4d2dba24d15ce5899b238d253dd46a97.ctex"
+uid="uid://cd74bite35sjt"
+path="res://.godot/imported/table.PNG-2050c997fb0ec0f2656d7d3e85f03945.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/LibrarySprites/couches.PNG"
-dest_files=["res://.godot/imported/couches.PNG-4d2dba24d15ce5899b238d253dd46a97.ctex"]
+source_file="res://World/Library/Sprites/table.PNG"
+dest_files=["res://.godot/imported/table.PNG-2050c997fb0ec0f2656d7d3e85f03945.ctex"]
 
 [params]
 

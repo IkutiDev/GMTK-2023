@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp1joe1kusvar"
-path="res://.godot/imported/middle shelf.PNG-ad3072381d4862028d09e08128ee4a28.ctex"
+uid="uid://bdtpggskcoeu2"
+path="res://.godot/imported/back shelf.PNG-9dcc5980b30bebeefbacf96eea07bece.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/LibrarySprites/middle shelf.PNG"
-dest_files=["res://.godot/imported/middle shelf.PNG-ad3072381d4862028d09e08128ee4a28.ctex"]
+source_file="res://World/Library/Sprites/back shelf.PNG"
+dest_files=["res://.godot/imported/back shelf.PNG-9dcc5980b30bebeefbacf96eea07bece.ctex"]
 
 [params]
 

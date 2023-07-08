@@ -1,4 +1,4 @@
-extends Node
+extends Control
 class_name PlayerInventory
 
 static var in_hand : ItemData

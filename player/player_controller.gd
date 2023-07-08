@@ -1,8 +1,7 @@
 class_name PlayerController
 extends CharacterBody2D
 
-const SPEED = 300.0
-
+@export var walking_speed := 150.0
 @export var walk_sound : WalkSounds
 
 var current_interactable : Interactable = null
@@ -42,10 +41,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * walking_speed
 		walk_sound.play_walk(true)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, walking_speed)
 		walk_sound.play_walk(false)
 		
 	if PlayerInventory.has_item_in_hand():
