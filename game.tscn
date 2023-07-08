@@ -21,13 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_17w1s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwka4"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx3ni"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d13pj"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -65,11 +65,11 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_17w1s")
+material = SubResource("ShaderMaterial_cwka4")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_kx3ni")
+material = SubResource("ShaderMaterial_d13pj")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]

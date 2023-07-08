@@ -51,6 +51,8 @@ func recieve_text_signal(argument:String) -> void:
 	print("[Dialogic] Encountered a signal in text: ", argument)
 
 func reset_game() -> void:
+	if Dialogic.current_timeline != null:
+		return
 	Dialogic.VAR.clear_game_state(Dialogic.ClearFlags.FullClear)
 	get_tree().reload_current_scene()
 

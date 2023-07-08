@@ -7,13 +7,13 @@
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="4_c8dfw"]
 [ext_resource type="Resource" path="res://World/Library/Objects/right_shelf_library.dtl" id="5_n60dj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb5e3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gn385"]
 resource_local_to_scene = true
 shader = ExtResource("4_c8dfw")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_176qc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tndew"]
 resource_local_to_scene = true
 shader = ExtResource("4_c8dfw")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -45,8 +45,8 @@ texture = ExtResource("2_qltyj")
 offset = Vector2(-3.005, 14.615)
 
 [node name="Lockers" parent="Furniture" instance=ExtResource("3_1m7qe")]
-material = SubResource("ShaderMaterial_rb5e3")
+material = SubResource("ShaderMaterial_gn385")
 
 [node name="Seat" parent="Furniture" instance=ExtResource("4_74pps")]
-material = SubResource("ShaderMaterial_176qc")
+material = SubResource("ShaderMaterial_tndew")
 timeline = ExtResource("5_n60dj")
