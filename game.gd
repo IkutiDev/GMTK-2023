@@ -2,6 +2,7 @@ extends Node2D
 class_name Game
 
 @export var options : CanvasLayer
+@export var player_controller : PlayerController
 
 var showing_options : bool
 
@@ -32,12 +33,13 @@ func _input(event):
 		return
 	
 	if showing_options == false:
-		print ("Test 1")
 		options.show_menu()
 		showing_options = true
+		player_controller.set_in_menu(true)
 	else:
 		if options.try_hide():
 			showing_options = false
+			player_controller.set_in_menu(false)
 		
 
 func recieve_event_signal(argument:String) -> void:

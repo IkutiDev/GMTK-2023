@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=11 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
@@ -9,10 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://b2hfq46adswvq" path="res://Inventory/inventory.tscn" id="6_poo6d"]
 [ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="7_a550o"]
 [ext_resource type="PackedScene" uid="uid://cgyohedl6f7oi" path="res://Options/options.tscn" id="9_6ps0n"]
+[ext_resource type="AudioStream" uid="uid://d2gqed4hrninc" path="res://Sounds/Music/Expelled_-_Dating_music.mp3" id="10_ngvri"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("options")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("options", "player_controller")]
 script = ExtResource("1_m0js2")
 options = NodePath("Options")
+player_controller = NodePath("PlayerCharacter")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_8dyyb")]
 
@@ -54,3 +56,10 @@ offset_right = 128.0
 
 [node name="Options" parent="." instance=ExtResource("9_6ps0n")]
 visible = false
+
+[node name="MusicHolder" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicHolder"]
+stream = ExtResource("10_ngvri")
+autoplay = true
+bus = &"Music"

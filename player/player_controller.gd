@@ -3,9 +3,14 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+
 var current_interactable : Interactable = null
+var is_in_menu : bool
 
 func _input(event: InputEvent) -> void:
+	if is_in_menu:
+		return
+	
 	if Input.is_action_just_pressed("interact") and PlayerInventory.has_item_in_hand():
 		print("drop item")
 		PlayerInventory.set_in_hand(null)
@@ -18,6 +23,8 @@ func _input(event: InputEvent) -> void:
 		current_interactable.hide()
 
 func _physics_process(delta: float) -> void:
+	if is_in_menu:
+		return
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -31,6 +38,9 @@ func _physics_process(delta: float) -> void:
 		current_interactable.set_position(position)
 
 	move_and_slide()
+	
+func set_in_menu(in_menu: bool):
+	is_in_menu = in_menu
 
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:

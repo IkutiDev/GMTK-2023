@@ -18,7 +18,7 @@ shape = SubResource("CircleShape2D_4cbdd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player_controller")]
 sprite_frames = ExtResource("1_m87x0")
-animation = &"interact_front"
+animation = &"walk_back"
 autoplay = "idle_front"
 script = ExtResource("3_tbfbs")
 player_controller = NodePath("..")
