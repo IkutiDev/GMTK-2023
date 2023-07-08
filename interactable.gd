@@ -5,6 +5,8 @@ class_name Interactable
 @export var visual : Sprite2D
 @export var outline_thickness : float = 1.7
 
+var is_in_focus
+
 func run_timeline() -> void:
 	if timeline == null:
 		return
@@ -40,10 +42,12 @@ func clear_timeline() -> void:
 
 func on_player_enter():
 	enable_outline(true)
+	is_in_focus = true
 
 
 func on_player_exit():
 	enable_outline(false)
+	is_in_focus = false
 	
 func enable_outline(enable : bool) -> void:
 	if enable == true:
