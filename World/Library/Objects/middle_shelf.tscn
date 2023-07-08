@@ -1,13 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv8eacifliwlv"]
+[gd_scene load_steps=6 format=3 uid="uid://bv8eacifliwlv"]
 
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="1_8ofkh"]
 [ext_resource type="Texture2D" uid="uid://cp1joe1kusvar" path="res://World/Library/Sprites/middle shelf.PNG" id="1_71g6w"]
+[ext_resource type="Script" path="res://interactable.gd" id="2_8en5s"]
+[ext_resource type="Resource" path="res://World/Library/Objects/right_shelf_library.dtl" id="3_sccai"]
 
-[node name="MiddleShelf" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiw33"]
+size = Vector2(102.279, 59.4607)
+
+[node name="MiddleShelf" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
 position = Vector2(-136, 48)
+script = ExtResource("2_8en5s")
+timeline = ExtResource("3_sccai")
+visual = NodePath("Visual")
+outline_thickness = 1.7
 
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
+material = ExtResource("1_8ofkh")
 texture = ExtResource("1_71g6w")
 offset = Vector2(68, -81.25)
 
@@ -17,3 +28,13 @@ position = Vector2(-68, -32)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 999
 polygon = PackedVector2Array(13, 37, 88, -11, 118, 16, 48, 58)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-13, -8)
+rotation = -1.18288
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.24176, 16.894)
+rotation = 0.509133
+shape = SubResource("RectangleShape2D_tiw33")

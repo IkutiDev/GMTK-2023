@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=13 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" path="res://timelines/interact_with_item_example.dtl" id="4_5lcd7"]
 [ext_resource type="Resource" uid="uid://cauxog3km4h6m" path="res://Inventory/Items/test_item_res.tres" id="5_igkqt"]
 [ext_resource type="Resource" uid="uid://b7i4k3bpmw82g" path="res://Inventory/Items/empty_item_res.tres" id="6_f3mfo"]
+[ext_resource type="PackedScene" uid="uid://ddj6085q7c80v" path="res://World/Library/Objects/library_door.tscn" id="6_jix5c"]
 [ext_resource type="PackedScene" uid="uid://b2hfq46adswvq" path="res://Inventory/inventory.tscn" id="6_poo6d"]
 [ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="7_a550o"]
 [ext_resource type="PackedScene" uid="uid://cgyohedl6f7oi" path="res://Options/options.tscn" id="9_6ps0n"]
@@ -22,7 +23,35 @@ y_sort_enabled = true
 
 [node name="Library" parent="WorldHolder" instance=ExtResource("11_ut05g")]
 
-[node name="PlayerCharacter" parent="WorldHolder" instance=ExtResource("1_8dyyb")]
+[node name="ItemToPickup" parent="WorldHolder/Library" instance=ExtResource("3_xeypn")]
+z_index = 1
+position = Vector2(973, 610)
+scale = Vector2(0.2, 0.2)
+item_data = ExtResource("5_igkqt")
+timeline = ExtResource("4_5lcd7")
+
+[node name="Library_Door" parent="WorldHolder/Library" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
+exit_point = NodePath("../../Library2/Marker2D")
+
+[node name="Marker2D2" type="Marker2D" parent="WorldHolder/Library"]
+position = Vector2(972, 561)
+
+[node name="Library2" parent="WorldHolder" instance=ExtResource("11_ut05g")]
+modulate = Color(0.262745, 1, 1, 1)
+position = Vector2(2444, -2)
+
+[node name="ItemToPickup" parent="WorldHolder/Library2" node_paths=PackedStringArray("visual") instance=ExtResource("3_xeypn")]
+z_index = 1
+position = Vector2(973, 610)
+scale = Vector2(0.2, 0.2)
+item_data = ExtResource("5_igkqt")
+timeline = ExtResource("4_5lcd7")
+visual = NodePath("../../Library/ItemToPickup/Sprite2D")
+
+[node name="Marker2D" type="Marker2D" parent="WorldHolder/Library2"]
+position = Vector2(972, 563)
+
+[node name="PlayerCharacter" parent="WorldHolder" groups=["Player"] instance=ExtResource("1_8dyyb")]
 position = Vector2(975, 555)
 scale = Vector2(0.25, 0.25)
 walking_speed = 125.0
@@ -34,11 +63,9 @@ remote_path = NodePath("../../../Camera2D")
 position = Vector2(975, 555)
 scale = Vector2(0.25, 0.25)
 
-[node name="ItemToPickup" parent="." instance=ExtResource("3_xeypn")]
-position = Vector2(908, 643)
-scale = Vector2(0.2, 0.2)
-item_data = ExtResource("5_igkqt")
-timeline = ExtResource("4_5lcd7")
+[node name="Library_Door2" parent="." node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
+position = Vector2(2444, -2)
+exit_point = NodePath("../WorldHolder/Library/Marker2D2")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

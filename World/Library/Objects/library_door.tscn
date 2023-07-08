@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddj6085q7c80v"]
+
+[ext_resource type="Script" path="res://gateway.gd" id="1_5mipx"]
+[ext_resource type="Texture2D" uid="uid://bwuyfutybn478" path="res://World/Library/Sprites/doorlibrary.png" id="1_gglx0"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="2_43cfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qtnr"]
+size = Vector2(75.8733, 23.4019)
+
+[node name="Library_Door" type="Node2D" node_paths=PackedStringArray("visual")]
+script = ExtResource("1_5mipx")
+visual = NodePath("Visual")
+outline_thickness = 1.7
+
+[node name="Visual" type="Sprite2D" parent="."]
+z_index = -998
+material = ExtResource("2_43cfv")
+position = Vector2(964, 547)
+texture = ExtResource("1_gglx0")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(920, 556)
+rotation = -0.541466
+shape = SubResource("RectangleShape2D_7qtnr")

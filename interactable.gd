@@ -26,13 +26,20 @@ func on_player_exit():
 	enable_outline(false)
 	
 func enable_outline(enable : bool) -> void:
-	if enable == false:
+	if enable == true:
 		print(name)
+		
+	if not can_enable_outline():
+		return
 	
-	if visual == null:
-		return
-	if visual.material == null:
-		return
-	if timeline == null:
-		return
 	visual.material.set_shader_parameter("line_thickness", outline_thickness if enable else 0)
+
+func can_enable_outline() -> bool:
+	if visual == null:
+		return false
+	if visual.material == null:
+		return false
+	if timeline == null:
+		return false
+		
+	return true

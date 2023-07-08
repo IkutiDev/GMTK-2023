@@ -67,7 +67,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	var interactable : Interactable = area.get_parent() as Interactable
 	interactable.on_player_enter()
 	
-	if interactable != null and current_interactable != null:
+	if interactable != null and current_interactable != null and interactable != current_interactable:
 		current_interactable.enable_outline(false)
 	
 	if interactable is ItemInteractable:
@@ -86,6 +86,6 @@ func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index
 		current_interactable = null
 		
 	for close_area in $Area2D.get_overlapping_areas():
-		if close_area.get_parent() is Interactable:
+		if close_area.get_parent() as Interactable != null:
 			_on_area_2d_area_shape_entered(RID(), close_area, 0, 0)
 			return
