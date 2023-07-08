@@ -9,6 +9,9 @@ var current_item_interactable : ItemInteractable = null
 var is_in_menu : bool
 
 func _input(event: InputEvent) -> void:
+	if Dialogic.current_timeline != null:
+		return
+	
 	if is_in_menu:
 		return
 		
@@ -34,6 +37,10 @@ func _input(event: InputEvent) -> void:
 		current_item_interactable.hide()
 
 func _physics_process(delta: float) -> void:
+	
+	if Dialogic.current_timeline != null:
+		return
+	
 	if is_in_menu:
 		return
 
@@ -57,8 +64,11 @@ func set_in_menu(in_menu: bool):
 
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	var interactable : Interactable = area.get_parent()
+	var interactable : Interactable = area.get_parent() as Interactable
 	interactable.on_player_enter()
+	
+	if interactable != null and current_interactable != null:
+		current_interactable.enable_outline(false)
 	
 	if interactable is ItemInteractable:
 		current_item_interactable = interactable
@@ -74,3 +84,8 @@ func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index
 		current_item_interactable = null
 	else:
 		current_interactable = null
+		
+	for close_area in $Area2D.get_overlapping_areas():
+		if close_area.get_parent() is Interactable:
+			_on_area_2d_area_shape_entered(RID(), close_area, 0, 0)
+			return

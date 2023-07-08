@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv8eacifliwlv"]
+
+[ext_resource type="Texture2D" uid="uid://cp1joe1kusvar" path="res://World/Library/Sprites/middle shelf.PNG" id="1_71g6w"]
+
+[node name="MiddleShelf" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(-136, 48)
+
+[node name="Visual" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_71g6w")
+offset = Vector2(68, -81.25)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-68, -32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = 999
+polygon = PackedVector2Array(13, 37, 88, -11, 118, 16, 48, 58)

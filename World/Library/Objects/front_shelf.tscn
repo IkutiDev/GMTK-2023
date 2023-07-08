@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://deuqug5hg0awm"]
+
+[ext_resource type="Texture2D" uid="uid://bj46taynn5xq3" path="res://World/Library/Sprites/front shelf.PNG" id="1_sg54b"]
+
+[node name="FrontShelf" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(-101, 68)
+
+[node name="Visual" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_sg54b")
+offset = Vector2(34, -99.745)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-68, -32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(24, 44, 93, 3, 104, 11, 116, 21, 51, 59, 39, 53)

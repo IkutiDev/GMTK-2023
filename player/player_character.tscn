@@ -12,15 +12,17 @@
 height = 52.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpnrn"]
-size = Vector2(164, 176)
+size = Vector2(74, 42)
 
 [node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("walk_sound")]
+y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 collision_layer = 3
 script = ExtResource("1_afbaa")
 walk_sound = NodePath("WalkSoundEffects")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player_controller")]
+y_sort_enabled = true
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("1_m87x0")
 animation = &"walk_back"
@@ -38,6 +40,7 @@ debug_color = Color(0.262745, 0.635294, 0, 0.419608)
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 67)
 shape = SubResource("RectangleShape2D_wpnrn")
 
 [node name="WalkSoundEffects" type="AudioStreamPlayer" parent="."]

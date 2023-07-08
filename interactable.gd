@@ -2,39 +2,37 @@ extends Node2D
 class_name Interactable
 
 @export var timeline : DialogicTimeline
-@export var shader_material : Sprite2D
+@export var visual : Sprite2D
 @export var outline_thickness : float
 
-var shader_param
-var has_shader : bool
-
-func _ready():
-	if shader_material == null:
-		has_shader = false
-		return
-	
-	has_shader = true
-	shader_param = shader_material.material.get_shader_parameter("line_thickness")
-
 func run_timeline() -> void:
+	if timeline == null:
+		return
 	Dialogic.start_timeline(timeline)
 	Dialogic.timeline_ended.connect(clear_timeline)
 
 func clear_timeline() -> void:
+	if timeline == null:
+		return
 	Dialogic.clear()
 	Dialogic.timeline_ended.disconnect(clear_timeline)
 
 
 func on_player_enter():
-	if has_shader == false:
-		return
-	
-	shader_material.material.set_shader_parameter("line_thickness", outline_thickness)
+	enable_outline(true)
 
 
 func on_player_exit():
-	if has_shader == false:
+	enable_outline(false)
+	
+func enable_outline(enable : bool) -> void:
+	if enable == false:
+		print(name)
+	
+	if visual == null:
 		return
-	
-	shader_material.material.set_shader_parameter("line_thickness", 0)
-	
+	if visual.material == null:
+		return
+	if timeline == null:
+		return
+	visual.material.set_shader_parameter("line_thickness", outline_thickness if enable else 0)

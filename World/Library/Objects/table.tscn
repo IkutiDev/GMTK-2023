@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw3a75dc3scv6"]
+
+[ext_resource type="Texture2D" uid="uid://cd74bite35sjt" path="res://World/Library/Sprites/table.PNG" id="1_1bp6w"]
+[ext_resource type="Script" path="res://interactable.gd" id="1_7uqmc"]
+[ext_resource type="Resource" path="res://World/Library/Objects/library_table.dtl" id="2_cnd0a"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_y23ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hufb8"]
+size = Vector2(64, 56)
+
+[node name="Table" type="Node2D" node_paths=PackedStringArray("visual")]
+y_sort_enabled = true
+position = Vector2(1, 0)
+script = ExtResource("1_7uqmc")
+timeline = ExtResource("2_cnd0a")
+visual = NodePath("Visual")
+outline_thickness = 1.7
+
+[node name="Visual" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = ExtResource("3_y23ha")
+texture = ExtResource("1_1bp6w")
+offset = Vector2(-68, -32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-68, -32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(39, 34, 73, 29, 97, 28, 97, 46, 63, 66, 39, 53)
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_hufb8")
