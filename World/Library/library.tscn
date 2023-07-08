@@ -4,13 +4,12 @@
 [ext_resource type="Script" path="res://interactable.gd" id="2_3p5jj"]
 [ext_resource type="PackedScene" uid="uid://bw3a75dc3scv6" path="res://World/Library/Objects/table.tscn" id="2_8limu"]
 [ext_resource type="PackedScene" uid="uid://5f4g1qkjhodv" path="res://World/Library/Objects/right_shelf.tscn" id="3_4rbke"]
-[ext_resource type="Resource" path="res://timelines/interact_target_one.dtl" id="3_gpgbp"]
 [ext_resource type="PackedScene" uid="uid://h7cdep1ctkdb" path="res://World/Library/Objects/couches.tscn" id="4_qi2u8"]
 [ext_resource type="Texture2D" uid="uid://2op0bi1wdy6d" path="res://World/NPC/target_one.png" id="5_qw4gs"]
 [ext_resource type="PackedScene" uid="uid://ci3o6gy32bxt1" path="res://World/Library/Objects/back_shelf.tscn" id="5_urmkl"]
 [ext_resource type="PackedScene" uid="uid://bv8eacifliwlv" path="res://World/Library/Objects/middle_shelf.tscn" id="6_ysgya"]
 [ext_resource type="PackedScene" uid="uid://deuqug5hg0awm" path="res://World/Library/Objects/front_shelf.tscn" id="7_trwir"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="9_ec3tu"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="9_8jbix"]
 [ext_resource type="Material" uid="uid://b4n65qfi6heap" path="res://Shaders/outline_material.tres" id="10_d56h4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g06o"]
@@ -52,7 +51,7 @@ position = Vector2(0, 0)
 position = Vector2(1047, 524)
 scale = Vector2(0.45, 0.45)
 script = ExtResource("2_3p5jj")
-timeline = ExtResource("3_gpgbp")
+timeline = ExtResource("9_8jbix")
 visual = NodePath("TargetOne")
 outline_thickness = 10.0
 
