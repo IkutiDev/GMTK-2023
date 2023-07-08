@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=28 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
@@ -19,15 +19,17 @@
 [ext_resource type="Script" path="res://gateway.gd" id="9_p7d5e"]
 [ext_resource type="AudioStream" uid="uid://cw0kyepndt660" path="res://Sounds/Music/dating_music_chiptune.mp3" id="10_3jcig"]
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
+[ext_resource type="Script" path="res://patrol_path.gd" id="11_50exk"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
+[ext_resource type="SpriteFrames" uid="uid://dmcgx1fquamx" path="res://player/player_sprite_frames.tres" id="12_52lf8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwka4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk86a"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d13pj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7i8m6"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -35,6 +37,15 @@ shader_parameter/line_thickness = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v7dt"]
 size = Vector2(22.4988, 33.4782)
+
+[sub_resource type="Curve2D" id="Curve2D_cmspj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 905, 553, 0, 0, 0, 0, 998.571, 614.482)
+}
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7edf"]
+radius = 12.3023
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("options", "player_controller")]
 script = ExtResource("1_m0js2")
@@ -65,11 +76,13 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_cwka4")
+visible = false
+material = SubResource("ShaderMaterial_yk86a")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_d13pj")
+visible = false
+material = SubResource("ShaderMaterial_7i8m6")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
@@ -90,6 +103,36 @@ monitoring = false
 position = Vector2(7.07813, -8.14038)
 rotation = 1.06891
 shape = SubResource("RectangleShape2D_1v7dt")
+
+[node name="PatrollingNPC" type="Path2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("animated_sprite", "path_follow")]
+position = Vector2(-71.1755, -56.6282)
+scale = Vector2(1.0687, 1.08974)
+curve = SubResource("Curve2D_cmspj")
+script = ExtResource("11_50exk")
+walk_cycle_time = 5.0
+wait_time = 2.0
+animated_sprite = NodePath("PathFollow2D/Node2D/AnimatedSprite2D")
+path_follow = NodePath("PathFollow2D")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="WorldHolder/Hallway/PatrollingNPC"]
+position = Vector2(905, 553)
+rotation = 0.581324
+loop = false
+
+[node name="Node2D" type="Node2D" parent="WorldHolder/Hallway/PatrollingNPC/PathFollow2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D"]
+rotation = -0.523599
+sprite_frames = ExtResource("12_52lf8")
+animation = &"idle_front"
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D/AnimatedSprite2D"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D/AnimatedSprite2D/Area2D"]
+position = Vector2(4.68945, 16.2742)
+shape = SubResource("CircleShape2D_y7edf")
 
 [node name="Classroom" parent="WorldHolder" instance=ExtResource("5_riu0p")]
 modulate = Color(0.294118, 0.294118, 0.294118, 1)
@@ -163,16 +206,6 @@ offset_right = 80.0
 offset_bottom = 357.41
 grow_vertical = 1
 
-[node name="Button" type="Button" parent="UI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -8.0
-offset_bottom = 8.0
-grow_horizontal = 0
-action_mode = 0
-text = "RESET"
-
 [node name="Options" parent="." instance=ExtResource("9_6ps0n")]
 visible = false
 
@@ -183,4 +216,4 @@ stream = ExtResource("10_3jcig")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D/AnimatedSprite2D/Area2D" to="WorldHolder/Hallway/PatrollingNPC" method="_on_area_2d_body_entered"]

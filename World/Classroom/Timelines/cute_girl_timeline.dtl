@@ -15,3 +15,4 @@ elif {FinishedExamAll} == 0:
 else:
 	player_timeline_character: I don't want to talk to her ever again.
 [end_timeline]
+[call_node single_use="true"]

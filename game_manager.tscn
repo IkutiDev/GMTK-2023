@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0h7pcp67t071"]
+
+[ext_resource type="Script" path="res://gamemanager.gd" id="1_thghh"]
+[ext_resource type="PackedScene" uid="uid://b2y52p3q8y7jl" path="res://EndGameScreens/win_screen.tscn" id="2_v7aot"]
+[ext_resource type="PackedScene" uid="uid://btj1u3r5ua42c" path="res://MainMenu/main_menu.tscn" id="2_xaekm"]
+[ext_resource type="PackedScene" uid="uid://dnqwv3r1wn0rv" path="res://EndGameScreens/lose_screen.tscn" id="3_xp0i5"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_thghh")
+main_menu = ExtResource("2_xaekm")
+win_screen = ExtResource("2_v7aot")
+lose_screen = ExtResource("3_xp0i5")
