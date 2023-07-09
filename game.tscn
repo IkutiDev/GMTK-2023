@@ -28,7 +28,7 @@
 [ext_resource type="Script" path="res://timelines/global_timeline_controller.gd" id="23_lqcxd"]
 [ext_resource type="AudioStream" uid="uid://bms38pprlsbv4" path="res://Sounds/Music/intostealth.wav" id="24_vt1it"]
 [ext_resource type="Resource" path="res://timelines/interact_all_classroom_timeline.dtl" id="25_5anyo"]
-[ext_resource type="AudioStream" uid="uid://22hland2roxk" path="res://Sounds/Music/stealth-009.wav" id="25_y7dac"]
+[ext_resource type="AudioStream" uid="uid://lphqrc6w6epl" path="res://Sounds/Music/stealthFinal.wav" id="27_b6rj0"]
 [ext_resource type="Resource" path="res://timelines/tutorial_timeline.dtl" id="29_p4w3b"]
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 
@@ -247,7 +247,7 @@ main_music = NodePath("MainMusicAudio")
 stealth_intro = NodePath("StealthIntroAudio")
 stealth_loop = NodePath("StealthLoopAudio")
 fade_time = 0.5
-steal_intro_time = 5.0
+steal_intro_time = 1.2
 
 [node name="MainMusicAudio" type="AudioStreamPlayer" parent="MusicHolder"]
 stream = ExtResource("10_3jcig")

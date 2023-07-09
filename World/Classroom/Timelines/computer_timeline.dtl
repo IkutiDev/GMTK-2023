@@ -10,12 +10,12 @@ if {CompAct} == 0:
 	player_timeline_character (default): ...
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Who built this darn machine, NASA?!
-	[call_node single_use="true"]
 	player_timeline_character: And it’s sharp somehow! Now I have a cut on my hand, ow.
 	VAR {CompAct} = 1
 elif {FinishedExamAll} == 0:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	I should probably stay away from this murder weapon.
+	[jump timeline="" label="end"]
 else:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	As much as this hurt me, I bet it could help hurt someone else even more.

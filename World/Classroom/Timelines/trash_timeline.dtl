@@ -13,7 +13,7 @@ if {TrashAct} == 0:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: No. Self control, Pel.
 	VAR {TrashAct} = 1
-elif {FinishedExamAll} == "1":
+elif {FinishedExamAll} == 1:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Can’t move this, but I can totally put something in it.
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
