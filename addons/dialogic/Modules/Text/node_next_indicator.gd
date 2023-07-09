@@ -11,7 +11,7 @@ extends Control
 @export var show_on_autoadvance := false
 
 ## What animation should the indicator do.
-@export_enum('bounce', 'blink', 'none') var animation := 0
+@export var animation := 0
 ## Set the image to use as the indicator.
 @export var texture := preload("res://addons/dialogic/Example Assets/next-indicator/next-indicator.png")
 
@@ -38,22 +38,23 @@ func _on_visibility_changed():
 
 
 func play_animation(animation: int, time:float) -> void:
-	if animation == 0:
-		var tween:Tween = (create_tween() as Tween)
-		var distance := 4
-		tween.set_parallel(false)
-		tween.set_trans(Tween.TRANS_SINE)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.set_loops()
-		
-		tween.tween_property(self, 'position', Vector2(0,distance), time*0.3).as_relative()
-		tween.tween_property(self, 'position', - Vector2(0,distance), time*0.3).as_relative()
-	if animation == 1:
-		var tween:Tween = (create_tween() as Tween)
-		tween.set_parallel(false)
-		tween.set_trans(Tween.TRANS_SINE)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.set_loops()
-		
-		tween.tween_property(self, 'modulate:a', 0, time*0.3)
-		tween.tween_property(self, 'modulate:a', 1, time*0.3)
+	return
+#	if animation == 0:
+#		var tween:Tween = (create_tween() as Tween)
+#		var distance := 4
+#		tween.set_parallel(false)
+#		tween.set_trans(Tween.TRANS_SINE)
+#		tween.set_ease(Tween.EASE_IN_OUT)
+#		tween.set_loops()
+#
+#		tween.tween_property(self, 'position', Vector2(0,distance), time*0.3).as_relative()
+#		tween.tween_property(self, 'position', - Vector2(0,distance), time*0.3).as_relative()
+#	if animation == 1:
+#		var tween:Tween = (create_tween() as Tween)
+#		tween.set_parallel(false)
+#		tween.set_trans(Tween.TRANS_SINE)
+#		tween.set_ease(Tween.EASE_IN_OUT)
+#		tween.set_loops()
+#
+#		tween.tween_property(self, 'modulate:a', 0, time*0.3)
+#		tween.tween_property(self, 'modulate:a', 1, time*0.3)

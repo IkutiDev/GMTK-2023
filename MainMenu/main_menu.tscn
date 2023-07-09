@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://btj1u3r5ua42c"]
+[gd_scene load_steps=22 format=3 uid="uid://btj1u3r5ua42c"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_1swu1"]
 [ext_resource type="Script" path="res://Options/sound_slider.gd" id="1_4mt7a"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://b1fts3q75rwpx" path="res://Sounds/Music/main.wav" id="11_4tr8v"]
 [ext_resource type="Texture2D" uid="uid://c7y7cfrjqa0vo" path="res://MainMenu/music.png" id="11_08uy6"]
 [ext_resource type="Texture2D" uid="uid://jjbx1qutxo2q" path="res://MainMenu/SFX.png" id="12_a6f2m"]
+[ext_resource type="Script" path="res://MainMenu/main_menu_music.gd" id="15_erjiq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0i7v"]
 bg_color = Color(0.992157, 0.301961, 0.537255, 1)
@@ -281,7 +282,12 @@ stretch_mode = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_4tr8v")
-autoplay = true
 bus = &"Music"
+script = ExtResource("15_erjiq")
+
+[node name="Timer" type="Timer" parent="AudioStreamPlayer"]
+one_shot = true
+autostart = true
 
 [connection signal="button_down" from="Control/StartGameButton" to="." method="_on_start_game_button_button_down"]
+[connection signal="timeout" from="AudioStreamPlayer/Timer" to="AudioStreamPlayer" method="_on_timer_timeout"]

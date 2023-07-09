@@ -6,13 +6,13 @@ const PLAYER_GROUP_NAME = "Player"
 @export var exit_point : Node2D
 @export var exit_at_timeline_end : bool
 
-static var doors_useable : bool
+@export var door_open : bool
 
 func can_use_doors():
-	Doors.doors_useable = true
+	door_open = true
 
 func run_timeline() -> void:
-	if Doors.doors_useable == false:
+	if door_open == false:
 		super.run_timeline()
 		return
 		

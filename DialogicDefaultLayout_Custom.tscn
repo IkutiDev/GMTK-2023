@@ -421,6 +421,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("13_4u81v")
 show_on_questions = true
+animation = 1
 metadata/_edit_layout_mode = 1
 
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="DefaultStyle/DialogTextAnimationParent/DialogTextPanel"]

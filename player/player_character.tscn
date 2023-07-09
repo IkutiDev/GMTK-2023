@@ -8,11 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://di2wi7o8lypj" path="res://Sounds/SFX/Walk/footstep_L4.wav" id="6_v3pbn"]
 [ext_resource type="AudioStream" uid="uid://ca411o68cejws" path="res://Sounds/SFX/Walk/footstep_L5.wav" id="7_wtnro"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqo7q"]
-height = 52.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvar3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpnrn"]
-size = Vector2(74, 42)
+[sub_resource type="CircleShape2D" id="CircleShape2D_sv7rf"]
 
 [node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("walk_sound")]
 y_sort_enabled = true
@@ -34,15 +32,15 @@ player_controller = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 66)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_sqo7q")
+shape = SubResource("CircleShape2D_jvar3")
 debug_color = Color(0.262745, 0.635294, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-5, 67)
-shape = SubResource("RectangleShape2D_wpnrn")
+position = Vector2(-4, 66)
+shape = SubResource("CircleShape2D_sv7rf")
 
 [node name="WalkSoundEffects" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"

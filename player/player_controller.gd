@@ -59,8 +59,8 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	var interactable : Interactable = area.get_parent() as Interactable
 	interactable.on_player_enter()
 	
-	if interactable.is_trash_can:
-		Dialogic.VAR.TrashAct = 1
+#	if interactable.is_trash_can:
+#		Dialogic.VAR.TrashAct = 1
 	
 	if interactable != null and current_interactable != null and interactable != current_interactable:
 		current_interactable.enable_outline(false)
@@ -76,8 +76,8 @@ func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index
 	interactable.on_player_exit()
 	interactable.player_interacting(false)
 	
-	if interactable.is_trash_can:
-		Dialogic.VAR.TrashAct = 0
+#	if interactable.is_trash_can:
+#		Dialogic.VAR.TrashAct = 0
 	
 	current_interactable = null
 		

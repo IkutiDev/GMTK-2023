@@ -4,6 +4,8 @@ if {BlackboardAct} == 0:
 	player_timeline_character: You would think a trained teacher would be able to write more neatly.
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Detention. *Sigh* What a hellscape.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Better than being surrounded by assholes in class.
 	VAR {BlackboardAct} = 1
 else:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]

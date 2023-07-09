@@ -29,16 +29,3 @@ layout_mode = 2
 texture = ExtResource("1_7tibg")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="DropButton" type="Button" parent="."]
-custom_minimum_size = Vector2(5, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 5
-action_mode = 0
-text = "D
-R
-O
-P"
-
-[connection signal="pressed" from="DropButton" to="." method="_on_drop_button_pressed"]
