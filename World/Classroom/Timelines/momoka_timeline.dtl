@@ -35,7 +35,8 @@ if {MomokaAct} == 0:
 	Leave player_timeline_character
 	VAR {MomokaAct} = 1
 	[call_node path="root/Game/WorldHolder/PlayerCharacter/MomokaFollow" method="start_moving" single_use="true"]
-	[wait time="3.0"]
+	[call_node path="root/Game/WorldHolder/Hallway/Path2D/PathFollow2D/NPC/NPCWalk" method="start_walking" single_use="true"]
+	[wait time="2.5"]
 	[sound path="res://Sounds/SFX/doors/dooropen.wav" volume="0.0"]
 	[background arg="res://Void.png" fade="0.0"]
 	[call_node path="root/Game/WorldHolder/PlayerCharacter" method="teleport_player_to_library" single_use="true"]

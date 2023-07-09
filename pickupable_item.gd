@@ -8,6 +8,7 @@ const PLAYER_GROUP_NAME = "Player"
 @export var collider1 : CollisionShape2D
 @export var collider2 : CollisionPolygon2D
 @export var is_stealth: bool = true
+@export var can_pickup_variable : String = "empty"
 
 func _ready() -> void:
 	if visual != null:
@@ -44,6 +45,11 @@ func enable_collision() -> void:
 func _input(event):
 	if is_stealth:
 		if Game.is_passed_exam_steps == false:
+			return
+	
+	if can_pickup_variable != "empty":
+		print(Dialogic.VAR.get_variable(can_pickup_variable))
+		if Dialogic.VAR.get_variable(can_pickup_variable) as int == 0:
 			return
 	
 	if is_player_interacting == false:

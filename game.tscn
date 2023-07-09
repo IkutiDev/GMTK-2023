@@ -34,13 +34,13 @@
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 [ext_resource type="Texture2D" uid="uid://cxehva8oudh8s" path="res://MainMenu/bg.png" id="32_0r01v"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rld1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f1k6"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oi6o"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58mmx"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -91,11 +91,11 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_8rld1")
+material = SubResource("ShaderMaterial_7f1k6")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_8oi6o")
+material = SubResource("ShaderMaterial_58mmx")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 door_open = true
 
@@ -174,7 +174,7 @@ position = Vector2(3000, 3000)
 position = Vector2(6000, 3000)
 
 [node name="PlayerCharacter" parent="WorldHolder" node_paths=PackedStringArray("library_exit_point") groups=["Player"] instance=ExtResource("1_8dyyb")]
-position = Vector2(976, 550)
+position = Vector2(975, 550)
 scale = Vector2(0.25, 0.25)
 walking_speed = 125.0
 library_exit_point = NodePath("../Library/Library_Enter")
@@ -200,7 +200,7 @@ player = NodePath("..")
 [node name="Items" type="Node2D" parent="WorldHolder"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(976, 550)
+position = Vector2(975, 550)
 scale = Vector2(0.25, 0.25)
 
 [node name="Background" type="CanvasLayer" parent="."]

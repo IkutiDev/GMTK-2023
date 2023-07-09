@@ -1,6 +1,8 @@
 if {IsPickupAction} == 1:
 	if {LetterAct} == 1:
 		[jump timeline="" label="pickup"]
+	else:
+		[end_timeline]
 if {LetterAct} == 0:
 	Join player_timeline_character
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]

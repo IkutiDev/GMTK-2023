@@ -93,6 +93,7 @@ script = ExtResource("13_rdwum")
 item_data = ExtResource("18_p1q0p")
 collider1 = NodePath("Area2D/CollisionShape2D")
 is_stealth = false
+can_pickup_variable = "LetterAct"
 timeline = ExtResource("19_f1sms")
 visual = NodePath(".")
 
