@@ -34,6 +34,10 @@ func _ready() -> void:
 
 
 func is_voiced(index:int) -> bool:
+	
+	if index == -1:
+		return false
+	
 	if dialogic.current_timeline_events[index] is DialogicTextEvent:
 		if dialogic.current_timeline_events[index-1] is DialogicVoiceEvent:
 			return true

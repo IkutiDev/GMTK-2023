@@ -24,8 +24,10 @@ func clear_timeline() -> void:
 		item_data.pickup_item = self
 		Events.picked_up_item.emit(item_data)
 		Dialogic.VAR.IsPickupAction = 0
-		collider1.disabled = true
-		collider2.disabled = true
+		if collider1 != null:
+			collider1.disabled = true
+		if collider2 != null:
+			collider2.disabled = true
 		hide()
 		
 func drop_item():
