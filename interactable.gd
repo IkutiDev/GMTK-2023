@@ -29,8 +29,6 @@ func clear_timeline() -> void:
 		return
 	if Dialogic.VAR.DoorAct == 0:
 		return
-	if Dialogic.VAR.FishAct == 0:
-		return
 	if Dialogic.VAR.NoticeAct == 0:
 		return
 	if Dialogic.VAR.TrashAct == 0:

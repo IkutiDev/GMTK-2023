@@ -1,18 +1,18 @@
 Join player_timeline_character
 Join cute_girl 3
 if {CuteGirlAct} == 0:
-	cute_girl: Oh, h- hi…
-	cute_girl: I’m j-just sharpening my p-pencil.
-	player_timeline_character: She seems… unstable. I guess it’s her first time here?
-	cute_girl: [i]Fumbles with her pencil sharpener, and drops it in the bin.[/i]
-	cute_girl: Ahh!
-	player_timeline_character: *Sigh* She’s always been all thumbs.
-	cute_girl: [i]She scrambles to pick it back up and slowly continues sharpening.[/i]
-	player_timeline_character: She’s avoiding eye contact.
+	cute_girl: What the hell do you want?
+	player_timeline_character: Why are you here?
+	player_timeline_character: It’s not like it’s a surprise seeing you here but, y’know.
+	cute_girl: None of your business.
+	cute_girl: [i] Chisato fumbles with her pencil sharpener, and drops it in the bin. [/i]
+	cute_girl: Shit!
+	cute_girl: Look what you made me do.
+	She scrambles to pick it back up and slowly continues sharpening.
+	: Leave me alone.
 	VAR {CuteGirlAct} = 1
 elif {FinishedExamAll} == 0:
 	player_timeline_character: Not a time to pick up girls! I have a mission to carry out.
 else:
-	player_timeline_character: I don't want to talk to her ever again.
+	cute_girl: I said to leave me alone.
 [end_timeline]
-[call_node single_use="true"]

@@ -1,13 +1,14 @@
 Join player_timeline_character
 if {CompAct} == 0:
-	player_timeline_character (default): “I don’t know who’s computer this is. It's made so tough; I remember trying to break this once to get expelled, but it just wouldn’t budge.
+	player_timeline_character (default): I don’t know whose computer this is. It looks so… robust.
+	player_timeline_character: I don’t know whose computer this is. It looks so… robust.
 	player_timeline_character (punch): Hmph!
 	player_timeline_character (default): ...
 	player_timeline_character: Who built this darn machine, NASA?!
-	Ugh, it’s sharp somehow. I have a cut on my hand now.
+	player_timeline_character: And it’s sharp somehow! Now I have a cut on my hand, ow.
 	VAR {CompAct} = -act} = -act} = 1
 elif {FinishedExamAll} == 0:
-	I've already looked at this.
+	I should probably stay away from this murder weapon.
 else:
 	As much as this hurt me, I bet it could help hurt someone else even more.
 	Its corners are sharp, I’m pretty sure I could even crack the floor with this.
