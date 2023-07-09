@@ -1,12 +1,20 @@
 extends Interactable
+class_name Doors
 
 const PLAYER_GROUP_NAME = "Player"
 
 @export var exit_point : Node2D
 @export var exit_at_timeline_end : bool
 
+static var doors_useable : bool
+
+func can_use_doors():
+	Doors.doors_useable = true
+
 func run_timeline() -> void:
-	
+	if Doors.doors_useable == false:
+		return
+		
 	if timeline == null:
 		teleport_player()
 		return
@@ -22,6 +30,9 @@ func teleport_player() -> void:
 		(n as Node2D).global_position = exit_point.global_position
 		
 func can_enable_outline() -> bool:
+	if Doors.doors_useable == false:
+		return false
+		
 	if visual == null:
 		return false
 	if visual.material == null:

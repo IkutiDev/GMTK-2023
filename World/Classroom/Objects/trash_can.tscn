@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://interactable.gd" id="1_sbqwu"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/trash_timeline.dtl" id="2_p1164"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_lkgyh"]
-[ext_resource type="Texture2D" uid="uid://1gnis88g8rnr" path="res://World/Library/Sprites/right shelf.PNG" id="4_mnkfu"]
+[ext_resource type="Texture2D" uid="uid://bxyjidbo8num7" path="res://World/Classroom/Sprites/trash_can.PNG" id="4_k5xf7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
-size = Vector2(121.212, 64.1976)
+size = Vector2(62, 54.0988)
 
 [node name="TrashCan" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
@@ -18,7 +18,7 @@ visual = NodePath("Visual")
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
 material = ExtResource("3_lkgyh")
-texture = ExtResource("4_mnkfu")
+texture = ExtResource("4_k5xf7")
 offset = Vector2(-73, 45)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -33,6 +33,5 @@ polygon = PackedVector2Array(19, -4, 91, 38, 122, 57, 122, 108, 18, 48)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(12.3336, 25.7982)
-rotation = 0.509133
+position = Vector2(-5, 85.0494)
 shape = SubResource("RectangleShape2D_vvlfa")

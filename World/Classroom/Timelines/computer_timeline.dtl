@@ -1,6 +1,5 @@
 Join player_timeline_character
 if {CompAct} == 0:
-	player_timeline_character (default): I don’t know whose computer this is. It looks so… robust.
 	player_timeline_character: I don’t know whose computer this is. It looks so… robust.
 	player_timeline_character (punch): Hmph!
 	player_timeline_character (default): ...

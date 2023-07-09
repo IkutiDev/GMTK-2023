@@ -28,13 +28,13 @@
 [ext_resource type="Resource" path="res://timelines/interact_all_classroom_timeline.dtl" id="25_5anyo"]
 [ext_resource type="AudioStream" uid="uid://22hland2roxk" path="res://Sounds/Music/stealth-009.wav" id="25_y7dac"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jaqn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5r8ev"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lhp7h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1cie"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -82,12 +82,12 @@ position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
 visible = false
-material = SubResource("ShaderMaterial_2jaqn")
+material = SubResource("ShaderMaterial_5r8ev")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
 visible = false
-material = SubResource("ShaderMaterial_lhp7h")
+material = SubResource("ShaderMaterial_i1cie")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
@@ -167,7 +167,7 @@ position = Vector2(3000, 3000)
 position = Vector2(6000, 3000)
 
 [node name="PlayerCharacter" parent="WorldHolder" groups=["Player"] instance=ExtResource("1_8dyyb")]
-position = Vector2(975, 555)
+position = Vector2(6937, 588)
 scale = Vector2(0.25, 0.25)
 walking_speed = 125.0
 
@@ -180,7 +180,7 @@ remote_path = NodePath("../../../Camera2D")
 position = Vector2(976, 610)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(975, 555)
+position = Vector2(6937, 588)
 scale = Vector2(0.25, 0.25)
 
 [node name="UI" type="CanvasLayer" parent="."]

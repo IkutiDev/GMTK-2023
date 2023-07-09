@@ -30,7 +30,7 @@ variables={
 "DoorAct": "0",
 "FinishedExamAll": "0",
 "FishAct": "0",
-"HasTargetOneItem": "",
+"HasTargetOneItem": "0",
 "NoticeAct": "0",
 "TrashAct": "0"
 }
