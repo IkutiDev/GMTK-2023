@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://di2wi7o8lypj" path="res://Sounds/SFX/Walk/footstep_L4.wav" id="6_v3pbn"]
 [ext_resource type="AudioStream" uid="uid://ca411o68cejws" path="res://Sounds/SFX/Walk/footstep_L5.wav" id="7_wtnro"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jvar3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hilt1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sv7rf"]
 
@@ -32,7 +32,7 @@ player_controller = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 66)
 rotation = 1.5708
-shape = SubResource("CircleShape2D_jvar3")
+shape = SubResource("CircleShape2D_hilt1")
 debug_color = Color(0.262745, 0.635294, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]

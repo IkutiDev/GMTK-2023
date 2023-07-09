@@ -1,0 +1,12 @@
+Join player_timeline_character
+if {BookAct} == 1:
+	player_timeline_character: Did something fall out?
+	[end_timeline]
+A math textbook… it’s covered in pen marks and is stuffed with paper.
+Must be one of Nana’s books Momoka was looking for. I wonder what’s inside.
+[call_node path="root/Game/WorldHolder/Library/Letter" method="show" single_use="true"]
+[call_node path="root/Game/WorldHolder/Library/Letter" method="enable_collision" single_use="true"]
+player_timeline_character: Huh? What’s this?
+VAR {BookAct} = 1
+[end_timeline]
+

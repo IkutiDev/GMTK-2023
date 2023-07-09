@@ -1,13 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://h7cdep1ctkdb"]
+[gd_scene load_steps=6 format=3 uid="uid://h7cdep1ctkdb"]
 
+[ext_resource type="Script" path="res://interactable.gd" id="1_jtnkp"]
 [ext_resource type="Texture2D" uid="uid://du1oqj4ptqiau" path="res://World/Library/Sprites/couches.PNG" id="1_xvuey"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/chairs_timeline.dtl" id="2_emfmp"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="2_htov8"]
 
-[node name="Couches" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf45d"]
+size = Vector2(65.6718, 42.2071)
+
+[node name="Couches" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
 position = Vector2(-24, -69)
+script = ExtResource("1_jtnkp")
+timeline = ExtResource("2_emfmp")
+visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
+material = ExtResource("2_htov8")
 texture = ExtResource("1_xvuey")
 offset = Vector2(-44, 37)
 
@@ -22,3 +32,10 @@ polygon = PackedVector2Array(29, 34, 44, 26, 62, 39, 62, 50, 46, 61, 29, 53)
 z_index = 999
 position = Vector2(39, 24)
 polygon = PackedVector2Array(29, 40, 45, 38, 61, 33, 62, 50, 46, 61, 29, 53)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.97109, 27.7954)
+rotation = 0.630119
+shape = SubResource("RectangleShape2D_qf45d")

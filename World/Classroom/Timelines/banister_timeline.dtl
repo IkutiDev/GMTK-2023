@@ -1,0 +1,8 @@
+if {HasLetter} == 1:
+	Finally, time to run home and relax with a nice can of [i]Monster.[/i]
+	[call_node path="/root/Game/WorldHolder/Hallway/Banister" method="teleport_player" single_use="true"]
+	[end_timeline]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+[i]Momoka looks at me weird, I need to talk with her first. [/i]
+[end_timeline]
+

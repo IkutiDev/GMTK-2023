@@ -31,14 +31,14 @@ if {MomokaAct} == 0:
 	player_timeline_character: Sure yeah, I can do that.
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	momoka: Sweet, let’s go.
+	Leave momoka
+	Leave player_timeline_character
 	VAR {MomokaAct} = 1
 	[call_node path="root/Game/WorldHolder/PlayerCharacter/MomokaFollow" method="start_moving" single_use="true"]
 	[wait time="3.0"]
 	[sound path="res://Sounds/SFX/doors/dooropen.wav" volume="0.0"]
-	Leave momoka 3
-	[call_node path="root/Game/WorldHolder/Hallway/NPC" method="clear_object" single_use="true"]
+	[background arg="res://Void.png" fade="0.0"]
 	[call_node path="root/Game/WorldHolder/PlayerCharacter" method="teleport_player_to_library" single_use="true"]
-	[background arg="res://Void.png" fade="1.0"]
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Wait-
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
@@ -63,9 +63,6 @@ if {MomokaAct} == 0:
 	[i] I facepalm. Of course, what the hell was I thinking? [/i]
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	[i] Might as well just figure out how to get out of here. [/i]
-
-
-
-
+	[end_timeline]
 [end_timeline]
 

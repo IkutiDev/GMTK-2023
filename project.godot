@@ -25,6 +25,7 @@ GameManager="*res://game_manager.tscn"
 
 variables={
 "BlackboardAct": "0",
+"BookAct": "0",
 "CompAct": "0",
 "CuteGirlAct": "0",
 "Debug": {
@@ -34,9 +35,11 @@ variables={
 "FinishedExamAll": "0",
 "FishAct": "0",
 "HasComputer": "0",
+"HasLetter": "0",
 "HasTargetOneItem": "0",
 "IsPickupAction": "0",
 "IsTrashPutAction": "0",
+"LetterAct": "0",
 "MomokaAct": "0",
 "NoticeAct": "0",
 "PlayerName": "Pel",

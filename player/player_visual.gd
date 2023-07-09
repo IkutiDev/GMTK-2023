@@ -11,6 +11,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if PlayerEnd.move == true:
+		flip_h = true
+		is_front = true
+		play_animation("walk")
+		return
+	
 	if not player_controller.velocity.x == 0:
 		if player_controller.velocity.x > 0:
 			flip_h = true

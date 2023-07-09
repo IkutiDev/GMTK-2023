@@ -1,19 +1,32 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnhdx1lf3ce71"]
+[gd_scene load_steps=20 format=3 uid="uid://dnhdx1lf3ce71"]
 
 [ext_resource type="Texture2D" uid="uid://cllh7eb5f4ykg" path="res://World/Library/Sprites/library.png" id="1_a1e6e"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_3p5jj"]
 [ext_resource type="PackedScene" uid="uid://bw3a75dc3scv6" path="res://World/Library/Objects/table.tscn" id="2_8limu"]
 [ext_resource type="PackedScene" uid="uid://5f4g1qkjhodv" path="res://World/Library/Objects/right_shelf.tscn" id="3_4rbke"]
 [ext_resource type="PackedScene" uid="uid://h7cdep1ctkdb" path="res://World/Library/Objects/couches.tscn" id="4_qi2u8"]
-[ext_resource type="Texture2D" uid="uid://2op0bi1wdy6d" path="res://World/NPC/target_one.png" id="5_qw4gs"]
 [ext_resource type="PackedScene" uid="uid://ci3o6gy32bxt1" path="res://World/Library/Objects/back_shelf.tscn" id="5_urmkl"]
 [ext_resource type="PackedScene" uid="uid://bv8eacifliwlv" path="res://World/Library/Objects/middle_shelf.tscn" id="6_ysgya"]
+[ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="7_l6wdb"]
 [ext_resource type="PackedScene" uid="uid://deuqug5hg0awm" path="res://World/Library/Objects/front_shelf.tscn" id="7_trwir"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="9_8jbix"]
-[ext_resource type="Material" uid="uid://b4n65qfi6heap" path="res://Shaders/outline_material.tres" id="10_d56h4"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="12_0cykp"]
+[ext_resource type="Texture2D" uid="uid://kqj0nfwffg3o" path="res://World/other_sprites/book.png" id="12_s8ln0"]
+[ext_resource type="Script" path="res://pickupable_item.gd" id="13_rdwum"]
+[ext_resource type="Texture2D" uid="uid://b7arjm2l4st60" path="res://World/Classroom/Sprites/letter.png" id="16_06nn4"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/book_timeline.dtl" id="16_c7j17"]
+[ext_resource type="Resource" uid="uid://cltr5yk8chgm2" path="res://World/Classroom/ItemData/letter_item_data.tres" id="18_p1q0p"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/letter_timeline.dtl" id="19_f1sms"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g06o"]
-size = Vector2(67, 128)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpi2x"]
+resource_local_to_scene = true
+shader = ExtResource("7_l6wdb")
+shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
+shader_parameter/line_thickness = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o87c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nurps"]
+size = Vector2(14.0462, 20)
 
 [node name="Library" type="Node2D"]
 y_sort_enabled = true
@@ -36,34 +49,56 @@ position = Vector2(1032, 579)
 
 [node name="Table" parent="Furniture" instance=ExtResource("2_8limu")]
 position = Vector2(0, 0)
+timeline = null
 
 [node name="RightShelf" parent="Furniture" instance=ExtResource("3_4rbke")]
+timeline = null
 
 [node name="Couches" parent="Furniture" instance=ExtResource("4_qi2u8")]
+
+[node name="Book" type="Node2D" parent="Furniture" node_paths=PackedStringArray("visual")]
+y_sort_enabled = true
+position = Vector2(-54, -25)
+script = ExtResource("2_3p5jj")
+timeline = ExtResource("16_c7j17")
+visual = NodePath("Visual")
+
+[node name="Visual" type="Sprite2D" parent="Furniture/Book"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_bpi2x")
+position = Vector2(50, 4)
+texture = ExtResource("12_s8ln0")
+offset = Vector2(-44, 37)
+
+[node name="Area2D" type="Area2D" parent="Furniture/Book"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Book/Area2D"]
+position = Vector2(4.99998, 41)
+rotation = 0.630119
+shape = SubResource("RectangleShape2D_0o87c")
 
 [node name="BackShelf" parent="Furniture" instance=ExtResource("5_urmkl")]
 
 [node name="MiddleShelf" parent="Furniture" instance=ExtResource("6_ysgya")]
+timeline = null
 
 [node name="FrontShelf" parent="Furniture" instance=ExtResource("7_trwir")]
 
-[node name="NPC" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
+[node name="Letter" type="Sprite2D" parent="." node_paths=PackedStringArray("collider1", "visual")]
 visible = false
-position = Vector2(968, 568)
-scale = Vector2(0.45, 0.45)
-script = ExtResource("2_3p5jj")
-timeline = ExtResource("9_8jbix")
-visual = NodePath("TargetOne")
-outline_thickness = 10.0
+material = ExtResource("12_0cykp")
+position = Vector2(992, 624)
+texture = ExtResource("16_06nn4")
+script = ExtResource("13_rdwum")
+item_data = ExtResource("18_p1q0p")
+collider1 = NodePath("Area2D/CollisionShape2D")
+is_stealth = false
+timeline = ExtResource("19_f1sms")
+visual = NodePath(".")
 
-[node name="Area2D" type="Area2D" parent="NPC"]
+[node name="Area2D" type="Area2D" parent="Letter"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
-position = Vector2(32.5, 65)
-shape = SubResource("RectangleShape2D_2g06o")
-
-[node name="TargetOne" type="Sprite2D" parent="NPC"]
-material = ExtResource("10_d56h4")
-position = Vector2(32, 64)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("5_qw4gs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Letter/Area2D"]
+rotation = 0.861519
+shape = SubResource("RectangleShape2D_nurps")
+disabled = true

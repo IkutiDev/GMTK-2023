@@ -7,6 +7,8 @@ const PLAYER_GROUP_NAME = "Player"
 @export var inventory_view : InventoryView
 @export var player_controller : PlayerController
 
+@export var letter : ItemData
+
 func _ready() -> void:
 	Events.picked_up_item.connect(add_item_to_invetory)
 	
@@ -48,3 +50,15 @@ func _input(event):
 		Events.drop_item.emit(slot.item_data)
 		slot.item_data.pickup_item.drop_item()
 		slot.clear_object()
+
+
+func drop_letter() -> void:
+	var slot : SlotView = null
+	
+	for s in inventory_view.get_items():
+		if letter == s.item_data:
+			slot = s
+			break
+	if slot == null:
+		return
+	slot.clear_object()

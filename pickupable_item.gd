@@ -7,6 +7,7 @@ const PLAYER_GROUP_NAME = "Player"
 @export var pickup_item_at_timeline_end : bool
 @export var collider1 : CollisionShape2D
 @export var collider2 : CollisionPolygon2D
+@export var is_stealth: bool = true
 
 func _ready() -> void:
 	if visual != null:
@@ -36,9 +37,14 @@ func drop_item():
 	collider2.disabled = false
 	show()
 		
+		
+func enable_collision() -> void:
+	collider1.disabled = false
+		
 func _input(event):
-	if Game.is_passed_exam_steps == false:
-		return
+	if is_stealth:
+		if Game.is_passed_exam_steps == false:
+			return
 	
 	if is_player_interacting == false:
 		return

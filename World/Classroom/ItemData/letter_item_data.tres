@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cltr5yk8chgm2"]
+
+[ext_resource type="Script" path="res://Inventory/item_data.gd" id="1_gj4gb"]
+[ext_resource type="Texture2D" uid="uid://cubao6cfsmndo" path="res://World/other_sprites/letter.png" id="2_7gd2p"]
+
+[resource]
+resource_name = "ComputerItem"
+script = ExtResource("1_gj4gb")
+name = "Letter"
+texture = ExtResource("2_7gd2p")
+dialogic_variable_name = "HasLetter"
+item_pickable_packed_scene_path = "res://Inventory/item_3.tscn"

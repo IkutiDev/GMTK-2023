@@ -1,0 +1,27 @@
+if {IsPickupAction} == 1:
+	if {LetterAct} == 1:
+		[jump timeline="" label="pickup"]
+if {LetterAct} == 0:
+	Join player_timeline_character
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: [i] Dear Kai, your eyes are as beautiful as the sunset…[/i] …Eww, what the heck is this? A love letter?
+	[sound path="res://Sounds/SFX/events/punch.wav" volume="0.0"]
+	I can’t risk reading the whole thing without throwing up… but I do spot a name at the bottom.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character : [i]Love, Nana.[/i]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Nana?! Kai?? Nana has a crush on… Momoka’s boyfriend…?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Ohoho, this could be good!
+	VAR {LetterAct} = 1
+[jump timeline="" label="end"]
+[label name="pickup"]
+Join player_timeline_character
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+Now, what can I do with this love letter?
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+I could try to expose Nana right in front of her precious friend!
+VAR {HasLetter} = 1
+[label name="end"]
+[end_timeline]
+

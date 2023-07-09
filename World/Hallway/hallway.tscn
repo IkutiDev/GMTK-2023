@@ -7,7 +7,7 @@
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="4_c8dfw"]
 [ext_resource type="Resource" path="res://World/Library/Objects/right_shelf_library.dtl" id="5_n60dj"]
 [ext_resource type="Script" path="res://interactable.gd" id="7_ucodd"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="8_4vpov"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/momoka_timeline.dtl" id="8_cfwhl"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="9_klqnr"]
 [ext_resource type="Texture2D" uid="uid://c5c0dv2gg0wnl" path="res://Sprites/momoka.png" id="10_yqryo"]
 
@@ -63,8 +63,8 @@ z_index = 5
 position = Vector2(849, 486)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("7_ucodd")
-timeline = ExtResource("8_4vpov")
-visual = NodePath("")
+timeline = ExtResource("8_cfwhl")
+visual = NodePath("TargetOneSprite")
 
 [node name="Area2D" type="Area2D" parent="NPC"]
 

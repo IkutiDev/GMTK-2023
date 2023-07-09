@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=39 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/door_library_timeline.dtl" id="4_tnpes"]
 [ext_resource type="PackedScene" uid="uid://o0j3rpfnicok" path="res://World/Hallway/Objects/door_right.tscn" id="5_djmel"]
 [ext_resource type="PackedScene" uid="uid://csk2urcg16wmj" path="res://World/Classroom/class_room.tscn" id="5_riu0p"]
 [ext_resource type="PackedScene" uid="uid://ddy4y8usf6xx1" path="res://World/CommonRoom/common_room.tscn" id="6_8uynk"]
@@ -18,11 +19,13 @@
 [ext_resource type="Script" path="res://gateway.gd" id="9_p7d5e"]
 [ext_resource type="AudioStream" uid="uid://cw0kyepndt660" path="res://Sounds/Music/dating_music_chiptune.mp3" id="10_3jcig"]
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/banister_timeline.dtl" id="11_a310v"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
 [ext_resource type="Texture2D" uid="uid://ckag5kkonwu3k" path="res://Sprites/kaede.png" id="15_5ta6o"]
 [ext_resource type="Script" path="res://player/player_end_act.gd" id="19_pffvw"]
 [ext_resource type="Script" path="res://Sounds/sound_controller.gd" id="22_5y7j5"]
+[ext_resource type="Resource" uid="uid://cltr5yk8chgm2" path="res://World/Classroom/ItemData/letter_item_data.tres" id="23_6amfl"]
 [ext_resource type="Script" path="res://timelines/global_timeline_controller.gd" id="23_lqcxd"]
 [ext_resource type="AudioStream" uid="uid://bms38pprlsbv4" path="res://Sounds/Music/intostealth.wav" id="24_vt1it"]
 [ext_resource type="Resource" path="res://timelines/interact_all_classroom_timeline.dtl" id="25_5anyo"]
@@ -31,13 +34,13 @@
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 [ext_resource type="Texture2D" uid="uid://cxehva8oudh8s" path="res://MainMenu/bg.png" id="32_0r01v"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntvwb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rld1"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5u1k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oi6o"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -48,7 +51,7 @@ size = Vector2(22.4988, 33.4782)
 
 [sub_resource type="Curve2D" id="Curve2D_5p1t2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 113, 14, 0, 0, 0, 0, 255, 91)
+"points": PackedVector2Array(0, 0, 0, 0, 113, 14, 0, 0, 0, 0, 235, 84)
 }
 point_count = 2
 
@@ -70,7 +73,7 @@ y_sort_enabled = true
 
 [node name="Library_Door" parent="WorldHolder/Library" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
 exit_point = NodePath("../../Hallway/Hallway_Enter")
-door_open = true
+timeline = ExtResource("4_tnpes")
 
 [node name="Library_Enter" type="Marker2D" parent="WorldHolder/Library"]
 position = Vector2(972, 561)
@@ -88,12 +91,11 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_ntvwb")
+material = SubResource("ShaderMaterial_8rld1")
 exit_point = NodePath("../../Library/Library_Enter")
-door_open = true
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_y5u1k")
+material = SubResource("ShaderMaterial_8oi6o")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 door_open = true
 
@@ -105,6 +107,7 @@ texture = ExtResource("10_ll23k")
 offset = Vector2(-3.005, 14.615)
 script = ExtResource("9_p7d5e")
 exit_point = NodePath("../../CommonRoom/CommonRoom_Enter")
+timeline = ExtResource("11_a310v")
 visual = NodePath(".")
 
 [node name="Area2D" type="Area2D" parent="WorldHolder/Hallway/Banister"]
@@ -117,7 +120,7 @@ rotation = 1.06891
 shape = SubResource("RectangleShape2D_1v7dt")
 
 [node name="HallwayPath" type="Path2D" parent="WorldHolder/Hallway"]
-z_index = 20
+y_sort_enabled = true
 position = Vector2(787, 532)
 curve = SubResource("Curve2D_5p1t2")
 
@@ -133,6 +136,7 @@ position = Vector2(6000, 0)
 position = Vector2(956, 564)
 
 [node name="ClassroomDoor" parent="WorldHolder/Classroom" node_paths=PackedStringArray("exit_point") instance=ExtResource("14_ogqth")]
+z_index = -1
 position = Vector2(964, 548)
 exit_point = NodePath("../../Hallway/Hallway_Enter2")
 
@@ -170,8 +174,7 @@ position = Vector2(3000, 3000)
 position = Vector2(6000, 3000)
 
 [node name="PlayerCharacter" parent="WorldHolder" node_paths=PackedStringArray("library_exit_point") groups=["Player"] instance=ExtResource("1_8dyyb")]
-z_index = 4
-position = Vector2(7026, 616)
+position = Vector2(976, 550)
 scale = Vector2(0.25, 0.25)
 walking_speed = 125.0
 library_exit_point = NodePath("../Library/Library_Enter")
@@ -185,8 +188,10 @@ walk_cycle_time = 0.5
 path_follow = NodePath("../../Classroom/EndActOnePath/EndActOnePathFollow")
 player = NodePath("..")
 sprites_to_show = [NodePath("../../Classroom/Teacher")]
+end_act_one = true
 
 [node name="MomokaFollow" type="Node2D" parent="WorldHolder/PlayerCharacter" node_paths=PackedStringArray("path_follow", "player")]
+z_index = -1
 script = ExtResource("19_pffvw")
 walk_cycle_time = 2.0
 path_follow = NodePath("../../Hallway/HallwayPath/HallwayPathFollow")
@@ -195,7 +200,7 @@ player = NodePath("..")
 [node name="Items" type="Node2D" parent="WorldHolder"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(7026, 616)
+position = Vector2(976, 550)
 scale = Vector2(0.25, 0.25)
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -230,6 +235,7 @@ script = ExtResource("7_a550o")
 items_container = NodePath("../../WorldHolder/Items")
 inventory_view = NodePath("PlayerInventory")
 player_controller = NodePath("../../WorldHolder/PlayerCharacter")
+letter = ExtResource("23_6amfl")
 
 [node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_poo6d")]
 layout_mode = 1
