@@ -1,6 +1,9 @@
 Join player_timeline_character
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] Some nice-looking couches, great for reading. Too bad only nerds read.[/i]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 Huh, if you move the cushions, you could easily hide something under them.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 Like a water balloon. Haha, imagine that.
 [end_timeline]
 

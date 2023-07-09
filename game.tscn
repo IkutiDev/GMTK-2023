@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=43 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
@@ -11,36 +11,40 @@
 [ext_resource type="PackedScene" uid="uid://b2hfq46adswvq" path="res://Inventory/inventory.tscn" id="6_poo6d"]
 [ext_resource type="Script" path="res://Inventory/player_inventory.gd" id="7_a550o"]
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="7_fdtu7"]
-[ext_resource type="PackedScene" uid="uid://dvsdo4d5483vq" path="res://World/NurseOffice/nurse_office.tscn" id="7_hja4d"]
 [ext_resource type="PackedScene" uid="uid://ctfxtvexw4u2i" path="res://World/Hallway/Objects/door_left.tscn" id="7_kskif"]
 [ext_resource type="PackedScene" uid="uid://b368vn8gqjhim" path="res://World/PrincipalOffice/principal_office.tscn" id="8_jk3xg"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="8_qbkrc"]
 [ext_resource type="PackedScene" uid="uid://cgyohedl6f7oi" path="res://Options/options.tscn" id="9_6ps0n"]
 [ext_resource type="Script" path="res://gateway.gd" id="9_p7d5e"]
-[ext_resource type="AudioStream" uid="uid://cw0kyepndt660" path="res://Sounds/Music/dating_music_chiptune.mp3" id="10_3jcig"]
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/banister_timeline.dtl" id="11_a310v"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
 [ext_resource type="Texture2D" uid="uid://ckag5kkonwu3k" path="res://Sprites/kaede.png" id="15_5ta6o"]
+[ext_resource type="Resource" path="res://final_battle.dtl" id="17_f6r7m"]
 [ext_resource type="Script" path="res://player/player_end_act.gd" id="19_pffvw"]
 [ext_resource type="Script" path="res://Sounds/sound_controller.gd" id="22_5y7j5"]
 [ext_resource type="Resource" uid="uid://cltr5yk8chgm2" path="res://World/Classroom/ItemData/letter_item_data.tres" id="23_6amfl"]
 [ext_resource type="Script" path="res://timelines/global_timeline_controller.gd" id="23_lqcxd"]
 [ext_resource type="AudioStream" uid="uid://bms38pprlsbv4" path="res://Sounds/Music/intostealth.wav" id="24_vt1it"]
 [ext_resource type="Resource" path="res://timelines/interact_all_classroom_timeline.dtl" id="25_5anyo"]
+[ext_resource type="AudioStream" uid="uid://vf5frpt0hus3" path="res://Sounds/Music/main.mp3" id="26_kqrbe"]
 [ext_resource type="AudioStream" uid="uid://lphqrc6w6epl" path="res://Sounds/Music/stealthFinal.wav" id="27_e4ffm"]
+[ext_resource type="AudioStream" uid="uid://bl023a1hq8ixw" path="res://Sounds/Music/intro.wav" id="27_fd8vl"]
 [ext_resource type="Resource" path="res://timelines/tutorial_timeline.dtl" id="29_p4w3b"]
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 [ext_resource type="Texture2D" uid="uid://cxehva8oudh8s" path="res://MainMenu/bg.png" id="32_0r01v"]
+[ext_resource type="Texture2D" uid="uid://b7kg7ebtbrmfn" path="res://World/CommonRoom/Sprites/office foor.PNG" id="34_ptl24"]
+[ext_resource type="Texture2D" uid="uid://v531sjfv8f1y" path="res://World/CommonRoom/Sprites/room door.PNG" id="35_t6hed"]
+[ext_resource type="Texture2D" uid="uid://diedjohkwka44" path="res://World/CommonRoom/Sprites/front door.PNG" id="36_rtkep"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f1k6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6b7c"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_58mmx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8mag"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -91,11 +95,11 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_7f1k6")
+material = SubResource("ShaderMaterial_n6b7c")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_58mmx")
+material = SubResource("ShaderMaterial_k8mag")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 door_open = true
 
@@ -130,7 +134,7 @@ rotates = false
 loop = false
 
 [node name="Classroom" parent="WorldHolder" instance=ExtResource("5_riu0p")]
-position = Vector2(6000, 0)
+position = Vector2(6105, 221)
 
 [node name="Classroom_Enter" type="Marker2D" parent="WorldHolder/Classroom"]
 position = Vector2(956, 564)
@@ -158,23 +162,20 @@ texture = ExtResource("15_5ta6o")
 region_enabled = true
 region_rect = Rect2(0, 0, 29, 40)
 
-[node name="CommonRoom" parent="WorldHolder" instance=ExtResource("6_8uynk")]
+[node name="CommonRoom" parent="WorldHolder" node_paths=PackedStringArray("inventory", "tips") instance=ExtResource("6_8uynk")]
 position = Vector2(0, 3000)
+final_battle_timeline = ExtResource("17_f6r7m")
+inventory = NodePath("../../UI/InventoryInterface")
+tips = NodePath("../../UI/Label")
 
 [node name="CommonRoom_Enter" type="Marker2D" parent="WorldHolder/CommonRoom"]
-position = Vector2(945, 559)
-
-[node name="Library_Door3" parent="WorldHolder/CommonRoom" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
-exit_point = NodePath("../../Hallway/Hallway_Enter3")
-
-[node name="NurseOffice" parent="WorldHolder" instance=ExtResource("7_hja4d")]
-position = Vector2(3000, 3000)
+position = Vector2(1039, 551)
 
 [node name="PrincipalOffice" parent="WorldHolder" instance=ExtResource("8_jk3xg")]
 position = Vector2(6000, 3000)
 
 [node name="PlayerCharacter" parent="WorldHolder" node_paths=PackedStringArray("library_exit_point") groups=["Player"] instance=ExtResource("1_8dyyb")]
-position = Vector2(975, 550)
+position = Vector2(7138, 837)
 scale = Vector2(0.25, 0.25)
 walking_speed = 125.0
 library_exit_point = NodePath("../Library/Library_Enter")
@@ -200,7 +201,7 @@ player = NodePath("..")
 [node name="Items" type="Node2D" parent="WorldHolder"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(975, 550)
+position = Vector2(7138, 837)
 scale = Vector2(0.25, 0.25)
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -252,10 +253,10 @@ grow_vertical = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -101.0
+offset_left = -117.0
 offset_top = 13.0
 offset_right = -13.0
-offset_bottom = 91.0
+offset_bottom = 117.0
 grow_horizontal = 0
 text = "ESC - Settings
 Q - Interact
@@ -271,8 +272,11 @@ fade_time = 0.5
 steal_intro_time = 1.2
 
 [node name="MainMusicAudio" type="AudioStreamPlayer" parent="MusicHolder"]
-stream = ExtResource("10_3jcig")
-autoplay = true
+stream = ExtResource("26_kqrbe")
+bus = &"Music"
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="MusicHolder"]
+stream = ExtResource("27_fd8vl")
 bus = &"Music"
 
 [node name="StealthIntroAudio" type="AudioStreamPlayer" parent="MusicHolder"]
@@ -283,12 +287,29 @@ bus = &"Music"
 stream = ExtResource("27_e4ffm")
 bus = &"Music"
 
-[node name="GlobalTimelineController" type="Node2D" parent="."]
+[node name="GlobalTimelineController" type="Node2D" parent="." node_paths=PackedStringArray("normal_music", "intro_music")]
 script = ExtResource("23_lqcxd")
 initial_timeline = ExtResource("29_p4w3b")
 finished_exam_timeline = ExtResource("25_5anyo")
 win_act_one = ExtResource("30_d0p1h")
+normal_music = NodePath("../MusicHolder/MainMusicAudio")
+intro_music = NodePath("../MusicHolder/IntroMusic")
 
 [node name="Options" parent="." instance=ExtResource("9_6ps0n")]
 layer = 50
 visible = false
+
+[node name="OfficeFoor" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1018, 3516)
+texture = ExtResource("34_ptl24")
+
+[node name="RoomDoor" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(959, 3551)
+texture = ExtResource("35_t6hed")
+
+[node name="FrontDoor" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(965, 3548)
+texture = ExtResource("36_rtkep")

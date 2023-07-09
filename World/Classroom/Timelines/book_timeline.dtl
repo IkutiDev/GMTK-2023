@@ -1,8 +1,11 @@
 Join player_timeline_character
 if {BookAct} == 1:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Did something fall out?
 	[end_timeline]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 A math textbook… it’s covered in pen marks and is stuffed with paper.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 Must be one of Nana’s books Momoka was looking for. I wonder what’s inside.
 [call_node path="root/Game/WorldHolder/Library/Letter" method="show" single_use="true"]
 [call_node path="root/Game/WorldHolder/Library/Letter" method="enable_collision" single_use="true"]

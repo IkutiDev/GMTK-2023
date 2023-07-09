@@ -6,6 +6,8 @@ static var controller : TimelineController
 @export var initial_timeline : DialogicTimeline
 @export var finished_exam_timeline : DialogicTimeline
 @export var win_act_one : DialogicTimeline
+@export var normal_music : AudioStreamPlayer
+@export var intro_music : AudioStreamPlayer
 
 func _ready():
 	TimelineController.controller = self
@@ -26,3 +28,12 @@ func play_win_act_one_timeline():
 func clear_timeline() -> void:
 	Dialogic.clear(Dialogic.ClearFlags.KeepVariables)
 	Dialogic.timeline_ended.disconnect(clear_timeline)
+	
+func play_normal_music() -> void:
+	normal_music.play()
+	
+func play_intro_music() -> void:
+	intro_music.play()
+	
+func stop_intro_music() -> void:
+	intro_music.stop()

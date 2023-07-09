@@ -29,9 +29,10 @@ variables={
 "CompAct": "0",
 "CuteGirlAct": "0",
 "Debug": {
-"SkipIntro": "1"
+"SkipIntro": "0"
 },
 "DoorAct": "0",
+"FailCounter": "0",
 "FinishedExamAll": "0",
 "FishAct": "0",
 "HasComputer": "0",
@@ -52,7 +53,7 @@ animations/join_default_length=0.5
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/join_default_wait=true
-choices/autofocus_first=true
+choices/autofocus_first=false
 choices/delay=0.2
 choices/reveal_delay=0
 choices/reveal_by_input=false

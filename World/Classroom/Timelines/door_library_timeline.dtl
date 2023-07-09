@@ -35,6 +35,7 @@ target_one: You don’t deserve him! He’s way too cool for a teacher’s pet l
 momoka: You bastard!
 [i] A loud scuffling starts outside, followed by various shrieks and screams.[/i]
 Haha. What predictable idiots.
+[i] You can hear behind the doors Momoka chase Nana down the stairs[/i]
 [call_node path="/root/Game/WorldHolder/Library/Library_Door" method="can_use_doors" single_use="true"]
 [call_node path="/root/Game/WorldHolder/Hallway/Path2D/PathFollow2D/NPC" method="clear_object" single_use="true"]
 [label name="end"]

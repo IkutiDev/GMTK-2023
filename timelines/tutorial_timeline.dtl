@@ -1,8 +1,9 @@
 if {Debug.SkipIntro}:
 	[end_timeline]
 [background arg="res://Void.png" fade="0.0"]
+[call_node path="root/Game/GlobalTimelineController" method="play_intro_music" single_use="true"]
 [text_input text="Hi! Please enter your character name:" var="PlayerName" placeholder="Player Name" default="Pel"]
-[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0" bus="Music"]
 Love...
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 Hate...
@@ -20,7 +21,9 @@ And I can’t even try to get myself expelled because my parents already threate
 So I guess, if I can't leave…
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 I can make [i]them[/i] leave instead.
-[background fade="0.0"]
+[call_node path="root/Game/GlobalTimelineController" method="stop_intro_music" single_use="true"]
+[call_node path="root/Game/GlobalTimelineController" method="play_normal_music" single_use="true"]
+[background fade="2.0"]
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character (default): Detention.
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
@@ -37,4 +40,5 @@ player_timeline_character: She’s always up to no good; I wonder what she’s i
 [i]WASD to move.[/i]
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] Q to examine items and talk to people. [/i]
+
 

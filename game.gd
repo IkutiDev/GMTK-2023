@@ -63,3 +63,6 @@ func _on_button_2_pressed() -> void:
 static func PlayStealth():
 	Game.is_passed_exam_steps = true
 	AudioController.controller.play_stealth()
+	
+func play_normal_music() -> void:
+	AudioController.controller.play_normal_music()

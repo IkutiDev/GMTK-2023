@@ -12,4 +12,7 @@ kaede: Young lady… you’re coming with me to the principal’s office.
 [call_node path="root/Game/WorldHolder/Classroom/ClassroomDoor" method="can_use_doors" single_use="true"]
 [call_node path="root/Game/WorldHolder/Classroom/NPC" method="clear_object" single_use="true"]
 [call_node path="root/Game/WorldHolder/Classroom/Teacher" method="queue_free" single_use="true"]
+[call_node path="root/Game/MusicHolder/StealthIntroFinal" method="queue_free" single_use="true"]
+[call_node path="root/Game" method="play_normal_music" single_use="true"]
 [end_timeline]
+

@@ -61,6 +61,10 @@ func teleport_player_to_library():
 	
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	var interactable : Interactable = area.get_parent() as Interactable
+	
+	if interactable == null:
+		return
+	
 	interactable.on_player_enter()
 	
 #	if interactable.is_trash_can:
@@ -76,7 +80,11 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area == null:
 		return
-	var interactable : Interactable = area.get_parent()
+	var interactable : Interactable = area.get_parent() as Interactable
+	
+	if interactable == null:
+		return
+	
 	interactable.on_player_exit()
 	interactable.player_interacting(false)
 	

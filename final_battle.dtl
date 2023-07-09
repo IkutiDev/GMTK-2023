@@ -1,0 +1,155 @@
+Join player_timeline_character 0
+After heading downstairs to the lobby, the principal appears from his door and walks towards you.
+Join principial 2
+principial: {PlayerName}! Come here at once!
+[i] Great, what is it this time? He seems a little angrier than usual, though.[/i]
+They both walk into the office
+Join momoka 3
+Join target_one 4
+player_timeline_character (punch): Gee, it’s crowded in here, isn’t it?
+principial: Hmph. Momoka and Nana here are very close to suspension as a result of their violent catfight. I don’t suppose you know anything about that, {PlayerName}?
+player_timeline_character (default): Stop looking at me like that, you two. No, I don’t know anything. I was minding my own business in the library.
+[i]Suddenly, I notice something on the principal’s desk. The love letter![/i]
+[i]Nana seems to notice my gaze.[/i]
+target_one: Sir! It was all {PlayerName}’s fault! Look at that letter you found! They forged that letter to make me and Momo-chan fight!
+player_timeline_character (doubt): Oh, wipe that ridiculous expression off your face, you-
+principial: {PlayerName}! Is this true?
+player_timeline_character (default): Of course not! What do you take me for, a liar?
+principial: Well, if what Nana says is true, I’m afraid {PlayerName} will face punishment unless they can prove themselves not guilty-
+player_timeline_character (surprise): What, are you actually gonna expel me this time? I’ll take that.
+principial: No. Something you might find worse than expulsion, I’d say. Your parents find it an appropriate punishment too, in fact.
+player_timeline_character (default): You’ve consulted my parents on this???
+momoka (unhappy): Sir, me and Nana-chan can prove it’s all their fault! Just listen to us!
+target_one (friendly): Yeah! It’s because of them that Momo-chan turned on me! We’re totally innocent! Listen to our side of the story!
+player_timeline_character (punch): Oh, back to being best friends again, are we?
+principial: Well, {PlayerName}? What do you have to say for yourself?
+player_timeline_character (doubt): Oh, it’s on. I’ll prove that it’s [i]them[/i] that should be punished for their evil.
+[i] I’ll show you. I’ll show you all what it means to be hateful.[/i]
+[background arg="res://Void.png" fade="0.0"]
+momoka(confused): Chisato! Chisato was suspended because of you! You were the one who threw the laptop in the trash!
+principial: That’s a serious accusation, Momoka.
+target_one (default): She’s right! {PlayerName} framed poor Chisa-chan!
+player_timeline_character (surprise): Oh, stop with the nicknames already. It wasn’t me, Chisato did that herself and was appropriately punished for her stupidity.
+momoka (eager): But why would Chisato toss the laptop? She’s not dumb enough to do that.
+- Because she thought it was mine
+	VAR {FailCounter} += 1
+	player_timeline_character(surprise): She thought it was mine, so she tried to break it to one-up me in detention. I tried to tell her it was actually Kaede-sensei’s, but she wouldn’t listen. So it’s kinda her fault.
+	target_one(doubt): As if! I’ve seen Chisato in detention - all she does is sit there drawing weird aliens on her paper the whole time. She doesn’t care about you!
+	player_timeline_character(punch): It’s called [i]manga[/i], actually.
+	momoka(eager): Weak response, twerp. You know we’re right.
+	principial: Hmm…
+- Because she was using the laptop
+	player_timeline_character(surprise): Chisato tried to dump the computer because she was snooping through Kaede-sensei’s laptop, looking up inappropriate things online!
+	principial: {PlayerName}! 
+	player_timeline_character(default): It’s true, I saw her! But she downloaded a virus on one of the websites, which screwed up Sensei’s laptop, so she tried to remove the evidence before Sensei got back. 
+	principial: That seems… plausible.
+	target_one(default): And how would you know, Sir?
+	principial: Silence!
+	player_timeline_character(surprise): Chisato even tried to blame me! But she was guilty and knew it was too late, which is why she let herself get suspended.
+	momoka(unhappy): Tch…
+target_one(annoyed): Fine then. Forget about Chisato - that “love letter”, as you call it. Where did you even get it from? It’s definitely not mine.
+momoka(eager): Yeah, look at it. Sir found it outside under the window. Nana would never go after my boyfriend.
+[i]Momoka doesn’t seem 100% convinced that Nana is innocent.[/i]
+target_one(doubt): How did you get that letter? It’s a bit suspicious that it was conveniently ‘left’ in the library while you were there.
+- I found it in one of Nana’s books
+	player_timeline_character(surprise): It was hidden inside one of Nana’s books. Momoka, you told me to go find Nana’s books, isn’t that true?
+	momoka(confused): …Yes, I did say that.
+	target_one(default): Oh, so that’s how you got them in the library. I expected you to just go get them for me, but that works too.
+	principial: What do you mean, [i]”got them in the library”[/i]?
+	player_timeline_character: Those two locked me in the library! After school hours too, so I could’ve been stuck in there the whole weekend all alone! I could’ve died!
+	principial: Momoka! Nana! Is this true?
+	target_one(doubt): We didn’t lock them in there, we were only playing around! Right Momo-chan?
+	momoka(unhappy): I thought you wanted me to lock them in the library so you could trash their locker!
+	target_one(annoyed): ...
+	[i]Nana cringes as the principal raises his eyebrows.[/i]
+	player_timeline_character: The letter fell out of a graffitied math textbook, one clearly belonging to Nana, therefore it must’ve been hers! 
+	principial: Nana, damaging school property now too? This isn’t looking good for you.
+- It was lost inside the couch
+	VAR {FailCounter} += 1
+	player_timeline_character(surprise): The letter fell out of a graffitied math textbook, one clearly belonging to Nana, therefore it must’ve been hers! : I found it tucked inside the chair by the bookshelf where Nana usually sits. It’s easy to hide things under those cushions!
+	target_one(friendly): Liar! I don’t read! So you must have found someone else’s note and changed the names!
+	momoka(eager): Hah, got you! So the letter wasn’t from Nana!
+	principial: It is quite easy to drop things inside the couches…if I’ve done it before, any student could have.
+target_one(doubt): Well, the letter still isn’t mine. How do we know they didn’t forge it? I’m sure they just wrote it up while they were in the library!
+player_timeline_character: [i]Stuck[/i] in the library, thank you very much.
+momoka(confused): Shut up! You totally made it up to trick me!
+- The letter was in Nana’s handwriting 
+	player_timeline_character(surprise): The letter is clearly in Nana’s childish handwriting, just compare it to the graffiti on her textbooks! Plus, it’s completely drowned in her gross perfume-
+	target_one(angry): Hey! Kai loves spicy scents!
+	momoka(confused): How do you know that??
+	principial: {PlayerName} has a point; it does look like your handwriting, Nana.
+	player_timeline_character: And where would I find pink paper in the library anyway? If it even existed, not like I could find where it was, because I barely ever go into the library.
+	principial: That is also true. You three really should read some more.
+	target_one: That’s not the issue here, Greybeard!
+- I didn’t write it
+	VAR {FailCounter} += 1
+	player_timeline_character(surprise): I couldn’t have forged the letter, I have no idea how to write something that cringey. You think I can write a love letter? I only know how to hate!
+	principial: That point really isn’t working as well as you’d hope, {PlayerName}.
+	momoka(eager): You would do anything to get rid of other people, including writing sappy fake letters! You knew it would make me jealous, so of course you tried the obvious way out!
+	target_one(default): Yeah! Stop trying to be so edgy!
+	[i] Damn, that didn’t work.[/i]
+principial: Alright kids, you’ve made your arguments, and I’ve made my decision.
+momoka(unhappy): So you’ll get {PlayerName} away from this school and leave us in peace?
+target_one(default): So you won’t punish me?
+player_timeline_character(default): … Don’t you believe me, Mister Principal?
+
+if {FailCounter} == 2:
+	principial: Momoka, Nana, you two have broken the school rules by fighting on school grounds. You will face punishment for that.
+	player_timeline_character(default): Yes!!!
+	principial: {PlayerName}, I wouldn’t celebrate just yet. For I believe the story that Momoka and Nana have revealed, and it seems you are responsible for much greater wrongdoing. 
+	principial: {PlayerName}, I hereby sentence you to transfer to Kurayami Boarding School for your remaining three years of schooling.
+	player_timeline_character(surprise): WHAT?!
+	target_one(default): HAHAHAHA!! Sucks to be you!
+	momoka(default): Deserved! I’ve heard that school is the worst of the worst - even worse than here. No offense, Sir.
+	player_timeline_character: B-but Kurayami is hours away! The food is disgusting! And there are no holidays or weekends!
+	principial: You will be staying in a shared dorm with 12 other students. Your parents have pre-emptively agreed to send you off next week.
+	[i]This can’t be real… Being forced to go to boarding school is ten times worse than expulsion - if you get punished, you have to STAY at school, rather than get kicked out![/i]
+	player_timeline_character(punch): Tch, seems like I failed to defend myself this time…
+	player_timeline_character: But I’ll get you two back, just you wait. Don’t forget to look over your shoulders when you walk home.
+	[i]Their smiles fade, meaning my intimidation worked. What losers.[/i]
+	principial: Girls, stay here with me while I call up your parents. {PlayerName}, get out of here before you cause any more trouble. And we won’t be seeing you again.
+	player_timeline_character(doubt): ...
+	[i]I leave without looking at Momoka and Nana’s faces again. I think if I see their sickly smiles one more time, my head will blast right off my neck.[/i]
+	[i]This is the worst outcome. Boarding school. Goddammit.[/i]
+else:
+	principial: Momoka, Nana, you two have broken the school rules by fighting on school grounds. You will face punishment for that.
+	principial: Additionally, you will face the consequences of spinning lies and incriminating an innocent student.
+	target_one(angry): What?! How could you say that! It’s all {PlayerName}’s fault, I swear! It’s their fault they found that stupid letter-
+	momoka(confused): So it’s real, then?
+	target_one(doubt): What?
+	momoka(eager): The letter. Your love letter to Kai. [i]My boyfriend.[/i]
+	[i]Uh oh, looks like someone’s not very happy.[/i]
+	target_one(annoyed): Of course it’s real, you idiot. Why else would there be such a drama about this whole situation? We’re in this mess because you overreacted-
+	momoka(confused): You little shit! You’re trying to steal my boyfriend! Are you even my friend?!
+	target_one(doubt): Girl, I was only ever friends with you because you were dating Kai. You’re so bland, I can’t even imagine why anyone would want you in the first place. It’s not like you’re my bestie anyway, that’s Chisato.
+	momoka(eager): ...
+	[i]Momoka’s face shifts. It’s like she’s entered a state of such pure fury that her face has gone blank.[/i]
+	principial: Let’s calm down now, shall we-
+	target_one(angry): Shut up and just get these people out of my sight already! Send these two off to be punished! I’m the victim here!
+	principial: Nana. I will not tolerate that language. That’s three charges you have against you now. I am going to have to suspend you until further notice.
+	target_one: …What? No way! I’m the victim! This is all {PlayerName}’s fault!
+	momoka: Get out, you liar.
+	[i]Momoka’s voice is scarily quiet. I’ve never seen her like this before, especially with Nana.[/i]
+	principial: Suspended! You are excused, Nana. I will contact your parents soon.
+	target_one(doubt): You’ll pay for this, {PlayerName}.
+	Nana leaves in a huff
+	[i]Momoka turns her cold gaze to me. I feel a chill run down my spine.[/i]
+	principial: Momoka, you are also suspended.
+	momoka(confused): What? Why me?!
+	principial: You initiated the fight against Nana. I would have excused a petty slap, but you got nails, hair, and punches involved. You caused serious harm to Nana, yourself, and other students, and you also played along with Nana’s lies.
+	principial: I will also contact your parents. You are excused.
+	momoka(confused): Ugh. So stupid.
+	Momoka leaves
+	player_timeline_character(default): Well, that was eventful.
+	Principal: I hope you’re happy, {PlayerName}. I believe you’re deserving of punishment too, for causing such a ruckus, but this time, you were the victim. 
+	player_timeline_character(surprise): Oh, I’m absolutely thrilled, Sir. Thank you for giving those brats what they deserve. I’ll be making my leave now-
+	principial: Oh, I don’t think so. You’re not getting away that easily. You will continue your detention time after school for the rest of the year. I’m increasing it to two hours.
+	player_timeline_character: But Sir-
+	principial: Away with you. And please stop being such a nuisance.
+	player_timeline_character(doubt): Fiiine.
+	{PlayerName} leaves the office.
+	
+Leave --All-- 
+[background arg="res://End-art.png" fade="0.0"]
+[wait time="360"]
+

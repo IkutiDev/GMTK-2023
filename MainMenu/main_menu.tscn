@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://vgf358tfbbx3" path="res://Sprites/MC-2.png" id="8_msyq4"]
 [ext_resource type="Texture2D" uid="uid://choofr0qljit0" path="res://MainMenu/sus.png" id="9_7h4us"]
 [ext_resource type="Texture2D" uid="uid://bvctqjgkp8471" path="res://MainMenu/start.png" id="10_lj2nr"]
-[ext_resource type="AudioStream" uid="uid://b1fts3q75rwpx" path="res://Sounds/Music/main.wav" id="11_4tr8v"]
 [ext_resource type="Texture2D" uid="uid://c7y7cfrjqa0vo" path="res://MainMenu/music.png" id="11_08uy6"]
 [ext_resource type="Texture2D" uid="uid://jjbx1qutxo2q" path="res://MainMenu/SFX.png" id="12_a6f2m"]
+[ext_resource type="AudioStream" uid="uid://cnwi7wg8ei0rs" path="res://Sounds/Music/title (long).wav" id="14_s314g"]
 [ext_resource type="Script" path="res://MainMenu/main_menu_music.gd" id="15_erjiq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0i7v"]
@@ -281,7 +281,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_4tr8v")
+stream = ExtResource("14_s314g")
 bus = &"Music"
 script = ExtResource("15_erjiq")
 

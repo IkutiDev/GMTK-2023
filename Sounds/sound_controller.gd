@@ -10,14 +10,21 @@ class_name AudioController
 var fade_counter : float
 var change_to_stealth : int
 
+var pre_stealth_value : float
+
 static var controller : AudioController
 
 func _ready():
 	AudioController.controller = self
 	fade_counter = fade_time
+	pre_stealth_value = main_music.volume_db
 
 func play_stealth():
 	change_to_stealth = 1
+	
+func play_normal_music() -> void:
+	main_music.volume_db = pre_stealth_value
+	main_music.play()
 	
 func _physics_process(delta):
 	if change_to_stealth == 3:
