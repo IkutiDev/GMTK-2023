@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
 [ext_resource type="Script" path="res://patrol_path.gd" id="11_50exk"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
-[ext_resource type="SpriteFrames" uid="uid://dmcgx1fquamx" path="res://player/player_sprite_frames.tres" id="12_52lf8"]
+[ext_resource type="SpriteFrames" uid="uid://c1mnnoartfhbw" path="res://Sprites/bully_sprite_frames.tres" id="12_4a86i"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
 [ext_resource type="Script" path="res://player/player_end_act.gd" id="19_pffvw"]
 [ext_resource type="Script" path="res://Sounds/sound_controller.gd" id="22_5y7j5"]
@@ -32,13 +32,13 @@
 [ext_resource type="Resource" path="res://timelines/tutorial_timeline.dtl" id="29_p4w3b"]
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_28tn6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udnus"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgvy6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hefiv"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -92,12 +92,12 @@ position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
 visible = false
-material = SubResource("ShaderMaterial_28tn6")
+material = SubResource("ShaderMaterial_udnus")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
 visible = false
-material = SubResource("ShaderMaterial_cgvy6")
+material = SubResource("ShaderMaterial_hefiv")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
@@ -138,8 +138,8 @@ loop = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D"]
 rotation = -0.523599
-sprite_frames = ExtResource("12_52lf8")
-animation = &"idle_front"
+sprite_frames = ExtResource("12_4a86i")
+animation = &"idle_back"
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D/AnimatedSprite2D"]

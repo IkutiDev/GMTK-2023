@@ -14,6 +14,9 @@ func run_timeline() -> void:
 		return
 	Dialogic.start_timeline(timeline)
 	Dialogic.timeline_ended.connect(clear_timeline)
+	
+func clear_object():
+	queue_free()
 
 func clear_timeline() -> void:
 	if timeline == null:
