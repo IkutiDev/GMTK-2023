@@ -32,6 +32,27 @@
 "scale": 1.0,
 "scene": "",
 "sound_mood": "BasicTalk"
+},
+"doubt": {
+"image": "res://Sprites/Chisato-4.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"question": {
+"image": "res://Sprites/Chisato-2.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"surprise": {
+"image": "res://Sprites/Chisato-3.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 "scale": 1.0

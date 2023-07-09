@@ -32,11 +32,25 @@
 "scale": 1.0,
 "scene": ""
 },
+"doubt": {
+"image": "res://Sprites/MC-2.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "punch": {
-"image": "res://Sprites/MC-1.png",
+"image": "res://Sprites/MC-3.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1.0,
+"scene": ""
+},
+"surprise": {
+"image": "res://Sprites/MC-4.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
 "scene": ""
 }
 },
