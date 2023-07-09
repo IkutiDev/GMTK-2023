@@ -48,6 +48,7 @@ position = Vector2(0, 0)
 [node name="FrontShelf" parent="Furniture" instance=ExtResource("7_trwir")]
 
 [node name="NPC" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
+visible = false
 position = Vector2(968, 568)
 scale = Vector2(0.45, 0.45)
 script = ExtResource("2_3p5jj")

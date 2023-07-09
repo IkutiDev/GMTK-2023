@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
-[ext_resource type="PackedScene" uid="uid://bfa140llfivte" path="res://Inventory/item_1.tscn" id="3_xeypn"]
 [ext_resource type="PackedScene" uid="uid://o0j3rpfnicok" path="res://World/Hallway/Objects/door_right.tscn" id="5_djmel"]
 [ext_resource type="PackedScene" uid="uid://csk2urcg16wmj" path="res://World/Classroom/class_room.tscn" id="5_riu0p"]
 [ext_resource type="PackedScene" uid="uid://ddy4y8usf6xx1" path="res://World/CommonRoom/common_room.tscn" id="6_8uynk"]
@@ -23,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
 [ext_resource type="SpriteFrames" uid="uid://c1mnnoartfhbw" path="res://Sprites/bully_sprite_frames.tres" id="12_4a86i"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
+[ext_resource type="Texture2D" uid="uid://ckag5kkonwu3k" path="res://Sprites/kaede.png" id="15_5ta6o"]
 [ext_resource type="Script" path="res://player/player_end_act.gd" id="19_pffvw"]
 [ext_resource type="Script" path="res://Sounds/sound_controller.gd" id="22_5y7j5"]
 [ext_resource type="Script" path="res://timelines/global_timeline_controller.gd" id="23_lqcxd"]
@@ -32,13 +32,13 @@
 [ext_resource type="Resource" path="res://timelines/tutorial_timeline.dtl" id="29_p4w3b"]
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4er6v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qkf6c"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxx18"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_55k83"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -92,12 +92,12 @@ position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
 visible = false
-material = SubResource("ShaderMaterial_4er6v")
+material = SubResource("ShaderMaterial_qkf6c")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
 visible = false
-material = SubResource("ShaderMaterial_hxx18")
+material = SubResource("ShaderMaterial_55k83")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
@@ -169,6 +169,14 @@ position = Vector2(122, 40)
 rotates = false
 loop = false
 
+[node name="Teacher" type="Sprite2D" parent="WorldHolder/Classroom"]
+visible = false
+z_index = 88
+position = Vector2(956, 554)
+texture = ExtResource("15_5ta6o")
+region_enabled = true
+region_rect = Rect2(0, 0, 29, 40)
+
 [node name="CommonRoom" parent="WorldHolder" instance=ExtResource("6_8uynk")]
 modulate = Color(1, 1, 0.6, 1)
 position = Vector2(0, 3000)
@@ -194,16 +202,14 @@ walking_speed = 125.0
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="WorldHolder/PlayerCharacter"]
 remote_path = NodePath("../../../Camera2D")
 
-[node name="EndActOneFollow" type="Node2D" parent="WorldHolder/PlayerCharacter" node_paths=PackedStringArray("path_follow", "player")]
+[node name="EndActOneFollow" type="Node2D" parent="WorldHolder/PlayerCharacter" node_paths=PackedStringArray("path_follow", "player", "sprites_to_show")]
 script = ExtResource("19_pffvw")
 walk_cycle_time = 0.5
 path_follow = NodePath("../../Classroom/EndActOnePath/PathFollow2D")
 player = NodePath("..")
+sprites_to_show = [NodePath("../../Classroom/Teacher")]
 
 [node name="Items" type="Node2D" parent="WorldHolder"]
-
-[node name="WorldItem" parent="WorldHolder/Items" instance=ExtResource("3_xeypn")]
-position = Vector2(976, 610)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(7011, 623)

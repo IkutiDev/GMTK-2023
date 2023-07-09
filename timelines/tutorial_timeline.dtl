@@ -1,5 +1,23 @@
 [background arg="res://Void.png" fade="0.0"]
 [text_input text="Hi! Please enter your character name:" var="PlayerName" placeholder="Player Name" default="Pel"]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+Love...
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+Hate...
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+Two feelings so powerful that they can change the tides of war. Feelings so innate that none can deny them.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+I loved once, probably.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+But ever since I was imprisoned in this rotten place, I've forgotten what it feels to love. To be loved.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+Stuck in this prison with these unholy pests in this nightmarish world called the Seikei High School.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+And I can’t even try to get myself expelled because my parents already threatened to take my gaming console away if it happens.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+So I guess, if I can't leave…
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+I can make [i]them[/i] leave instead.
 [background fade="0.0"]
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character (default): Detention.
@@ -10,8 +28,11 @@ player_timeline_character: I guess wrestling a pigeon into class wasn’t bad en
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character: Some teachers even thought it was funny, which was a total shock to me. I didn’t think teachers could laugh at all.
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
-player_timeline_character: I can’t seem to be left alone here either. Chisato is here too. Just looking at her saps years off my life. She’s always up to no good; I wonder what she’s in for this time
+player_timeline_character: I can’t seem to be left alone here either. Chisato is here too. Just looking at her saps years off my life.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+player_timeline_character: She’s always up to no good; I wonder what she’s in for this time
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i]WASD to move.[/i]
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] Q to examine items and talk to people. [/i]
+

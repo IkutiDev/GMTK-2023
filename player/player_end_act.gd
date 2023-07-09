@@ -4,6 +4,7 @@ extends Node2D
 @export_category("References")
 @export var path_follow : PathFollow2D
 @export var player : PlayerController
+@export var sprites_to_show : Array[Sprite2D]
 
 var previous_parent
 
@@ -29,6 +30,10 @@ func _physics_process(delta: float) -> void:
 		previous_parent.add_child(player)
 		player.global_position = gp
 		TimelineController.controller.play_win_act_one_timeline()
+		
+		for sprite in sprites_to_show:
+			sprite.show()
+		
 		move = false
 
 
