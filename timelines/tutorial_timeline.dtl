@@ -1,3 +1,6 @@
+[background arg="res://Void.png" fade="0.0"]
+[text_input text="Hi! Please enter your character name:" var="PlayerName" placeholder="Player Name" default="Pel"]
+[background fade="0.0"]
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character (default): Detention.
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]

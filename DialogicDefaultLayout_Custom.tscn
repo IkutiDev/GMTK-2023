@@ -223,7 +223,6 @@ name_label_box_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
 name_label_box_offset = Vector2(0, -25)
 
 [node name="DialogicNode_BackgroundHolder" type="CanvasLayer" parent="."]
-layer = -1
 script = ExtResource("2_f33vq")
 
 [node name="Portraits" type="CanvasLayer" parent="."]
@@ -370,10 +369,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 960.0
-offset_top = 1440.0
-offset_right = 960.0
-offset_bottom = 1440.0
+offset_left = 720.0
+offset_top = 1080.0
+offset_right = 720.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -469,10 +468,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -50.0
-offset_right = 210.0
-offset_bottom = 50.0
+offset_left = 488.0
+offset_top = 808.0
+offset_right = 908.0
+offset_bottom = 908.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_71iu8")
@@ -502,6 +501,7 @@ autowrap_mode = 3
 
 [node name="InputField" type="LineEdit" parent="DefaultStyle/DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
 layout_mode = 2
+max_length = 40
 
 [node name="ConfirmationButton" type="Button" parent="DefaultStyle/DialogicNode_TextInput/TextInputPanel/VBoxContainer"]
 layout_mode = 2

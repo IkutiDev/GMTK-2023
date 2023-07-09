@@ -35,6 +35,7 @@ variables={
 "IsPickupAction": "0",
 "IsTrashPutAction": "0",
 "NoticeAct": "0",
+"PlayerName": "Pel",
 "TrashAct": "0"
 }
 layout/mode=1

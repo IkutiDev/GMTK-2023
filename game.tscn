@@ -32,13 +32,13 @@
 [ext_resource type="Resource" path="res://timelines/tutorial_timeline.dtl" id="29_p4w3b"]
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p162l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4er6v"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uw03p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxx18"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -92,12 +92,12 @@ position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
 visible = false
-material = SubResource("ShaderMaterial_p162l")
+material = SubResource("ShaderMaterial_4er6v")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
 visible = false
-material = SubResource("ShaderMaterial_uw03p")
+material = SubResource("ShaderMaterial_hxx18")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
@@ -210,6 +210,7 @@ position = Vector2(7011, 623)
 scale = Vector2(0.25, 0.25)
 
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="InventoryInterface" type="Control" parent="UI" node_paths=PackedStringArray("items_container", "inventory_view", "player_controller")]
 layout_mode = 3
