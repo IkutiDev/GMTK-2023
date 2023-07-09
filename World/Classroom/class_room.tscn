@@ -16,7 +16,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clif2"]
 size = Vector2(67, 128)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk65p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vetf6"]
 resource_local_to_scene = true
 shader = ExtResource("9_1x8nf")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -75,5 +75,5 @@ position = Vector2(853, 513)
 position = Vector2(924, 596)
 
 [node name="DoorLeft" parent="." instance=ExtResource("8_grvob")]
-material = SubResource("ShaderMaterial_bk65p")
+material = SubResource("ShaderMaterial_vetf6")
 position = Vector2(1121, 489)

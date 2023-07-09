@@ -22,12 +22,13 @@ texture = ExtResource("4_jmckq")
 offset = Vector2(-73, 45)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-68, -32)
+position = Vector2(-190, 80)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 z_index = 999
-polygon = PackedVector2Array(19, -4, 91, 38, 122, 57, 122, 108, 18, 48)
+position = Vector2(-43, -46)
+polygon = PackedVector2Array(30, 26, 49, 38, 70, 49, 58, 59, 25, 39)
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
