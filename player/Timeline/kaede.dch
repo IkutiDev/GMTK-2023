@@ -15,7 +15,7 @@
 "offset": Vector2(0, 0),
 "portraits": {
 "default": {
-"image": "res://Sprites/chisato_back.png",
+"image": "res://Sprites/Kaede-1.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1.0,

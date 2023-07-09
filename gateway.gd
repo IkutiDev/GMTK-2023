@@ -16,10 +16,7 @@ func run_timeline() -> void:
 		super.run_timeline()
 		return
 		
-	if timeline == null:
-		teleport_player()
-		return
-	super()
+	teleport_player()
 	
 func clear_timeline() -> void:
 	super()

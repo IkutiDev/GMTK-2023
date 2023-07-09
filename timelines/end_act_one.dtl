@@ -1,12 +1,14 @@
-Join kaede 5
+Join kaede 3
 kaede: Chisato? What are you d-
 kaede: [i]Kaede looks into the trash can, she’s furious.[/i]
-Join target_one
+Join cute_girl
 kaede: Chisato can you explain what this is doing here?
-target_one: Ahh! I-I didn’t put it there.
-target_one: [playername] did it!
+cute_girl: Ahh! I-I didn’t put it there.
+cute_girl: [playername] did it!
 [i]Kaede-sensei stares at me.[/i]
 kaede: [playername] is working peacefully on her desk.
 target_one: No! I swear she did it, a moment ago!
 kaede: Young lady… you’re coming with me to the principal’s office.
+[call_node path="root/Game/WorldHolder/Classroom/ClassroomDoor" method="can_use_doors" single_use="true"]
+[call_node path="root/Game/WorldHolder/Classroom/NPC" method="clear_object" single_use="true"]
 [end_timeline]

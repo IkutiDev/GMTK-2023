@@ -9,16 +9,16 @@
 },
 "default_portrait": "default",
 "description": "",
-"display_name": "Tough Girl",
+"display_name": "Nana",
 "mirror": true,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
 "default": {
-"image": "res://World/NPC/target_one.png",
+"image": "res://Sprites/Nana-1.png",
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": ""
 }
 },
