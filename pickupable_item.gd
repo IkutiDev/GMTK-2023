@@ -23,8 +23,12 @@ func player_interacting(inter : bool):
 	is_player_interacting = inter
 		
 func _input(event):
+	if Game.is_passed_exam_steps == false:
+		return
+	
 	if is_player_interacting == false:
 		return
+		
 	if Input.is_action_just_pressed("pick_up"):
 		Events.picked_up_item.emit(item_data)
 		queue_free()

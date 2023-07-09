@@ -6,6 +6,8 @@ class_name Game
 
 var showing_options : bool
 
+static var is_passed_exam_steps : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Game started!")
@@ -59,4 +61,5 @@ func _on_button_2_pressed() -> void:
 	GameManager.LoseGame()
 	
 static func PlayStealth():
+	Game.is_passed_exam_steps = true
 	AudioController.controller.play_stealth()
