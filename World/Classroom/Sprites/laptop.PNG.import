@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmb481wbw0trs"
-path="res://.godot/imported/blackboard.PNG-30c3bb72e5d047e996db588d16f3dd2e.ctex"
+uid="uid://bw3qmwvqtejec"
+path="res://.godot/imported/laptop.PNG-1f35863982a6471922ba8d2e46615b36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Classroom/Sprites/blackboard.PNG"
-dest_files=["res://.godot/imported/blackboard.PNG-30c3bb72e5d047e996db588d16f3dd2e.ctex"]
+source_file="res://World/Classroom/Sprites/laptop.PNG"
+dest_files=["res://.godot/imported/laptop.PNG-1f35863982a6471922ba8d2e46615b36.ctex"]
 
 [params]
 

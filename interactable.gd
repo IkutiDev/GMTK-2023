@@ -54,7 +54,8 @@ func enable_outline(enable : bool) -> void:
 	if not can_enable_outline():
 		return
 	
-	visual.material.set_shader_parameter("line_thickness", outline_thickness if enable else 0)
+	if visual != null:
+		visual.material.set_shader_parameter("line_thickness", outline_thickness if enable else 0)
 
 func can_enable_outline() -> bool:
 	if visual == null:

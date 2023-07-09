@@ -1,39 +1,37 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvhneoxh7hhmk"]
 
-[ext_resource type="Script" path="res://interactable.gd" id="1_24m6b"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/door_timeline.dtl" id="2_hhp3u"]
-[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_fkdkx"]
-[ext_resource type="Texture2D" uid="uid://b3kta2pp80yl2" path="res://World/Hallway/Sprites/door left.PNG" id="4_jmckq"]
+[ext_resource type="Script" path="res://gateway.gd" id="1_e2byt"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/door_timeline.dtl" id="2_hphui"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_wtqhv"]
+[ext_resource type="Texture2D" uid="uid://b8uyg22qhgw1f" path="res://World/Classroom/Sprites/doorclass.png" id="4_q86f3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
 size = Vector2(47.803, 25.1604)
 
-[node name="Door" type="Node2D" node_paths=PackedStringArray("visual")]
+[node name="ClassroomDoor" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
 position = Vector2(5, -76)
-script = ExtResource("1_24m6b")
-timeline = ExtResource("2_hhp3u")
+script = ExtResource("1_e2byt")
+timeline = ExtResource("2_hphui")
 visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
-material = ExtResource("3_fkdkx")
-texture = ExtResource("4_jmckq")
-offset = Vector2(-73, 45)
+material = ExtResource("3_wtqhv")
+texture = ExtResource("4_q86f3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-190, 80)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 z_index = 999
-position = Vector2(-43, -46)
+position = Vector2(-68, -56)
 polygon = PackedVector2Array(30, 26, 49, 38, 70, 49, 58, 59, 25, 39)
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-188.847, 83.1435)
+position = Vector2(-27, -10)
 rotation = 0.509133
 shape = SubResource("RectangleShape2D_vvlfa")

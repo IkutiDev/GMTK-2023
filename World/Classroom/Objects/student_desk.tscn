@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://43vk3lli38ly"]
+
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="1_ljs4j"]
+[ext_resource type="Texture2D" uid="uid://dcl0acy2xwn7h" path="res://World/Classroom/Sprites/desk.PNG" id="2_4aeqp"]
+
+[node name="StudentsDesk" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(5, -76)
+
+[node name="Visual" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = ExtResource("1_ljs4j")
+texture = ExtResource("2_4aeqp")
+offset = Vector2(-73, 45)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Visual"]
+position = Vector2(-74, 45)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Visual/StaticBody2D"]
+visible = false
+z_index = 999
+position = Vector2(-2, -12)
+polygon = PackedVector2Array(-37, 72, -16, 62, -1, 71, -21, 82)

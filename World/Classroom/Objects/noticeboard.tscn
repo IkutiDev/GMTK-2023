@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://interactable.gd" id="1_feo2m"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/noticeboard_timeline.dtl" id="2_0xln4"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_dsh0v"]
-[ext_resource type="Texture2D" uid="uid://da0fpotkfl3ci" path="res://World/Classroom/Sprites/noticeboard.PNG" id="4_kg7wx"]
+[ext_resource type="Texture2D" uid="uid://d3bhlmd6lx4we" path="res://World/Classroom/Sprites/sticky.PNG" id="4_8etqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
-size = Vector2(62, 54.0988)
+size = Vector2(21, 67.0494)
 
 [node name="Noticeboard" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
@@ -18,21 +18,11 @@ visual = NodePath("Visual")
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
 material = ExtResource("3_dsh0v")
-texture = ExtResource("4_kg7wx")
-offset = Vector2(-73, 45)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-5, 79)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-z_index = 999
-position = Vector2(-40, -44)
-polygon = PackedVector2Array(45, 28, 65, 38, 66, 55, 35, 73, 14, 46)
+texture = ExtResource("4_8etqr")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-5, 85.0494)
+position = Vector2(-0.5, 6.4753)
 shape = SubResource("RectangleShape2D_vvlfa")

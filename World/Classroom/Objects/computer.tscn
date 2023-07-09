@@ -1,38 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhui1ryy2kmk3"]
+[gd_scene load_steps=7 format=3 uid="uid://dhui1ryy2kmk3"]
 
-[ext_resource type="Script" path="res://interactable.gd" id="1_17f11"]
+[ext_resource type="Script" path="res://pickupable_item.gd" id="1_4v33q"]
+[ext_resource type="Resource" uid="uid://bhb4yt36pgybd" path="res://World/Classroom/ItemData/computer_item_data.tres" id="2_55bba"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/computer_timeline.dtl" id="2_i7pvu"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_ljbtm"]
-[ext_resource type="Texture2D" uid="uid://bvm8ssnrxm65v" path="res://World/Classroom/Sprites/computer.PNG" id="4_qf5gw"]
+[ext_resource type="Texture2D" uid="uid://bw3qmwvqtejec" path="res://World/Classroom/Sprites/laptop.PNG" id="4_e84c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
-size = Vector2(63, 56.4869)
+size = Vector2(27, 25)
 
 [node name="Computer" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
 position = Vector2(5, -76)
-script = ExtResource("1_17f11")
+script = ExtResource("1_4v33q")
+item_data = ExtResource("2_55bba")
 timeline = ExtResource("2_i7pvu")
 visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
 material = ExtResource("3_ljbtm")
-texture = ExtResource("4_qf5gw")
-offset = Vector2(-73, 45)
+texture = ExtResource("4_e84c4")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4.5, 85.2435)
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_vvlfa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-4, 77)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 z_index = 999
-position = Vector2(-48, -41)
-polygon = PackedVector2Array(21, 45, 52, 27, 72, 38, 72, 54, 42, 71)
+polygon = PackedVector2Array(-7, -4, 0, -7, 8, 4, 1, 8)

@@ -7,7 +7,8 @@ class_name PickupItem
 var is_player_interacting : bool
 
 func _ready() -> void:
-	visual.texture = item_data.texture
+	if visual != null:
+		visual.texture = item_data.texture
 
 func run_timeline() -> void:
 	

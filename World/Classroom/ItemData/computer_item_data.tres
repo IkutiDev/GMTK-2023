@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bhb4yt36pgybd"]
+
+[ext_resource type="Script" path="res://Inventory/item_data.gd" id="1_7ix3r"]
+[ext_resource type="Texture2D" uid="uid://bw3qmwvqtejec" path="res://World/Classroom/Sprites/laptop.PNG" id="2_qd261"]
+
+[resource]
+resource_name = "ComputerItem"
+script = ExtResource("1_7ix3r")
+name = "Computer"
+texture = ExtResource("2_qd261")
+dialogic_variable_name = "HasComputer"
+item_pickable_packed_scene_path = "res://Inventory/item_1.tscn"

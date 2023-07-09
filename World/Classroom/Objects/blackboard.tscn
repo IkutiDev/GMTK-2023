@@ -1,38 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt6f7fq4qyuy7"]
+[gd_scene load_steps=3 format=3 uid="uid://dt6f7fq4qyuy7"]
 
 [ext_resource type="Script" path="res://interactable.gd" id="1_1711j"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/blackboard_timeline.dtl" id="2_of2cu"]
-[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_5pg4r"]
-[ext_resource type="Texture2D" uid="uid://dmb481wbw0trs" path="res://World/Classroom/Sprites/blackboard.PNG" id="4_1005l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
-size = Vector2(63, 56.0988)
-
-[node name="Blackboard" type="Node2D" node_paths=PackedStringArray("visual")]
+[node name="Blackboard" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(5, -76)
 script = ExtResource("1_1711j")
 timeline = ExtResource("2_of2cu")
-visual = NodePath("Visual")
-
-[node name="Visual" type="Sprite2D" parent="."]
-y_sort_enabled = true
-material = ExtResource("3_5pg4r")
-texture = ExtResource("4_1005l")
-offset = Vector2(-73, 45)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-6, 77)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-z_index = 999
-position = Vector2(-164, 67)
-polygon = PackedVector2Array(138, -60, 171, -83, 192, -71, 192, -54, 160, -37)
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4.5, 85.0494)
-shape = SubResource("RectangleShape2D_vvlfa")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-22, 31, 13, 10, 28, 36, -7, 59)

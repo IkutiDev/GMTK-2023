@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxyjidbo8num7"
-path="res://.godot/imported/trash_can.PNG-e1b7957cd4691c25a518b7905fd55f37.ctex"
+uid="uid://ch11qpkqdkg40"
+path="res://.godot/imported/player_portrait.png-2195d737d0bd7f1012c7b1bec451cf5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Classroom/Sprites/trash_can.PNG"
-dest_files=["res://.godot/imported/trash_can.PNG-e1b7957cd4691c25a518b7905fd55f37.ctex"]
+source_file="res://player/Sprites/player_portrait.png"
+dest_files=["res://.godot/imported/player_portrait.png-2195d737d0bd7f1012c7b1bec451cf5a.ctex"]
 
 [params]
 

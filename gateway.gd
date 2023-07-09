@@ -13,6 +13,7 @@ func can_use_doors():
 
 func run_timeline() -> void:
 	if Doors.doors_useable == false:
+		super.run_timeline()
 		return
 		
 	if timeline == null:
@@ -30,9 +31,6 @@ func teleport_player() -> void:
 		(n as Node2D).global_position = exit_point.global_position
 		
 func can_enable_outline() -> bool:
-	if Doors.doors_useable == false:
-		return false
-		
 	if visual == null:
 		return false
 	if visual.material == null:

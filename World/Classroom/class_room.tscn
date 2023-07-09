@@ -1,26 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://csk2urcg16wmj"]
+[gd_scene load_steps=13 format=3 uid="uid://csk2urcg16wmj"]
 
-[ext_resource type="Texture2D" uid="uid://cllh7eb5f4ykg" path="res://World/Library/Sprites/library.png" id="1_ou8kc"]
+[ext_resource type="Texture2D" uid="uid://bcxab4uofm3cp" path="res://World/Classroom/Sprites/classroom.PNG" id="1_1oy0q"]
 [ext_resource type="Material" uid="uid://b4n65qfi6heap" path="res://Shaders/outline_material.tres" id="2_f3b6m"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_qut2b"]
 [ext_resource type="Texture2D" uid="uid://2op0bi1wdy6d" path="res://World/NPC/target_one.png" id="3_3ivb7"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="3_tngif"]
 [ext_resource type="PackedScene" uid="uid://dt6f7fq4qyuy7" path="res://World/Classroom/Objects/blackboard.tscn" id="6_4q87t"]
 [ext_resource type="PackedScene" uid="uid://dhui1ryy2kmk3" path="res://World/Classroom/Objects/computer.tscn" id="7_4p68l"]
-[ext_resource type="PackedScene" uid="uid://ctfxtvexw4u2i" path="res://World/Hallway/Objects/door_left.tscn" id="8_grvob"]
-[ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/door.tscn" id="8_utlrm"]
-[ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="9_1x8nf"]
 [ext_resource type="PackedScene" uid="uid://dp7kks21gjigo" path="res://World/Classroom/Objects/trash_can.tscn" id="9_uhee1"]
 [ext_resource type="PackedScene" uid="uid://c6h0rvpm5f680" path="res://World/Classroom/Objects/noticeboard.tscn" id="10_if158"]
+[ext_resource type="PackedScene" uid="uid://c36ebbhejytyk" path="res://World/Classroom/Objects/teacher_desk.tscn" id="13_t58yv"]
+[ext_resource type="PackedScene" uid="uid://43vk3lli38ly" path="res://World/Classroom/Objects/student_desk.tscn" id="14_4glr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clif2"]
-size = Vector2(67, 128)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vetf6"]
-resource_local_to_scene = true
-shader = ExtResource("9_1x8nf")
-shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
-shader_parameter/line_thickness = 0.0
+size = Vector2(42.2225, 84.4444)
 
 [node name="Classroom" type="Node2D"]
 y_sort_enabled = true
@@ -28,16 +21,51 @@ y_sort_enabled = true
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -999
 position = Vector2(964, 547)
-texture = ExtResource("1_ou8kc")
+texture = ExtResource("1_1oy0q")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-6, -16, 27, -35, 145, 23, -43, 130, -146, 72)
+polygon = PackedVector2Array(-41, -15, 108, 70, 42, 112, -107, 23)
+
+[node name="Furniture" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1040, 580)
+
+[node name="Blackboard" parent="." instance=ExtResource("6_4q87t")]
+position = Vector2(891, 506)
+
+[node name="Computer" parent="." instance=ExtResource("7_4p68l")]
+z_index = 10
+position = Vector2(993, 619)
+
+[node name="TrashCan" parent="." instance=ExtResource("9_uhee1")]
+position = Vector2(942, 517)
+
+[node name="Noticeboard" parent="." instance=ExtResource("10_if158")]
+position = Vector2(971, 527)
+
+[node name="TeachersDesk" parent="." instance=ExtResource("13_t58yv")]
+position = Vector2(1041, 501)
+
+[node name="StudentsDesk" parent="." instance=ExtResource("14_4glr7")]
+z_index = 5
+position = Vector2(1037, 505)
+
+[node name="StudentsDesk2" parent="." instance=ExtResource("14_4glr7")]
+z_index = 5
+position = Vector2(1086, 533)
+
+[node name="StudentsDesk3" parent="." instance=ExtResource("14_4glr7")]
+position = Vector2(1127, 506)
+
+[node name="StudentsDesk4" parent="." instance=ExtResource("14_4glr7")]
+position = Vector2(1079, 478)
 
 [node name="NPC" type="Node2D" parent="."]
-position = Vector2(988, 560)
+z_index = 5
+position = Vector2(895, 541)
 scale = Vector2(0.45, 0.45)
 script = ExtResource("2_qut2b")
 timeline = ExtResource("3_tngif")
@@ -46,34 +74,11 @@ outline_thickness = 10.0
 [node name="Area2D" type="Area2D" parent="NPC"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
-position = Vector2(32.5, 65)
+position = Vector2(37.7777, 75.5555)
 shape = SubResource("RectangleShape2D_clif2")
 
-[node name="TargetOne" type="Sprite2D" parent="NPC"]
+[node name="TargetOneSprite" type="Sprite2D" parent="NPC"]
 material = ExtResource("2_f3b6m")
-position = Vector2(32, 64)
-scale = Vector2(0.16, 0.16)
+position = Vector2(37.7773, 75.5547)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_3ivb7")
-
-[node name="Furniture" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(1040, 580)
-
-[node name="Blackboard" parent="." instance=ExtResource("6_4q87t")]
-position = Vector2(1075, 481)
-
-[node name="Computer" parent="." instance=ExtResource("7_4p68l")]
-position = Vector2(917, 514)
-
-[node name="Door" parent="." instance=ExtResource("8_utlrm")]
-position = Vector2(1194, 444)
-
-[node name="TrashCan" parent="." instance=ExtResource("9_uhee1")]
-position = Vector2(853, 513)
-
-[node name="Noticeboard" parent="." instance=ExtResource("10_if158")]
-position = Vector2(924, 596)
-
-[node name="DoorLeft" parent="." instance=ExtResource("8_grvob")]
-material = SubResource("ShaderMaterial_vetf6")
-position = Vector2(1121, 489)

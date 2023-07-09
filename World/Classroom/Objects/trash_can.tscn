@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://interactable.gd" id="1_sbqwu"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/trash_timeline.dtl" id="2_p1164"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_lkgyh"]
-[ext_resource type="Texture2D" uid="uid://bxyjidbo8num7" path="res://World/Classroom/Sprites/trash_can.PNG" id="4_k5xf7"]
+[ext_resource type="Texture2D" uid="uid://colcvubf8l5ne" path="res://World/Classroom/Sprites/trash.png" id="4_ilxs3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
-size = Vector2(62, 54.0988)
+size = Vector2(20, 27)
 
 [node name="TrashCan" type="Node2D" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
@@ -18,21 +18,21 @@ visual = NodePath("Visual")
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true
 material = ExtResource("3_lkgyh")
-texture = ExtResource("4_k5xf7")
+texture = ExtResource("4_ilxs3")
 offset = Vector2(-73, 45)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Visual"]
-position = Vector2(-4, 77)
+position = Vector2(-74, 45)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Visual/StaticBody2D"]
-visible = false
 z_index = 999
 position = Vector2(-43, -36)
-polygon = PackedVector2Array(16, 40, 47, 22, 67, 34, 67, 50, 37, 66)
+polygon = PackedVector2Array(39, 29, 49, 29, 49, 44, 39, 44)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-73, 46)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-5, 85.0494)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_vvlfa")
