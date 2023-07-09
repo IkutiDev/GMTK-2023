@@ -25,16 +25,16 @@ func clear_timeline() -> void:
 		return
 	if Dialogic.VAR.BlackboardAct == 0:
 		return
-#	if Dialogic.VAR.CompAct == 0:
-#		return
-#	if Dialogic.VAR.DoorAct == 0:
-#		return
-#	if Dialogic.VAR.NoticeAct == 0:
-#		return
-#	if Dialogic.VAR.TrashAct == 0:
-#		return
-#	if Dialogic.VAR.CuteGirlAct == 0:
-#		return
+	if Dialogic.VAR.CompAct == 0:
+		return
+	if Dialogic.VAR.DoorAct == 0:
+		return
+	if Dialogic.VAR.NoticeAct == 0:
+		return
+	if Dialogic.VAR.TrashAct == 0:
+		return
+	if Dialogic.VAR.CuteGirlAct == 0:
+		return
 	
 	Dialogic.VAR.FinishedExamAll = 1
 	TimelineController.controller.play_exam_timeline()
