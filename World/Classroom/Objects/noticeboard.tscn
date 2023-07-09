@@ -21,14 +21,6 @@ material = ExtResource("3_dsh0v")
 texture = ExtResource("4_kg7wx")
 offset = Vector2(-73, 45)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-68, -32)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-z_index = 999
-polygon = PackedVector2Array(19, -4, 91, 38, 122, 57, 122, 108, 18, 48)
-
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
 

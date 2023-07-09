@@ -5,7 +5,7 @@ if {CompAct} == 0:
 	player_timeline_character (default): ...
 	player_timeline_character: Who built this darn machine, NASA?!
 	player_timeline_character: And it’s sharp somehow! Now I have a cut on my hand, ow.
-	VAR {CompAct} = -act} = -act} = 1
+	VAR {CompAct} = 1
 elif {FinishedExamAll} == 0:
 	I should probably stay away from this murder weapon.
 else:

@@ -17,6 +17,7 @@ func _input(event: InputEvent) -> void:
 	var interact = false
 	if Input.is_action_just_pressed("interact"):
 		interact = true
+		#AudioController.controller.play_stealth()
 		
 	if current_interactable != null:
 		if interact:

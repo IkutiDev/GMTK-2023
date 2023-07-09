@@ -2,4 +2,5 @@ Join player_timeline_character
 [i]Study trip to Australia! Come experience the amazing wildlife! [/i]
 player_timeline_character (default): No thanks, don’t want to get swallowed by an unnaturally sized insect.
 player_timeline_character: Although, arguably better than being here I guess.
+VAR {NoticeAct} = 1
 [end_timeline]
