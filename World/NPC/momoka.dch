@@ -9,34 +9,34 @@
 },
 "default_portrait": "default",
 "description": "",
-"display_name": "Nana",
-"mirror": true,
+"display_name": "Momoka",
+"mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"annoyed": {
-"image": "res://Sprites/Nana-4.png",
+"confused": {
+"image": "res://Sprites/Momoka-2.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
 "default": {
-"image": "res://Sprites/Nana-1.png",
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1.0,
-"scene": ""
-},
-"doubt": {
-"image": "res://Sprites/Nana-2.png",
+"image": "res://Sprites/Momoka-1.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"friendly": {
-"image": "res://Sprites/Nana-3.png",
+"eager": {
+"image": "res://Sprites/Momoka-4.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"unhappy": {
+"image": "res://Sprites/Momoka-3.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
