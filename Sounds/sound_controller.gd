@@ -22,7 +22,6 @@ func play_stealth():
 func _physics_process(delta):
 	if change_to_stealth == 3:
 		if stealth_intro.playing:
-			print("test")
 			stealth_loop.play()
 			change_to_stealth = 0
 		return

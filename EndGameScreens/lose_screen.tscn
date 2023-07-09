@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnqwv3r1wn0rv"]
+[gd_scene load_steps=3 format=3 uid="uid://dnqwv3r1wn0rv"]
 
 [ext_resource type="Script" path="res://EndGameScreens/lose_screen.gd" id="1_vijdj"]
+[ext_resource type="AudioStream" uid="uid://baxwh0jwsww28" path="res://Sounds/SFX/die.mp3" id="2_jqmh5"]
 
-[node name="win_screen" type="CanvasLayer"]
+[node name="lose_screen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_vijdj")
 
@@ -57,5 +58,11 @@ grow_horizontal = 2
 grow_vertical = 0
 action_mode = 0
 text = "Back to Main Menu"
+
+[node name="lose_sfx" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("2_jqmh5")
+volume_db = -15.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

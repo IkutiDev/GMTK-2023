@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2y52p3q8y7jl"]
+[gd_scene load_steps=3 format=3 uid="uid://b2y52p3q8y7jl"]
 
 [ext_resource type="Script" path="res://EndGameScreens/lose_screen.gd" id="1_ktpcm"]
+[ext_resource type="AudioStream" uid="uid://pemf76utpt75" path="res://Sounds/SFX/win.mp3" id="2_cxdbk"]
 
 [node name="win_screen" type="CanvasLayer"]
 process_mode = 3
@@ -49,5 +50,11 @@ grow_horizontal = 2
 grow_vertical = 0
 action_mode = 0
 text = "Back to Main Menu"
+
+[node name="win_sfx" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("2_cxdbk")
+volume_db = -15.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
