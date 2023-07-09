@@ -40,7 +40,7 @@ texture = ExtResource("1_1oy0q")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-41, -15, 14, 16, 0, 27, 8, 39, 85, 86, 69, 95, -16, 36, -47, 61, -107, 23)
+polygon = PackedVector2Array(-41, -15, 14, 16, 0, 30, 8, 39, 85, 86, 64, 98, -22, 40, -47, 61, -107, 23)
 
 [node name="Furniture" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -120,7 +120,6 @@ visual = NodePath("TargetOneSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
 position = Vector2(36.8751, 75.625)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_clif2")
 
 [node name="TargetOneSprite" type="Sprite2D" parent="NPC"]
