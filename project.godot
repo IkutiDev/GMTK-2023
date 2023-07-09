@@ -27,6 +27,9 @@ variables={
 "BlackboardAct": "0",
 "CompAct": "0",
 "CuteGirlAct": "0",
+"Debug": {
+"SkipIntro": "1"
+},
 "DoorAct": "0",
 "FinishedExamAll": "0",
 "FishAct": "0",
@@ -34,6 +37,7 @@ variables={
 "HasTargetOneItem": "0",
 "IsPickupAction": "0",
 "IsTrashPutAction": "0",
+"MomokaAct": "0",
 "NoticeAct": "0",
 "PlayerName": "Pel",
 "TrashAct": "0"

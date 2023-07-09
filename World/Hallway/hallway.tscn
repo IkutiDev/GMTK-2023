@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://budh30q4e8bp1"]
+[gd_scene load_steps=14 format=3 uid="uid://budh30q4e8bp1"]
 
 [ext_resource type="Texture2D" uid="uid://cwafyt8o7pasl" path="res://World/Hallway/Sprites/bg.PNG" id="1_dn7hc"]
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="2_qltyj"]
@@ -6,18 +6,25 @@
 [ext_resource type="PackedScene" uid="uid://vqboimvybw8v" path="res://World/Hallway/Objects/seat.tscn" id="4_74pps"]
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="4_c8dfw"]
 [ext_resource type="Resource" path="res://World/Library/Objects/right_shelf_library.dtl" id="5_n60dj"]
+[ext_resource type="Script" path="res://interactable.gd" id="7_ucodd"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="8_4vpov"]
+[ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="9_klqnr"]
+[ext_resource type="Texture2D" uid="uid://c5c0dv2gg0wnl" path="res://Sprites/momoka.png" id="10_yqryo"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3m3i7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgmry"]
 resource_local_to_scene = true
 shader = ExtResource("4_c8dfw")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ksn7l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kou4l"]
 resource_local_to_scene = true
 shader = ExtResource("4_c8dfw")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tt3s"]
+size = Vector2(42.2225, 53.7501)
 
 [node name="Hallway" type="Node2D"]
 y_sort_enabled = true
@@ -44,8 +51,31 @@ texture = ExtResource("2_qltyj")
 offset = Vector2(-3.005, 14.615)
 
 [node name="Lockers" parent="Furniture" instance=ExtResource("3_1m7qe")]
-material = SubResource("ShaderMaterial_3m3i7")
+visible = false
+material = SubResource("ShaderMaterial_pgmry")
 
 [node name="Seat" parent="Furniture" instance=ExtResource("4_74pps")]
-material = SubResource("ShaderMaterial_ksn7l")
+material = SubResource("ShaderMaterial_kou4l")
 timeline = ExtResource("5_n60dj")
+
+[node name="NPC" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
+z_index = 5
+position = Vector2(849, 486)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("7_ucodd")
+timeline = ExtResource("8_4vpov")
+visual = NodePath("")
+
+[node name="Area2D" type="Area2D" parent="NPC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
+position = Vector2(37.7777, 74.3749)
+shape = SubResource("RectangleShape2D_1tt3s")
+
+[node name="TargetOneSprite" type="Sprite2D" parent="NPC"]
+material = ExtResource("9_klqnr")
+position = Vector2(37.7773, 75.5547)
+texture = ExtResource("10_yqryo")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 38)

@@ -1,3 +1,5 @@
+if {Debug.SkipIntro}:
+	[end_timeline]
 [background arg="res://Void.png" fade="0.0"]
 [text_input text="Hi! Please enter your character name:" var="PlayerName" placeholder="Player Name" default="Pel"]
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]

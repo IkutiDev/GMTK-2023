@@ -24,7 +24,17 @@ func drop_item_from_invetory(item_data : ItemData) -> void:
 
 func _input(event):
 	if Input.is_action_just_pressed("put_down_item"):
-		var slot = inventory_view.get_latest_item()
+		
+		var slot : SlotView = null
+		
+		if not player_controller.current_interactable is ItemContainer:
+			return
+
+		for s in inventory_view.get_items():
+			if (player_controller.current_interactable as ItemContainer).item_to_store == s.item_data:
+				slot = s
+				break
+
 		if slot == null:
 			return
 		

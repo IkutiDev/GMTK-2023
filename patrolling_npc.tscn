@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs37tfkkce3yu"]
+
+[ext_resource type="Script" path="res://patrol_path.gd" id="1_b65uy"]
+[ext_resource type="SpriteFrames" uid="uid://c1mnnoartfhbw" path="res://Sprites/bully_sprite_frames.tres" id="2_2k2b5"]
+
+[sub_resource type="Curve2D" id="Curve2D_cmspj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 905, 553, 0, 0, 0, 0, 998.571, 614.482)
+}
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7edf"]
+radius = 12.3023
+
+[node name="PatrollingNPC" type="Path2D" node_paths=PackedStringArray("animated_sprite", "path_follow")]
+visible = false
+position = Vector2(-71.1755, -56.6282)
+scale = Vector2(1.0687, 1.08974)
+curve = SubResource("Curve2D_cmspj")
+script = ExtResource("1_b65uy")
+walk_cycle_time = 5.0
+wait_time = 2.0
+animated_sprite = NodePath("")
+path_follow = NodePath("")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(905, 553)
+rotation = 0.581324
+loop = false
+
+[node name="Node2D" type="Node2D" parent="PathFollow2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Node2D"]
+rotation = -0.523599
+sprite_frames = ExtResource("2_2k2b5")
+animation = &"idle_back"
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D/Node2D/AnimatedSprite2D"]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Node2D/AnimatedSprite2D/Area2D"]
+position = Vector2(4.68945, 16.2742)
+shape = SubResource("CircleShape2D_y7edf")
+
+[node name="_Timer_171297" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="body_entered" from="PathFollow2D/Node2D/AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

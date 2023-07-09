@@ -1,21 +1,32 @@
-[gd_scene load_steps=15 format=3 uid="uid://csk2urcg16wmj"]
+[gd_scene load_steps=19 format=3 uid="uid://csk2urcg16wmj"]
 
 [ext_resource type="Texture2D" uid="uid://bcxab4uofm3cp" path="res://World/Classroom/Sprites/classroom.PNG" id="1_1oy0q"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_qut2b"]
 [ext_resource type="Texture2D" uid="uid://fhih0u0q45kd" path="res://World/Classroom/Sprites/Blackboard.png" id="3_3m7j1"]
 [ext_resource type="Material" uid="uid://lxt10cnaclqg" path="res://Shaders/outline_material_object_blackboard.tres" id="3_a6w0a"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/blackboard_timeline.dtl" id="3_mj7ef"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="3_tngif"]
-[ext_resource type="PackedScene" uid="uid://dt6f7fq4qyuy7" path="res://World/Classroom/Objects/blackboard.tscn" id="6_4q87t"]
 [ext_resource type="PackedScene" uid="uid://dhui1ryy2kmk3" path="res://World/Classroom/Objects/computer.tscn" id="7_4p68l"]
+[ext_resource type="Resource" path="res://World/Classroom/Timelines/noticeboard_timeline.dtl" id="8_e8rtn"]
+[ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="9_cwj6n"]
 [ext_resource type="PackedScene" uid="uid://dp7kks21gjigo" path="res://World/Classroom/Objects/trash_can.tscn" id="9_uhee1"]
-[ext_resource type="PackedScene" uid="uid://c6h0rvpm5f680" path="res://World/Classroom/Objects/noticeboard.tscn" id="10_if158"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="10_tuu35"]
+[ext_resource type="Texture2D" uid="uid://d3bhlmd6lx4we" path="res://World/Classroom/Sprites/sticky.PNG" id="10_w4yvs"]
 [ext_resource type="Texture2D" uid="uid://b62sery3pdo21" path="res://Sprites/chisato_front.png" id="11_qn0ao"]
 [ext_resource type="PackedScene" uid="uid://c36ebbhejytyk" path="res://World/Classroom/Objects/teacher_desk.tscn" id="13_t58yv"]
 [ext_resource type="PackedScene" uid="uid://43vk3lli38ly" path="res://World/Classroom/Objects/student_desk.tscn" id="14_4glr7"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yeg5"]
+resource_local_to_scene = true
+shader = ExtResource("9_cwj6n")
+shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
+shader_parameter/line_thickness = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
+size = Vector2(16, 67.0494)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clif2"]
-size = Vector2(42.2225, 53.7501)
+size = Vector2(31.25, 46.25)
 
 [node name="Classroom" type="Node2D"]
 y_sort_enabled = true
@@ -35,10 +46,19 @@ polygon = PackedVector2Array(-41, -15, 108, 70, 42, 112, -107, 23)
 y_sort_enabled = true
 position = Vector2(1040, 580)
 
-[node name="Blackboard" parent="." node_paths=PackedStringArray("visual") instance=ExtResource("6_4q87t")]
+[node name="Blackboard" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
+y_sort_enabled = true
 position = Vector2(891, 506)
+script = ExtResource("2_qut2b")
+timeline = ExtResource("3_mj7ef")
 visual = NodePath("Blackboard2")
 outline_thickness = 10.0
+
+[node name="Area2D" type="Area2D" parent="Blackboard"]
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blackboard/Area2D"]
+polygon = PackedVector2Array(-22, 31, 6, 15, 22, 40, -1, 55)
 
 [node name="Blackboard2" type="Sprite2D" parent="Blackboard"]
 material = ExtResource("3_a6w0a")
@@ -53,8 +73,24 @@ position = Vector2(942, 591)
 [node name="TrashCan" parent="." instance=ExtResource("9_uhee1")]
 position = Vector2(942, 517)
 
-[node name="Noticeboard" parent="." instance=ExtResource("10_if158")]
+[node name="Noticeboard" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
+y_sort_enabled = true
 position = Vector2(971, 527)
+script = ExtResource("2_qut2b")
+timeline = ExtResource("8_e8rtn")
+visual = NodePath("Visual")
+
+[node name="Visual" type="Sprite2D" parent="Noticeboard"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_7yeg5")
+texture = ExtResource("10_w4yvs")
+
+[node name="Area2D" type="Area2D" parent="Noticeboard"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Noticeboard/Area2D"]
+position = Vector2(2, 6.47528)
+shape = SubResource("RectangleShape2D_vvlfa")
 
 [node name="TeachersDesk" parent="." instance=ExtResource("13_t58yv")]
 position = Vector2(1041, 501)
@@ -75,7 +111,7 @@ position = Vector2(1079, 478)
 
 [node name="NPC" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
 z_index = 5
-position = Vector2(888, 520)
+position = Vector2(886, 518)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("2_qut2b")
 timeline = ExtResource("3_tngif")
@@ -84,11 +120,14 @@ visual = NodePath("TargetOneSprite")
 [node name="Area2D" type="Area2D" parent="NPC"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
-position = Vector2(37.7777, 74.3749)
+position = Vector2(36.8751, 75.625)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_clif2")
 
 [node name="TargetOneSprite" type="Sprite2D" parent="NPC"]
+z_index = 10
 material = ExtResource("10_tuu35")
 position = Vector2(37.7773, 75.5547)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("11_qn0ao")
 flip_h = true

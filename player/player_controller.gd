@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var walking_speed := 150.0
 @export var walk_sound : WalkSounds
+@export var library_exit_point : Node2D
 
 var current_interactable : Interactable = null
 var is_in_menu : bool
@@ -54,7 +55,10 @@ func block_player_control():
 	
 func restore_player_control():
 	is_auto_controlled = false
-
+	
+func teleport_player_to_library():
+	global_position = library_exit_point.global_position
+	
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	var interactable : Interactable = area.get_parent() as Interactable
 	interactable.on_player_enter()

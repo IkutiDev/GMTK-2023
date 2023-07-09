@@ -1,0 +1,71 @@
+if {IsPickupAction} == 1:
+	[jump timeline="" label="pickup"]
+Join player_timeline_character
+Join momoka 3
+if {MomokaAct} == 0:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: So.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: What did you do there?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: I didn’t do anything, she’s the one that threw the computer in the trash.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: Pfft.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: Well I’m not buying that.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: Chisato isn’t stupid enough to get herself in any more trouble when she’s already in detention.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: But I’ll tell you what; Nana asked me to get a book from the library, but I get lost when there’s so many.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: If you can go pick the right one for me I’ll tell Nana that you didn’t toss the laptop.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: Deal?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Ugh...
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i]Well, it would be helpful to get them off my tail.[/i]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i]Whatever, it’s not a big deal, I’ll do it[/i]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Sure yeah, I can do that.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	momoka: Sweet, let’s go.
+	VAR {MomokaAct} = 1
+	[call_node path="root/Game/WorldHolder/PlayerCharacter/MomokaFollow" method="start_moving" single_use="true"]
+	[wait time="3.0"]
+	[sound path="res://Sounds/SFX/doors/dooropen.wav" volume="0.0"]
+	Leave momoka 3
+	[call_node path="root/Game/WorldHolder/Hallway/NPC" method="clear_object" single_use="true"]
+	[call_node path="root/Game/WorldHolder/PlayerCharacter" method="teleport_player_to_library" single_use="true"]
+	[background arg="res://Void.png" fade="1.0"]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Wait-
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i] I try to open the door.[/i]
+	[sound path="res://Sounds/SFX/doors/door.wav" volume="0.0"]
+	[i] And it’s locked…[/i]
+	[background arg="" fade="1.0"]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Motherf***er!
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i]You hear two voices laughing outside.[/i]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Who the hell is there?
+	Join target_one 3
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	unknown_target_one: Wouldn’t you like to know?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Nana?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	target_one: Did you really think I would defend you? You’re a piece of shit for doing that, now suffer the consequences.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i] I facepalm. Of course, what the hell was I thinking? [/i]
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i] Might as well just figure out how to get out of here. [/i]
+
+
+
+
+[end_timeline]
+
