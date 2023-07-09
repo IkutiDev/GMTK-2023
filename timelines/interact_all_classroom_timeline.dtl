@@ -12,6 +12,6 @@ player_timeline_character: I have everything I need in this room to rid this sch
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 Even if just temporarily.
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
-E to pick an item up. R to put it down.
+[i] E to pick an item up. R to put it down. [/i]
 [call_node path="root/Game" method="PlayStealth" single_use="true"]
 [end_timeline]

@@ -3,6 +3,7 @@ if {HasLetter} == 1:
 Join player_timeline_character (default)
 [sound path="res://Sounds/SFX/doors/door.wav" volume="0.0"]
 player_timeline_character: Hey!! Let me out, you losers!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i]Momoka and Nana laugh shrilly from behind the door.[/i]
 [jump timeline="" label="end"]
 [label name="open_door"]
@@ -10,33 +11,55 @@ player_timeline_character: Hey!! Let me out, you losers!
 Join player_timeline_character (default)
 player_timeline_character: Hey Momoka! I have the book that Nana was looking for!
 Join momoka 3
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 momoka: As if that would work on me! You’re not getting out that easily, twerp.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character: Well, I’ll just read out this note that she wrote, then. [i]”Dear Kai, your eyes-[/i]”
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 momoka: Shut up, idi- wait, did you just say Kai?
-momoka: Nana? What are they talking about?
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+momoka (angry): Nana? What are they talking about?
 Join target_one 4
-target_one: S-shut up! O-obviously they’re making this shit up!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+target_one (shock): S-shut up! O-obviously they’re making this shit up!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i]Hah, exactly as predicted.[/i]
-player_timeline_character: Ooh, but the best bit: [i]”I’m in love with you, Kai, ...[/i]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+player_timeline_character: Ooh, but the best bit\: [i]”I’m in love with you, Kai, ...[/i]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character: [i]... so dump that sad piece of trash and date me instead! Love, Nana.”[/i]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 momoka: Hah! I don’t believe you! Of course you would make up something like that to make me open the door!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 momoka: Well I won’t believe your lies! Right, Nana?
-target_one: Y-y-yeah! Piss off! Stupid! As if!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+target_one (shock): Y-y-yeah! Piss off! Stupid! As if!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] I slide the letter under the door.[/i]
 [call_node path="/root/Game/UI/InventoryInterface" method="drop_letter" single_use="true"]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character: Well, have a look for yourself then, Momoka. It’s pink, and has her perfume all over it too.
-target_one: Give that to me, Momoka!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+target_one (annoyed): Give that to me, Momoka!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] A beat of silence.[/i]
-momoka: Is it real, then?
-momoka: Nana! Are you really trying to [i]steal[/i] my boyfriend?!
-target_one: ...
-target_one: You don’t deserve him! He’s way too cool for a teacher’s pet like you! He’d be better off hanging out with me!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+momoka (unhappy): Is it real, then?
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+momoka (angry): Nana! Are you really trying to [i]steal[/i] my boyfriend?!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+target_one (annoyed): ...
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+target_one (default): You don’t deserve him! He’s way too cool for a teacher’s pet like you! He’d be better off hanging out with me!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] Momoka scoffs, and I feel the pressure against the door lighten.[/i]
-momoka: You bastard!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+momoka (eager): You bastard!
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 [i] A loud scuffling starts outside, followed by various shrieks and screams.[/i]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 Haha. What predictable idiots.
 [call_node path="/root/Game/WorldHolder/Library/Library_Door" method="can_use_doors" single_use="true"]
 [call_node path="/root/Game/WorldHolder/Hallway/Path2D/PathFollow2D/NPC" method="clear_object" single_use="true"]
 [label name="end"]
 [end_timeline]
-

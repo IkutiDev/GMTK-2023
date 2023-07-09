@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csk2urcg16wmj"]
+[gd_scene load_steps=20 format=3 uid="uid://csk2urcg16wmj"]
 
 [ext_resource type="Texture2D" uid="uid://bcxab4uofm3cp" path="res://World/Classroom/Sprites/classroom.PNG" id="1_1oy0q"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_qut2b"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dhui1ryy2kmk3" path="res://World/Classroom/Objects/computer.tscn" id="7_4p68l"]
 [ext_resource type="Resource" path="res://World/Classroom/Timelines/noticeboard_timeline.dtl" id="8_e8rtn"]
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="9_cwj6n"]
+[ext_resource type="Texture2D" uid="uid://cxpk34md7vgxg" path="res://World/Classroom/Sprites/noticeboard_background.PNG" id="9_p2qud"]
 [ext_resource type="PackedScene" uid="uid://dp7kks21gjigo" path="res://World/Classroom/Objects/trash_can.tscn" id="9_uhee1"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="10_tuu35"]
 [ext_resource type="Texture2D" uid="uid://d3bhlmd6lx4we" path="res://World/Classroom/Sprites/sticky.PNG" id="10_w4yvs"]
@@ -78,11 +79,19 @@ y_sort_enabled = true
 position = Vector2(971, 527)
 script = ExtResource("2_qut2b")
 timeline = ExtResource("8_e8rtn")
-visual = NodePath("Visual")
+visual = NodePath("Background")
 
-[node name="Visual" type="Sprite2D" parent="Noticeboard"]
+[node name="Background" type="Sprite2D" parent="Noticeboard"]
+z_index = -1
 y_sort_enabled = true
+material = ExtResource("10_tuu35")
+position = Vector2(-7, 20)
+texture = ExtResource("9_p2qud")
+
+[node name="Visual" type="Sprite2D" parent="Noticeboard/Background"]
+z_as_relative = false
 material = SubResource("ShaderMaterial_7yeg5")
+position = Vector2(7, -20)
 texture = ExtResource("10_w4yvs")
 
 [node name="Area2D" type="Area2D" parent="Noticeboard"]
