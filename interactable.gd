@@ -4,6 +4,7 @@ class_name Interactable
 @export var timeline : DialogicTimeline
 @export var visual : Sprite2D
 @export var outline_thickness : float = 1.7
+@export var is_trash_can : bool
 
 var is_in_focus
 var is_player_interacting : bool

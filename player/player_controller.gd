@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var current_interactable : Interactable = null
 var is_in_menu : bool
+var is_auto_controlled : bool
 
 func _input(event: InputEvent) -> void:
 	if Dialogic.current_timeline != null:
@@ -24,6 +25,8 @@ func _input(event: InputEvent) -> void:
 			return
 
 func _physics_process(delta: float) -> void:
+	if is_auto_controlled:
+		return
 	
 	if Dialogic.current_timeline != null:
 		return
@@ -46,10 +49,18 @@ func _physics_process(delta: float) -> void:
 func set_in_menu(in_menu: bool):
 	is_in_menu = in_menu
 
+func block_player_control():
+	is_auto_controlled = true
+	
+func restore_player_control():
+	is_auto_controlled = false
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	var interactable : Interactable = area.get_parent() as Interactable
 	interactable.on_player_enter()
+	
+	if interactable.is_trash_can:
+		Dialogic.VAR.TrashAct = 1
 	
 	if interactable != null and current_interactable != null and interactable != current_interactable:
 		current_interactable.enable_outline(false)
@@ -64,6 +75,9 @@ func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index
 	var interactable : Interactable = area.get_parent()
 	interactable.on_player_exit()
 	interactable.player_interacting(false)
+	
+	if interactable.is_trash_can:
+		Dialogic.VAR.TrashAct = 0
 	
 	current_interactable = null
 		

@@ -14,6 +14,7 @@ position = Vector2(5, -76)
 script = ExtResource("1_sbqwu")
 timeline = ExtResource("2_p1164")
 visual = NodePath("Visual")
+is_trash_can = true
 
 [node name="Visual" type="Sprite2D" parent="."]
 y_sort_enabled = true

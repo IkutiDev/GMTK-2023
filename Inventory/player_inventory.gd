@@ -5,7 +5,7 @@ const PLAYER_GROUP_NAME = "Player"
 
 @export var items_container : Node2D
 @export var inventory_view : InventoryView
-
+@export var player_controller : PlayerController
 
 func _ready() -> void:
 	Events.picked_up_item.connect(add_item_to_invetory)
@@ -27,6 +27,14 @@ func _input(event):
 		var slot = inventory_view.get_latest_item()
 		if slot == null:
 			return
+		
+		if Dialogic.VAR.TrashAct == 1:
+			Dialogic.VAR.IsTrashPutAction = 1
+			player_controller.current_interactable.run_timeline()
+			slot.item_data.pickup_item.queue_free()
+			slot.clear_object()
+			return
+			
 		Events.drop_item.emit(slot.item_data)
 		slot.item_data.pickup_item.drop_item()
 		slot.clear_object()
