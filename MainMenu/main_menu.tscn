@@ -1,12 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://btj1u3r5ua42c"]
+[gd_scene load_steps=9 format=3 uid="uid://btj1u3r5ua42c"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_1swu1"]
 [ext_resource type="Script" path="res://Options/sound_slider.gd" id="1_4mt7a"]
 [ext_resource type="PackedScene" uid="uid://xyb1217ay4u6" path="res://game.tscn" id="2_jca3j"]
+[ext_resource type="Texture2D" uid="uid://cxehva8oudh8s" path="res://MainMenu/bg.png" id="3_2s7ex"]
+[ext_resource type="Texture2D" uid="uid://2hjdw0m23q3c" path="res://Sprites/Nana-1.png" id="4_6mhbj"]
+[ext_resource type="Texture2D" uid="uid://di73xwst8gq5p" path="res://Sprites/Chisato-1.png" id="5_tl0r0"]
+[ext_resource type="Texture2D" uid="uid://cbt22i8mxim8j" path="res://Sprites/Momoka-1.png" id="6_k8uhw"]
+[ext_resource type="Texture2D" uid="uid://c5flftbin7510" path="res://Sprites/MC-1.png" id="7_qolul"]
 
 [node name="main_menu" type="CanvasLayer"]
 script = ExtResource("1_1swu1")
 game_scene = ExtResource("2_jca3j")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(239.5, 180.5)
+scale = Vector2(0.274744, 0.230721)
+texture = ExtResource("3_2s7ex")
+
+[node name="Nana" type="Sprite2D" parent="Background"]
+position = Vector2(656.975, 353.241)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_6mhbj")
+
+[node name="Chisato" type="Sprite2D" parent="Background"]
+position = Vector2(322.118, 370.578)
+scale = Vector2(-0.8, 0.8)
+texture = ExtResource("5_tl0r0")
+
+[node name="Momoka" type="Sprite2D" parent="Background"]
+position = Vector2(-362.155, 370.578)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_k8uhw")
+
+[node name="MC" type="Sprite2D" parent="Background"]
+position = Vector2(-649.696, 370.578)
+scale = Vector2(-0.8, 0.8)
+texture = ExtResource("7_qolul")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -16,73 +46,85 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-custom_minimum_size = Vector2(150, 31)
+[node name="Title" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 13
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = 53.0
-offset_right = 75.0
-offset_bottom = 53.0
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -99.0
+offset_right = 140.5
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+theme_override_font_sizes/font_size = 50
+text = "SUSPENDED"
 
-[node name="StartGameButton" type="Button" parent="Control/VBoxContainer"]
+[node name="MusicLabel" type="Label" parent="Control"]
 layout_mode = 2
-text = "Start Game"
-
-[node name="MusicLabel" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 153.0
+offset_bottom = 27.0
 theme_override_font_sizes/font_size = 15
 text = "Music"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="MusicSlider" type="HSlider" parent="Control/VBoxContainer"]
+[node name="MusicSlider" type="HSlider" parent="Control"]
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
+offset_left = 3.0
+offset_top = 31.0
+offset_right = 153.0
+offset_bottom = 53.0
 max_value = 1.0
 step = 0.001
 script = ExtResource("1_4mt7a")
 bus_name = "Music"
 initial_value = 0.1
 
-[node name="SFXLabel" type="Label" parent="Control/VBoxContainer"]
+[node name="SFXLabel" type="Label" parent="Control"]
 layout_mode = 2
+offset_left = 326.0
+offset_top = 2.0
+offset_right = 476.0
+offset_bottom = 27.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 15
 text = "Sound Effects"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="SFXSlider" type="HSlider" parent="Control/VBoxContainer"]
+[node name="SFXSlider" type="HSlider" parent="Control"]
 custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
+offset_left = 326.0
+offset_top = 31.0
+offset_right = 476.0
+offset_bottom = 53.0
+grow_horizontal = 0
 max_value = 1.0
 step = 0.001
 script = ExtResource("1_4mt7a")
 bus_name = "SFX"
 initial_value = 0.3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+[node name="StartGameButton" type="Button" parent="Control"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 45.0
-offset_bottom = 145.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -15.5
+offset_right = 75.0
+offset_bottom = 15.5
 grow_horizontal = 2
-alignment = 1
+grow_vertical = 2
+text = "Start Game"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center] HATING SIM"
-metadata/_edit_use_anchors_ = true
-
-[connection signal="button_down" from="Control/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_button_down"]
+[connection signal="button_down" from="Control/StartGameButton" to="." method="_on_start_game_button_button_down"]

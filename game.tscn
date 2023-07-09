@@ -238,9 +238,6 @@ offset_right = 80.0
 offset_bottom = 357.41
 grow_vertical = 1
 
-[node name="Options" parent="." instance=ExtResource("9_6ps0n")]
-visible = false
-
 [node name="MusicHolder" type="Node" parent="." node_paths=PackedStringArray("main_music", "stealth_intro", "stealth_loop")]
 script = ExtResource("22_5y7j5")
 main_music = NodePath("MainMusicAudio")
@@ -267,5 +264,9 @@ script = ExtResource("23_lqcxd")
 initial_timeline = ExtResource("29_p4w3b")
 finished_exam_timeline = ExtResource("25_5anyo")
 win_act_one = ExtResource("30_d0p1h")
+
+[node name="Options" parent="." instance=ExtResource("9_6ps0n")]
+layer = 50
+visible = false
 
 [connection signal="body_entered" from="WorldHolder/Hallway/PatrollingNPC/PathFollow2D/Node2D/AnimatedSprite2D/Area2D" to="WorldHolder/Hallway/PatrollingNPC" method="_on_area_2d_body_entered"]
