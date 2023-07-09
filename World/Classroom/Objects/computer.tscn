@@ -9,11 +9,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
 size = Vector2(27, 25)
 
-[node name="Computer" type="Node2D" node_paths=PackedStringArray("visual")]
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("collider1", "collider2", "visual")]
 y_sort_enabled = true
 position = Vector2(5, -76)
 script = ExtResource("1_4v33q")
 item_data = ExtResource("2_55bba")
+collider1 = NodePath("Area2D/CollisionShape2D")
+collider2 = NodePath("StaticBody2D/CollisionPolygon2D")
 timeline = ExtResource("2_i7pvu")
 visual = NodePath("Visual")
 

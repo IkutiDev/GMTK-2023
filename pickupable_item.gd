@@ -5,6 +5,8 @@ const PLAYER_GROUP_NAME = "Player"
 
 @export var item_data : ItemData
 @export var pickup_item_at_timeline_end : bool
+@export var collider1 : CollisionShape2D
+@export var collider2 : CollisionPolygon2D
 
 func _ready() -> void:
 	if visual != null:
@@ -22,10 +24,14 @@ func clear_timeline() -> void:
 		item_data.pickup_item = self
 		Events.picked_up_item.emit(item_data)
 		Dialogic.VAR.IsPickupAction = 0
+		collider1.disabled = true
+		collider2.disabled = true
 		hide()
 		
 func drop_item():
 	global_position = (get_tree().get_nodes_in_group(PLAYER_GROUP_NAME)[0] as Node2D).global_position
+	collider1.disabled = false
+	collider2.disabled = false
 	show()
 		
 func _input(event):
