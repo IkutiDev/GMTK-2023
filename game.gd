@@ -57,3 +57,6 @@ func _on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	GameManager.LoseGame()
+	
+static func PlayStealth():
+	AudioController.controller.play_stealth()

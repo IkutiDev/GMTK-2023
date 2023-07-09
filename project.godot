@@ -32,6 +32,7 @@ variables={
 "FishAct": "0",
 "HasComputer": "0",
 "HasTargetOneItem": "0",
+"IsPickupAction": "0",
 "NoticeAct": "0",
 "TrashAct": "0"
 }

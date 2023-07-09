@@ -1,3 +1,7 @@
+if {IsPickupAction} == 1:
+	[jump timeline="" label="pickup"]
+	[end_timeline]
+	[end_timeline]
 Join player_timeline_character
 if {CompAct} == 0:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
@@ -19,4 +23,12 @@ else:
 	As much as this hurt me, I bet it could help hurt someone else even more.
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	Its corners are sharp, I’m pretty sure I could even crack the floor with this.
+[end_timeline]
+[label name="pickup"]
+Join player_timeline_character
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+: As much as this hurts me, I bet it could hurt someone else even more.
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+player_timeline_character: These corners are sharp, I’m pretty sure you could even crack the floor with this thing.
+VAR {IsPickupAction} = "0"
 [end_timeline]
