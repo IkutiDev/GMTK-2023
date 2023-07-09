@@ -6,6 +6,7 @@ class_name Interactable
 @export var outline_thickness : float = 1.7
 
 var is_in_focus
+var is_player_interacting : bool
 
 func run_timeline() -> void:
 	if timeline == null:
@@ -23,19 +24,33 @@ func clear_timeline() -> void:
 		return
 	if Dialogic.VAR.BlackboardAct == 0:
 		return
-	if Dialogic.VAR.CompAct == 0:
-		return
-	if Dialogic.VAR.DoorAct == 0:
-		return
-	if Dialogic.VAR.NoticeAct == 0:
-		return
-	if Dialogic.VAR.TrashAct == 0:
-		return
-	if Dialogic.VAR.CuteGirlAct == 0:
-		return
+#	if Dialogic.VAR.CompAct == 0:
+#		return
+#	if Dialogic.VAR.DoorAct == 0:
+#		return
+#	if Dialogic.VAR.NoticeAct == 0:
+#		return
+#	if Dialogic.VAR.TrashAct == 0:
+#		return
+#	if Dialogic.VAR.CuteGirlAct == 0:
+#		return
 	
 	Dialogic.VAR.FinishedExamAll = 1
 	TimelineController.controller.play_exam_timeline()
+	
+func _input(event):
+	if Game.is_passed_exam_steps == false:
+		return
+	
+	if is_player_interacting == false:
+		return
+		
+	if Input.is_action_just_pressed("pick_up"):
+		Dialogic.VAR.IsPickupAction = 1
+		run_timeline()
+		
+func player_interacting(inter : bool):
+	is_player_interacting = inter
 
 
 func on_player_enter():
@@ -48,8 +63,8 @@ func on_player_exit():
 	is_in_focus = false
 	
 func enable_outline(enable : bool) -> void:
-	if enable == true:
-		print(name)
+#	if enable == true:
+#		print(name)
 		
 	if not can_enable_outline():
 		return

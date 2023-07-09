@@ -1,3 +1,5 @@
+if {IsPickupAction} == 1:
+	[jump timeline="" label="pickup"]
 Join player_timeline_character
 Join cute_girl 3
 if {CuteGirlAct} == 0:
@@ -19,10 +21,10 @@ if {CuteGirlAct} == 0:
 	She scrambles to pick it back up and slowly continues sharpening.
 	Leave 
 	VAR {CuteGirlAct} = 1
-elif {FinishedExamAll} == 0:
-	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
-	player_timeline_character: Not a time to pick up girls! I have a mission to carry out.
 else:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	cute_girl: I said to leave me alone.
 [end_timeline]
+[label name="pickup"]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+player_timeline_character: Not a time to pick up girls! I have a mission to carry out.

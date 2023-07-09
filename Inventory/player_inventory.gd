@@ -26,5 +26,7 @@ func drop_item_from_invetory(item_data : ItemData) -> void:
 func _input(event):
 	if Input.is_action_just_pressed("put_down_item"):
 		var slot = inventory_view.get_latest_item()
+		if slot == null:
+			return
 		Events.drop_item.emit(slot.item_data)
 		slot.clear_object()

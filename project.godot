@@ -33,6 +33,7 @@ variables={
 "HasComputer": "0",
 "HasTargetOneItem": "0",
 "IsPickupAction": "0",
+"IsTrashPutAction": "0",
 "NoticeAct": "0",
 "TrashAct": "0"
 }

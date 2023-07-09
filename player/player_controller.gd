@@ -55,10 +55,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		current_interactable.enable_outline(false)
 	
 	current_interactable = interactable
-	
-	var pickup : PickupItem = area.get_parent() as PickupItem
-	if pickup != null:
-		pickup.player_interacting(true)
+	interactable.player_interacting(true)
 
 
 func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
@@ -66,10 +63,7 @@ func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index
 		return
 	var interactable : Interactable = area.get_parent()
 	interactable.on_player_exit()
-	
-	var pickup : PickupItem = area.get_parent() as PickupItem
-	if pickup != null:
-		pickup.player_interacting(false)
+	interactable.player_interacting(false)
 	
 	current_interactable = null
 		

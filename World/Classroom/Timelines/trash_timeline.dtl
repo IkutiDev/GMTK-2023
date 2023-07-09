@@ -1,3 +1,5 @@
+if {IsPickupAction} == 1:
+	[jump timeline="" label="pickup"]
 Join player_timeline_character
 if {TrashAct} == 0:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
@@ -17,4 +19,10 @@ elif {FinishedExamAll} == "1":
 else:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: I've already looked at this trash.
+[jump timeline="" label="end"]
+[label name="pickup"]
+Join player_timeline_character
+player_timeline_character: Can’t pick this up, but I can totally put something in it.
+[i]Press R to place item. [/i]
+[label name="end"]
 [end_timeline]

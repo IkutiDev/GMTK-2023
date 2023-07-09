@@ -1,7 +1,5 @@
 if {IsPickupAction} == 1:
 	[jump timeline="" label="pickup"]
-	[end_timeline]
-	[end_timeline]
 Join player_timeline_character
 if {CompAct} == 0:
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
@@ -12,7 +10,7 @@ if {CompAct} == 0:
 	player_timeline_character (default): ...
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Who built this darn machine, NASA?!
-	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[call_node single_use="true"]
 	player_timeline_character: And it’s sharp somehow! Now I have a cut on my hand, ow.
 	VAR {CompAct} = 1
 elif {FinishedExamAll} == 0:
@@ -23,12 +21,12 @@ else:
 	As much as this hurt me, I bet it could help hurt someone else even more.
 	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	Its corners are sharp, I’m pretty sure I could even crack the floor with this.
-[end_timeline]
+[jump timeline="" label="end"]
 [label name="pickup"]
 Join player_timeline_character
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
-: As much as this hurts me, I bet it could hurt someone else even more.
+player_timeline_character: As much as this hurts me, I bet it could hurt someone else even more.
 [sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character: These corners are sharp, I’m pretty sure you could even crack the floor with this thing.
-VAR {IsPickupAction} = "0"
+[label name="end"]
 [end_timeline]
