@@ -28,17 +28,17 @@
 [ext_resource type="Script" path="res://timelines/global_timeline_controller.gd" id="23_lqcxd"]
 [ext_resource type="AudioStream" uid="uid://bms38pprlsbv4" path="res://Sounds/Music/intostealth.wav" id="24_vt1it"]
 [ext_resource type="Resource" path="res://timelines/interact_all_classroom_timeline.dtl" id="25_5anyo"]
-[ext_resource type="AudioStream" uid="uid://lphqrc6w6epl" path="res://Sounds/Music/stealthFinal.wav" id="27_b6rj0"]
+[ext_resource type="AudioStream" uid="uid://lphqrc6w6epl" path="res://Sounds/Music/stealthFinal.wav" id="27_e4ffm"]
 [ext_resource type="Resource" path="res://timelines/tutorial_timeline.dtl" id="29_p4w3b"]
 [ext_resource type="Resource" path="res://timelines/end_act_one.dtl" id="30_d0p1h"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_udnus"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p162l"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hefiv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uw03p"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -92,12 +92,12 @@ position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
 visible = false
-material = SubResource("ShaderMaterial_udnus")
+material = SubResource("ShaderMaterial_p162l")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
 visible = false
-material = SubResource("ShaderMaterial_hefiv")
+material = SubResource("ShaderMaterial_uw03p")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 
 [node name="Banister" type="Sprite2D" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point", "visual")]
@@ -245,7 +245,7 @@ visible = false
 script = ExtResource("22_5y7j5")
 main_music = NodePath("MainMusicAudio")
 stealth_intro = NodePath("StealthIntroAudio")
-stealth_loop = NodePath("StealthLoopAudio")
+stealth_loop = NodePath("StealthIntroFinal")
 fade_time = 0.5
 steal_intro_time = 1.2
 
@@ -258,8 +258,8 @@ bus = &"Music"
 stream = ExtResource("24_vt1it")
 bus = &"Music"
 
-[node name="StealthLoopAudio" type="AudioStreamPlayer" parent="MusicHolder"]
-stream = ExtResource("25_y7dac")
+[node name="StealthIntroFinal" type="AudioStreamPlayer" parent="MusicHolder"]
+stream = ExtResource("27_e4ffm")
 bus = &"Music"
 
 [node name="GlobalTimelineController" type="Node2D" parent="."]
