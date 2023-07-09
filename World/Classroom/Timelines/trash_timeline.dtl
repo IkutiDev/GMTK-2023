@@ -1,13 +1,20 @@
 Join player_timeline_character
 if {TrashAct} == 0:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Sometimes I want to dive in and stay for a while.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: I think it could fit me. It [i]is[/i] quite large.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: ...
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: No. Self control, Pel.
 	VAR {TrashAct} = 1
 elif {FinishedExamAll} == "1":
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Can’t move this, but I can totally put something in it.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	[i] [ASSIGNED KEY] to place item.[/i]
 else:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: I've already looked at this trash.
 [end_timeline]

@@ -1,8 +1,11 @@
 Join player_timeline_character
 if {BlackboardAct} == 0:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: You would think a trained teacher would be able to write more neatly.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: Detention. *Sigh* What a hellscape.
 	VAR {BlackboardAct} = 1
 else:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 	player_timeline_character: I've already looked at this.
 [end_timeline]

@@ -1,4 +1,5 @@
 Join player_timeline_character (default)
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
 player_timeline_character: I know better than to try to leave.
 VAR {DoorAct} = 1
 [end_timeline]
