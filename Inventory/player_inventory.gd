@@ -9,7 +9,6 @@ const PLAYER_GROUP_NAME = "Player"
 
 func _ready() -> void:
 	Events.picked_up_item.connect(add_item_to_invetory)
-	Events.drop_item.connect(drop_item_from_invetory)
 	
 
 func add_item_to_invetory(item_data : ItemData) -> void:
@@ -29,4 +28,5 @@ func _input(event):
 		if slot == null:
 			return
 		Events.drop_item.emit(slot.item_data)
+		slot.item_data.pickup_item.drop_item()
 		slot.clear_object()

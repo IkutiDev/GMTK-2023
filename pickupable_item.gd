@@ -1,6 +1,8 @@
 extends Interactable
 class_name PickupItem
 
+const PLAYER_GROUP_NAME = "Player"
+
 @export var item_data : ItemData
 @export var pickup_item_at_timeline_end : bool
 
@@ -17,8 +19,14 @@ func run_timeline() -> void:
 func clear_timeline() -> void:
 	super()
 	if Dialogic.VAR.IsPickupAction == 1:
+		item_data.pickup_item = self
+		Events.picked_up_item.emit(item_data)
 		Dialogic.VAR.IsPickupAction = 0
-		queue_free()
+		hide()
+		
+func drop_item():
+	global_position = (get_tree().get_nodes_in_group(PLAYER_GROUP_NAME)[0] as Node2D).global_position
+	show()
 		
 func _input(event):
 	if Game.is_passed_exam_steps == false:
@@ -28,7 +36,6 @@ func _input(event):
 		return
 		
 	if Input.is_action_just_pressed("pick_up"):
-		Events.picked_up_item.emit(item_data)
 		Dialogic.VAR.IsPickupAction = 1
 		run_timeline()
 	
