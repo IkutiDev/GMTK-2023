@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6h0rvpm5f680"]
 
 [ext_resource type="Script" path="res://interactable.gd" id="1_feo2m"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/noticeboard_timeline.dtl" id="2_0xln4"]
+[ext_resource type="Resource" path="res://World/Classroom/Noticeboard/noticeboard_timeline.dtl" id="2_0xln4"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_dsh0v"]
 [ext_resource type="Texture2D" uid="uid://d3bhlmd6lx4we" path="res://World/Classroom/Sprites/sticky.PNG" id="4_8etqr"]
 

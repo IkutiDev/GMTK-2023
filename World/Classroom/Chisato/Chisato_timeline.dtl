@@ -1,0 +1,30 @@
+if {IsPickupAction} == 1:
+	[jump timeline="" label="pickup"]
+Join player_timeline_character
+Join Chisato 3
+if {CuteGirlAct} == 0:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Chisato: What the hell do you want?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Why are you here?
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: It’s not like it’s a surprise seeing you here but, y’know.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Chisato: None of your business.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Chisato: [i] Chisato fumbles with her pencil sharpener, and drops it in the bin. [/i]
+	[sound path="res://Sounds/SFX/advancetext/impact.wav" volume="0.0"]
+	Chisato: Shit!
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Chisato: Look what you made me do.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Chisato: She scrambles to pick it back up and slowly continues sharpening.
+	Leave 
+	VAR {CuteGirlAct} = 1
+else:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	Chisato: I said to leave me alone.
+[end_timeline]
+[label name="pickup"]
+[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+player_timeline_character: Not a time to pick up girls! I have a mission to carry out.

@@ -1,20 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://csk2urcg16wmj"]
+[gd_scene load_steps=21 format=3 uid="uid://csk2urcg16wmj"]
 
 [ext_resource type="Texture2D" uid="uid://bcxab4uofm3cp" path="res://World/Classroom/Sprites/classroom.PNG" id="1_1oy0q"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_qut2b"]
-[ext_resource type="Texture2D" uid="uid://fhih0u0q45kd" path="res://World/Classroom/Sprites/Blackboard.png" id="3_3m7j1"]
+[ext_resource type="Texture2D" uid="uid://fhih0u0q45kd" path="res://World/Classroom/Blackboard/Blackboard.png" id="3_3m7j1"]
 [ext_resource type="Material" uid="uid://lxt10cnaclqg" path="res://Shaders/outline_material_object_blackboard.tres" id="3_a6w0a"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/blackboard_timeline.dtl" id="3_mj7ef"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/cute_girl_timeline.dtl" id="3_tngif"]
+[ext_resource type="Resource" path="res://World/Classroom/Blackboard/blackboard_timeline.dtl" id="3_dn5eq"]
 [ext_resource type="PackedScene" uid="uid://dhui1ryy2kmk3" path="res://World/Classroom/Objects/computer.tscn" id="7_4p68l"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/noticeboard_timeline.dtl" id="8_e8rtn"]
+[ext_resource type="Resource" path="res://World/Classroom/Computer/computer_timeline.dtl" id="7_vwymf"]
+[ext_resource type="Resource" path="res://World/Classroom/Trashcan/trash_timeline.dtl" id="9_4f0r4"]
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="9_cwj6n"]
 [ext_resource type="PackedScene" uid="uid://dp7kks21gjigo" path="res://World/Classroom/Objects/trash_can.tscn" id="9_uhee1"]
+[ext_resource type="Resource" path="res://World/Classroom/Noticeboard/noticeboard_timeline.dtl" id="10_hwb0s"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="10_tuu35"]
-[ext_resource type="Texture2D" uid="uid://d3bhlmd6lx4we" path="res://World/Classroom/Sprites/sticky.PNG" id="10_w4yvs"]
-[ext_resource type="Texture2D" uid="uid://b62sery3pdo21" path="res://Sprites/chisato_front.png" id="11_qn0ao"]
+[ext_resource type="Texture2D" uid="uid://d3bhlmd6lx4we" path="res://World/Classroom/Noticeboard/sticky.PNG" id="10_w4yvs"]
+[ext_resource type="Texture2D" uid="uid://b62sery3pdo21" path="res://NPCS/Chisato/chisato_front.png" id="11_qn0ao"]
 [ext_resource type="PackedScene" uid="uid://c36ebbhejytyk" path="res://World/Classroom/Objects/teacher_desk.tscn" id="13_t58yv"]
 [ext_resource type="PackedScene" uid="uid://43vk3lli38ly" path="res://World/Classroom/Objects/student_desk.tscn" id="14_4glr7"]
+[ext_resource type="Resource" path="res://World/Classroom/Chisato/Chisato_timeline.dtl" id="15_qxo76"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7yeg5"]
 resource_local_to_scene = true
@@ -50,7 +52,7 @@ position = Vector2(1040, 580)
 y_sort_enabled = true
 position = Vector2(891, 506)
 script = ExtResource("2_qut2b")
-timeline = ExtResource("3_mj7ef")
+timeline = ExtResource("3_dn5eq")
 visual = NodePath("Blackboard2")
 outline_thickness = 10.0
 
@@ -69,15 +71,17 @@ texture = ExtResource("3_3m7j1")
 [node name="Computer" parent="." instance=ExtResource("7_4p68l")]
 z_index = 10
 position = Vector2(942, 591)
+timeline = ExtResource("7_vwymf")
 
 [node name="TrashCan" parent="." instance=ExtResource("9_uhee1")]
 position = Vector2(942, 517)
+timeline = ExtResource("9_4f0r4")
 
 [node name="Noticeboard" type="Node2D" parent="." node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
 position = Vector2(971, 527)
 script = ExtResource("2_qut2b")
-timeline = ExtResource("8_e8rtn")
+timeline = ExtResource("10_hwb0s")
 visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="Noticeboard"]
@@ -113,7 +117,7 @@ z_index = 5
 position = Vector2(886, 518)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("2_qut2b")
-timeline = ExtResource("3_tngif")
+timeline = ExtResource("15_qxo76")
 visual = NodePath("TargetOneSprite")
 
 [node name="Area2D" type="Area2D" parent="NPC"]

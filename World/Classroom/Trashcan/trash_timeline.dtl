@@ -1,0 +1,41 @@
+if {IsPickupAction} == 1:
+	[jump timeline="" label="pickup"]
+if {IsTrashPutAction} == 1:
+	[jump timeline="" label="put_in_trash"]
+if {IsTrashPutAction} == 2:
+	[end_timeline]
+Join player_timeline_character
+if {TrashAct} == 0:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Sometimes I want to dive in and stay for a while.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: I think it could fit me. It [i]is[/i] quite large.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: ...
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: No. Self control, Pel.
+	VAR {TrashAct} = 1
+elif {FinishedExamAll} == 1:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: Can’t move this, but I can totally put something in it.
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	[i] R to place item.[/i]
+else:
+	[sound path="res://Sounds/SFX/advancetext/advancetext.wav" volume="0.0"]
+	player_timeline_character: I've already looked at this trash.
+[jump timeline="" label="end"]
+[label name="pickup"]
+Join player_timeline_character
+player_timeline_character: Can’t pick this up, but I can totally put something in it.
+[i]Press R to place item. [/i]
+[jump timeline="" label="end"]
+[label name="put_in_trash"]
+Join Chisato
+Chisato: What the hell.
+Chisato: Well that’s not mine so…
+Chisato: Snrk. Asami is in for a surprise.
+VAR {IsTrashPutAction} = 2
+[call_node path="root/Game/WorldHolder/PlayerCharacter" method="block_player_control" single_use="true"]
+[call_node path="root/Game/WorldHolder/PlayerCharacter/EndActOneFollow" method="start_moving" single_use="true"]
+[label name="end"]
+[end_timeline]

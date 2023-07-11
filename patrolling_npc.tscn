@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs37tfkkce3yu"]
 
 [ext_resource type="Script" path="res://patrol_path.gd" id="1_b65uy"]
-[ext_resource type="SpriteFrames" uid="uid://c1mnnoartfhbw" path="res://Sprites/bully_sprite_frames.tres" id="2_2k2b5"]
+[ext_resource type="SpriteFrames" uid="uid://c1mnnoartfhbw" path="res://NPCS/Nana/Nana_sprite_frames.tres" id="2_2k2b5"]
 
 [sub_resource type="Curve2D" id="Curve2D_cmspj"]
 _data = {

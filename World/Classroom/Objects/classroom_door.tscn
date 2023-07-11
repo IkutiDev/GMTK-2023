@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvhneoxh7hhmk"]
 
 [ext_resource type="Script" path="res://gateway.gd" id="1_e2byt"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/door_timeline.dtl" id="2_hphui"]
+[ext_resource type="Resource" path="res://World/Classroom/Door/door_timeline.dtl" id="2_hphui"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_wtqhv"]
 [ext_resource type="Texture2D" uid="uid://b8uyg22qhgw1f" path="res://World/Classroom/Sprites/doorclass.png" id="4_q86f3"]
 

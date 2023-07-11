@@ -6,16 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://5f4g1qkjhodv" path="res://World/Library/Objects/right_shelf.tscn" id="3_4rbke"]
 [ext_resource type="PackedScene" uid="uid://h7cdep1ctkdb" path="res://World/Library/Objects/couches.tscn" id="4_qi2u8"]
 [ext_resource type="PackedScene" uid="uid://ci3o6gy32bxt1" path="res://World/Library/Objects/back_shelf.tscn" id="5_urmkl"]
+[ext_resource type="Resource" path="res://World/Library/Book/book_timeline.dtl" id="6_wqj5e"]
 [ext_resource type="PackedScene" uid="uid://bv8eacifliwlv" path="res://World/Library/Objects/middle_shelf.tscn" id="6_ysgya"]
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="7_l6wdb"]
 [ext_resource type="PackedScene" uid="uid://deuqug5hg0awm" path="res://World/Library/Objects/front_shelf.tscn" id="7_trwir"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="12_0cykp"]
-[ext_resource type="Texture2D" uid="uid://kqj0nfwffg3o" path="res://World/other_sprites/book.png" id="12_s8ln0"]
+[ext_resource type="Texture2D" uid="uid://kqj0nfwffg3o" path="res://World/Library/Book/book.png" id="12_s8ln0"]
 [ext_resource type="Script" path="res://pickupable_item.gd" id="13_rdwum"]
 [ext_resource type="Texture2D" uid="uid://b7arjm2l4st60" path="res://World/Classroom/Sprites/letter.png" id="16_06nn4"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/book_timeline.dtl" id="16_c7j17"]
+[ext_resource type="Resource" path="res://World/Library/Book/letter_timeline.dtl" id="16_amjs4"]
 [ext_resource type="Resource" uid="uid://cltr5yk8chgm2" path="res://World/Classroom/ItemData/letter_item_data.tres" id="18_p1q0p"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/letter_timeline.dtl" id="19_f1sms"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpi2x"]
 resource_local_to_scene = true
@@ -60,7 +60,7 @@ timeline = null
 y_sort_enabled = true
 position = Vector2(-54, -25)
 script = ExtResource("2_3p5jj")
-timeline = ExtResource("16_c7j17")
+timeline = ExtResource("6_wqj5e")
 visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="Furniture/Book"]
@@ -94,7 +94,7 @@ item_data = ExtResource("18_p1q0p")
 collider1 = NodePath("Area2D/CollisionShape2D")
 is_stealth = false
 can_pickup_variable = "LetterAct"
-timeline = ExtResource("19_f1sms")
+timeline = ExtResource("16_amjs4")
 visual = NodePath(".")
 
 [node name="Area2D" type="Area2D" parent="Letter"]

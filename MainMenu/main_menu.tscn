@@ -1,12 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://btj1u3r5ua42c"]
+[gd_scene load_steps=21 format=3 uid="uid://btj1u3r5ua42c"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_1swu1"]
 [ext_resource type="Script" path="res://Options/sound_slider.gd" id="1_4mt7a"]
 [ext_resource type="PackedScene" uid="uid://xyb1217ay4u6" path="res://game.tscn" id="2_jca3j"]
 [ext_resource type="Texture2D" uid="uid://cxehva8oudh8s" path="res://MainMenu/bg.png" id="3_2s7ex"]
-[ext_resource type="Texture2D" uid="uid://2hjdw0m23q3c" path="res://Sprites/Nana-1.png" id="4_6mhbj"]
-[ext_resource type="Texture2D" uid="uid://di73xwst8gq5p" path="res://Sprites/Chisato-1.png" id="5_tl0r0"]
-[ext_resource type="Texture2D" uid="uid://cbt22i8mxim8j" path="res://Sprites/Momoka-1.png" id="6_k8uhw"]
+[ext_resource type="Texture2D" uid="uid://2hjdw0m23q3c" path="res://NPCS/Nana/Nana-1.png" id="4_kk5lk"]
+[ext_resource type="Texture2D" uid="uid://cbt22i8mxim8j" path="res://NPCS/Momoka/Momoka-1.png" id="5_2bbtr"]
 [ext_resource type="Texture2D" uid="uid://c5flftbin7510" path="res://Sprites/MC-1.png" id="7_qolul"]
 [ext_resource type="Texture2D" uid="uid://vgf358tfbbx3" path="res://Sprites/MC-2.png" id="8_msyq4"]
 [ext_resource type="Texture2D" uid="uid://choofr0qljit0" path="res://MainMenu/sus.png" id="9_7h4us"]
@@ -47,19 +46,18 @@ texture = ExtResource("3_2s7ex")
 visible = false
 position = Vector2(656.975, 353.241)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_6mhbj")
+texture = ExtResource("4_kk5lk")
 
 [node name="Chisato" type="Sprite2D" parent="Background"]
 visible = false
 position = Vector2(322.118, 370.578)
 scale = Vector2(-0.8, 0.8)
-texture = ExtResource("5_tl0r0")
 
 [node name="Momoka" type="Sprite2D" parent="Background"]
 visible = false
 position = Vector2(-362.155, 370.578)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("6_k8uhw")
+texture = ExtResource("5_2bbtr")
 
 [node name="MC" type="Sprite2D" parent="Background"]
 visible = false
@@ -91,7 +89,7 @@ offset_left = 247.0
 offset_top = 86.0
 offset_right = 439.0
 offset_bottom = 363.0
-texture = ExtResource("4_6mhbj")
+texture = ExtResource("4_kk5lk")
 expand_mode = 4
 stretch_mode = 4
 
@@ -101,7 +99,7 @@ offset_left = 176.0
 offset_top = 92.0
 offset_right = 333.0
 offset_bottom = 364.0
-texture = ExtResource("6_k8uhw")
+texture = ExtResource("5_2bbtr")
 expand_mode = 4
 stretch_mode = 4
 
@@ -111,7 +109,6 @@ offset_left = 357.0
 offset_top = 96.0
 offset_right = 519.0
 offset_bottom = 363.0
-texture = ExtResource("5_tl0r0")
 expand_mode = 4
 stretch_mode = 4
 
