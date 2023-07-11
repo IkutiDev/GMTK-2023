@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/door_library_timeline.dtl" id="4_tnpes"]
+[ext_resource type="Resource" path="res://World/Library/Timelines/door_library_timeline.dtl" id="4_ksuau"]
 [ext_resource type="PackedScene" uid="uid://o0j3rpfnicok" path="res://World/Hallway/Objects/door_right.tscn" id="5_djmel"]
 [ext_resource type="PackedScene" uid="uid://csk2urcg16wmj" path="res://World/Classroom/class_room.tscn" id="5_riu0p"]
 [ext_resource type="PackedScene" uid="uid://ddy4y8usf6xx1" path="res://World/CommonRoom/common_room.tscn" id="6_8uynk"]
@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cgyohedl6f7oi" path="res://Options/options.tscn" id="9_6ps0n"]
 [ext_resource type="Script" path="res://gateway.gd" id="9_p7d5e"]
 [ext_resource type="Texture2D" uid="uid://dlcnj8hiw77bu" path="res://World/Hallway/Sprites/banister.PNG" id="10_ll23k"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/banister_timeline.dtl" id="11_a310v"]
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
+[ext_resource type="Resource" path="res://World/Hallway/Timelines/banister_timeline.dtl" id="12_8kwah"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
 [ext_resource type="Texture2D" uid="uid://ckag5kkonwu3k" path="res://Sprites/kaede.png" id="15_5ta6o"]
 [ext_resource type="Resource" path="res://final_battle.dtl" id="17_f6r7m"]
@@ -38,13 +38,13 @@
 [ext_resource type="Texture2D" uid="uid://v531sjfv8f1y" path="res://World/CommonRoom/Sprites/room door.PNG" id="35_t6hed"]
 [ext_resource type="Texture2D" uid="uid://diedjohkwka44" path="res://World/CommonRoom/Sprites/front door.PNG" id="36_rtkep"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6b7c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thoof"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8mag"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyqju"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -77,7 +77,7 @@ y_sort_enabled = true
 
 [node name="Library_Door" parent="WorldHolder/Library" node_paths=PackedStringArray("exit_point") instance=ExtResource("6_jix5c")]
 exit_point = NodePath("../../Hallway/Hallway_Enter")
-timeline = ExtResource("4_tnpes")
+timeline = ExtResource("4_ksuau")
 
 [node name="Library_Enter" type="Marker2D" parent="WorldHolder/Library"]
 position = Vector2(972, 561)
@@ -95,11 +95,11 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_n6b7c")
+material = SubResource("ShaderMaterial_thoof")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_k8mag")
+material = SubResource("ShaderMaterial_oyqju")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 door_open = true
 
@@ -111,7 +111,7 @@ texture = ExtResource("10_ll23k")
 offset = Vector2(-3.005, 14.615)
 script = ExtResource("9_p7d5e")
 exit_point = NodePath("../../CommonRoom/CommonRoom_Enter")
-timeline = ExtResource("11_a310v")
+timeline = ExtResource("12_8kwah")
 visual = NodePath(".")
 
 [node name="Area2D" type="Area2D" parent="WorldHolder/Hallway/Banister"]

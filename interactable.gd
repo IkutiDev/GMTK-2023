@@ -67,9 +67,6 @@ func on_player_exit():
 	is_in_focus = false
 	
 func enable_outline(enable : bool) -> void:
-#	if enable == true:
-#		print(name)
-		
 	if not can_enable_outline():
 		return
 	

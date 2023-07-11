@@ -48,7 +48,6 @@ func _input(event):
 			return
 	
 	if can_pickup_variable != "empty":
-		print(Dialogic.VAR.get_variable(can_pickup_variable))
 		if Dialogic.VAR.get_variable(can_pickup_variable) as int == 0:
 			return
 	

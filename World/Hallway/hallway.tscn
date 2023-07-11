@@ -7,18 +7,18 @@
 [ext_resource type="Shader" path="res://Shaders/outline_shader.gdshader" id="4_c8dfw"]
 [ext_resource type="Resource" path="res://World/Library/Objects/right_shelf_library.dtl" id="5_n60dj"]
 [ext_resource type="Script" path="res://interactable.gd" id="7_ucodd"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/momoka_timeline.dtl" id="8_cfwhl"]
+[ext_resource type="Resource" path="res://World/Hallway/Timelines/momoka_timeline.dtl" id="8_hemte"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="9_klqnr"]
-[ext_resource type="Texture2D" uid="uid://c5c0dv2gg0wnl" path="res://Sprites/momoka.png" id="10_yqryo"]
+[ext_resource type="Texture2D" uid="uid://c5c0dv2gg0wnl" path="res://NPCS/Momoka/momoka.png" id="10_yqryo"]
 [ext_resource type="Script" path="res://npc_walk.gd" id="11_y03t6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqat5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbjoc"]
 resource_local_to_scene = true
 shader = ExtResource("4_c8dfw")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1g1l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrjk7"]
 resource_local_to_scene = true
 shader = ExtResource("4_c8dfw")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -59,10 +59,10 @@ offset = Vector2(-3.005, 14.615)
 
 [node name="Lockers" parent="Furniture" instance=ExtResource("3_1m7qe")]
 visible = false
-material = SubResource("ShaderMaterial_dqat5")
+material = SubResource("ShaderMaterial_tbjoc")
 
 [node name="Seat" parent="Furniture" instance=ExtResource("4_74pps")]
-material = SubResource("ShaderMaterial_s1g1l")
+material = SubResource("ShaderMaterial_vrjk7")
 timeline = ExtResource("5_n60dj")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -80,7 +80,7 @@ position = Vector2(-70.5724, -41.4793)
 rotation = -0.597636
 scale = Vector2(0.8, 0.8)
 script = ExtResource("7_ucodd")
-timeline = ExtResource("8_cfwhl")
+timeline = ExtResource("8_hemte")
 visual = NodePath("TargetOneSprite")
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/NPC"]

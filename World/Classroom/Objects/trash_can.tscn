@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp7kks21gjigo"]
+[gd_scene load_steps=6 format=3 uid="uid://dp7kks21gjigo"]
 
 [ext_resource type="Script" path="res://container.gd" id="1_p25bo"]
 [ext_resource type="Resource" uid="uid://bhb4yt36pgybd" path="res://World/Classroom/ItemData/computer_item_data.tres" id="2_dlcx3"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/trash_timeline.dtl" id="2_p1164"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_lkgyh"]
-[ext_resource type="Texture2D" uid="uid://colcvubf8l5ne" path="res://World/Classroom/Sprites/trash.png" id="4_ilxs3"]
+[ext_resource type="Texture2D" uid="uid://colcvubf8l5ne" path="res://World/Classroom/Trashcan/trash.png" id="4_ilxs3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
 size = Vector2(20, 27)
@@ -14,7 +13,6 @@ y_sort_enabled = true
 position = Vector2(5, -76)
 script = ExtResource("1_p25bo")
 item_to_store = ExtResource("2_dlcx3")
-timeline = ExtResource("2_p1164")
 visual = NodePath("Visual")
 is_trash_can = true
 

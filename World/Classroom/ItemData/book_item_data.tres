@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b236ejrrfr1ji"]
 
 [ext_resource type="Script" path="res://Inventory/item_data.gd" id="1_d01ak"]
-[ext_resource type="Texture2D" uid="uid://kqj0nfwffg3o" path="res://World/other_sprites/book.png" id="2_2mlhp"]
+[ext_resource type="Texture2D" uid="uid://kqj0nfwffg3o" path="res://World/Library/Book/book.png" id="2_2mlhp"]
 
 [resource]
 resource_name = "ComputerItem"
