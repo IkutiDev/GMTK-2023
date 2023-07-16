@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://xyb1217ay4u6"]
+[gd_scene load_steps=42 format=3 uid="uid://xyb1217ay4u6"]
 
 [ext_resource type="PackedScene" uid="uid://dm7i7bsvuges1" path="res://player/player_character.tscn" id="1_8dyyb"]
 [ext_resource type="Script" path="res://game.gd" id="1_m0js2"]
@@ -20,8 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
 [ext_resource type="Resource" path="res://World/Hallway/Timelines/banister_timeline.dtl" id="12_8kwah"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
-[ext_resource type="Texture2D" uid="uid://ckag5kkonwu3k" path="res://Sprites/kaede.png" id="15_5ta6o"]
-[ext_resource type="Resource" path="res://final_battle.dtl" id="17_f6r7m"]
+[ext_resource type="Resource" path="res://timelines/final_battle.dtl" id="16_h5746"]
 [ext_resource type="Script" path="res://player/player_end_act.gd" id="19_pffvw"]
 [ext_resource type="Script" path="res://Sounds/sound_controller.gd" id="22_5y7j5"]
 [ext_resource type="Resource" uid="uid://cltr5yk8chgm2" path="res://World/Classroom/ItemData/letter_item_data.tres" id="23_6amfl"]
@@ -158,7 +157,6 @@ loop = false
 visible = false
 z_index = 88
 position = Vector2(956, 554)
-texture = ExtResource("15_5ta6o")
 region_enabled = true
 region_rect = Rect2(0, 0, 29, 40)
 

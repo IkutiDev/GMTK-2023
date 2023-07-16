@@ -1,8 +1,0 @@
-Join target_one 3
-target_one (default): What do you want (insert insult here)?
-if {HasTargetOneItem} == 1:
-	target_one (default): Where the hell did you get that?
-	target_one (default): Hand it over NOW!
-else:
-	target_one (default): Get outta my face!
-[end_timeline]
