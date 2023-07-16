@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://interactable.gd" id="1_jtnkp"]
 [ext_resource type="Texture2D" uid="uid://du1oqj4ptqiau" path="res://World/Library/Sprites/couches.PNG" id="1_xvuey"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/chairs_timeline.dtl" id="2_emfmp"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="2_htov8"]
+[ext_resource type="Resource" path="res://World/Library/Timelines/chairs_timeline.dtl" id="2_rf1bw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf45d"]
 size = Vector2(65.6718, 42.2071)
@@ -12,7 +12,7 @@ size = Vector2(65.6718, 42.2071)
 y_sort_enabled = true
 position = Vector2(-24, -69)
 script = ExtResource("1_jtnkp")
-timeline = ExtResource("2_emfmp")
+timeline = ExtResource("2_rf1bw")
 visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="."]

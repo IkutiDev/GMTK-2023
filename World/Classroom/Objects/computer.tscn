@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://pickupable_item.gd" id="1_4v33q"]
 [ext_resource type="Resource" uid="uid://bhb4yt36pgybd" path="res://World/Classroom/ItemData/computer_item_data.tres" id="2_55bba"]
-[ext_resource type="Resource" path="res://World/Classroom/Timelines/computer_timeline.dtl" id="2_i7pvu"]
+[ext_resource type="Resource" path="res://World/Classroom/Computer/computer_timeline.dtl" id="3_1qhue"]
 [ext_resource type="Material" uid="uid://pkmsnt0ao7ss" path="res://Shaders/outline_material_object.tres" id="3_ljbtm"]
-[ext_resource type="Texture2D" uid="uid://bw3qmwvqtejec" path="res://World/Classroom/Sprites/laptop.PNG" id="4_e84c4"]
+[ext_resource type="Texture2D" uid="uid://bw3qmwvqtejec" path="res://World/Classroom/Computer/laptop.PNG" id="4_e84c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvlfa"]
 size = Vector2(27, 25)
@@ -16,7 +16,7 @@ script = ExtResource("1_4v33q")
 item_data = ExtResource("2_55bba")
 collider1 = NodePath("Area2D/CollisionShape2D")
 collider2 = NodePath("StaticBody2D/CollisionPolygon2D")
-timeline = ExtResource("2_i7pvu")
+timeline = ExtResource("3_1qhue")
 visual = NodePath("Visual")
 
 [node name="Visual" type="Sprite2D" parent="."]
