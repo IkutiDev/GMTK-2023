@@ -20,7 +20,7 @@ player_timeline_character (surprise): What, are you actually gonna expel me this
 principial: No. Something you might find worse than expulsion, I’d say. Your parents find it an appropriate punishment too, in fact.
 player_timeline_character (default): You’ve consulted my parents on this???
 momoka (unhappy): Sir, me and Nana-chan can prove it’s all their fault! Just listen to us!
-Yeah! It’s because of them that Momo-chan turned on me! We’re totally innocent! Listen to our side of the story!
+Nana: Yeah! It’s because of them that Momo-chan turned on me! We’re totally innocent! Listen to our side of the story!
 player_timeline_character (punch): Oh, back to being best friends again, are we?
 principial: Well, {PlayerName}? What do you have to say for yourself?
 player_timeline_character (doubt): Oh, it’s on. I’ll prove that it’s [i]them[/i] that should be punished for their evil.
@@ -141,7 +141,7 @@ else:
 	momoka (confused): Ugh. So stupid.
 	Momoka leaves
 	player_timeline_character (default): Well, that was eventful.
-	I hope you’re happy, {PlayerName}. I believe you’re deserving of punishment too, for causing such a ruckus, but this time, you were the victim.
+	principial: I hope you’re happy, {PlayerName}. I believe you’re deserving of punishment too, for causing such a ruckus, but this time, you were the victim.
 	player_timeline_character (surprise): Oh, I’m absolutely thrilled, Sir. Thank you for giving those brats what they deserve. I’ll be making my leave now-
 	principial: Oh, I don’t think so. You’re not getting away that easily. You will continue your detention time after school for the rest of the year. I’m increasing it to two hours.
 	player_timeline_character: But Sir-

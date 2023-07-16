@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckag5kkonwu3k"
-path="res://.godot/imported/kaede.png-7e7e849650ab9b70b0ccc938d6431de6.ctex"
+uid="uid://c5flftbin7510"
+path="res://.godot/imported/MC-1.png-e2e8affbf406b50b904d56b869b82c4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/kaede.png"
-dest_files=["res://.godot/imported/kaede.png-7e7e849650ab9b70b0ccc938d6431de6.ctex"]
+source_file="res://player/Portrait/MC-1.png"
+dest_files=["res://.godot/imported/MC-1.png-e2e8affbf406b50b904d56b869b82c4d.ctex"]
 
 [params]
 
