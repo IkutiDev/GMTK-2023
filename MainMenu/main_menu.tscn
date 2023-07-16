@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://btj1u3r5ua42c"]
+[gd_scene load_steps=22 format=3 uid="uid://btj1u3r5ua42c"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_1swu1"]
 [ext_resource type="Script" path="res://Options/sound_slider.gd" id="1_4mt7a"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cxehva8oudh8s" path="res://MainMenu/bg.png" id="3_2s7ex"]
 [ext_resource type="Texture2D" uid="uid://2hjdw0m23q3c" path="res://NPCS/Nana/Nana-1.png" id="4_kk5lk"]
 [ext_resource type="Texture2D" uid="uid://cbt22i8mxim8j" path="res://NPCS/Momoka/Momoka-1.png" id="5_2bbtr"]
-[ext_resource type="Texture2D" uid="uid://c5flftbin7510" path="res://Sprites/MC-1.png" id="7_qolul"]
-[ext_resource type="Texture2D" uid="uid://vgf358tfbbx3" path="res://Sprites/MC-2.png" id="8_msyq4"]
+[ext_resource type="Texture2D" uid="uid://c5flftbin7510" path="res://player/Portrait/MC-1.png" id="7_qolul"]
+[ext_resource type="Texture2D" uid="uid://di73xwst8gq5p" path="res://NPCS/Chisato/Chisato-1.png" id="8_mfb0s"]
+[ext_resource type="Texture2D" uid="uid://vgf358tfbbx3" path="res://player/Portrait/MC-2.png" id="8_msyq4"]
 [ext_resource type="Texture2D" uid="uid://choofr0qljit0" path="res://MainMenu/sus.png" id="9_7h4us"]
 [ext_resource type="Texture2D" uid="uid://bvctqjgkp8471" path="res://MainMenu/start.png" id="10_lj2nr"]
 [ext_resource type="Texture2D" uid="uid://c7y7cfrjqa0vo" path="res://MainMenu/music.png" id="11_08uy6"]
@@ -109,6 +110,7 @@ offset_left = 357.0
 offset_top = 96.0
 offset_right = 519.0
 offset_bottom = 363.0
+texture = ExtResource("8_mfb0s")
 expand_mode = 4
 stretch_mode = 4
 

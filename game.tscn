@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhdx1lf3ce71" path="res://World/Library/library.tscn" id="11_ut05g"]
 [ext_resource type="Resource" path="res://World/Hallway/Timelines/banister_timeline.dtl" id="12_8kwah"]
 [ext_resource type="PackedScene" uid="uid://dvhneoxh7hhmk" path="res://World/Classroom/Objects/classroom_door.tscn" id="14_ogqth"]
-[ext_resource type="Resource" path="res://timelines/final_battle.dtl" id="16_h5746"]
+[ext_resource type="Resource" path="res://timelines/final_battle.dtl" id="16_5f3wn"]
 [ext_resource type="Script" path="res://player/player_end_act.gd" id="19_pffvw"]
 [ext_resource type="Script" path="res://Sounds/sound_controller.gd" id="22_5y7j5"]
 [ext_resource type="Resource" uid="uid://cltr5yk8chgm2" path="res://World/Classroom/ItemData/letter_item_data.tres" id="23_6amfl"]
@@ -37,13 +37,13 @@
 [ext_resource type="Texture2D" uid="uid://v531sjfv8f1y" path="res://World/CommonRoom/Sprites/room door.PNG" id="35_t6hed"]
 [ext_resource type="Texture2D" uid="uid://diedjohkwka44" path="res://World/CommonRoom/Sprites/front door.PNG" id="36_rtkep"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_thoof"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwufa"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyqju"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stb1u"]
 resource_local_to_scene = true
 shader = ExtResource("7_fdtu7")
 shader_parameter/line_color = Color(0.141176, 0.435294, 0, 1)
@@ -94,11 +94,11 @@ position = Vector2(889, 575)
 position = Vector2(936, 525)
 
 [node name="DoorRight" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("5_djmel")]
-material = SubResource("ShaderMaterial_thoof")
+material = SubResource("ShaderMaterial_vwufa")
 exit_point = NodePath("../../Library/Library_Enter")
 
 [node name="DoorLeft" parent="WorldHolder/Hallway" node_paths=PackedStringArray("exit_point") instance=ExtResource("7_kskif")]
-material = SubResource("ShaderMaterial_oyqju")
+material = SubResource("ShaderMaterial_stb1u")
 exit_point = NodePath("../../Classroom/Classroom_Enter")
 door_open = true
 
@@ -162,7 +162,7 @@ region_rect = Rect2(0, 0, 29, 40)
 
 [node name="CommonRoom" parent="WorldHolder" node_paths=PackedStringArray("inventory", "tips") instance=ExtResource("6_8uynk")]
 position = Vector2(0, 3000)
-final_battle_timeline = ExtResource("17_f6r7m")
+final_battle_timeline = ExtResource("16_5f3wn")
 inventory = NodePath("../../UI/InventoryInterface")
 tips = NodePath("../../UI/Label")
 
