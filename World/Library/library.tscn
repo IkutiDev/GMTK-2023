@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://dnhdx1lf3ce71"]
+[gd_scene load_steps=21 format=3 uid="uid://dnhdx1lf3ce71"]
 
 [ext_resource type="Texture2D" uid="uid://cllh7eb5f4ykg" path="res://World/Library/Sprites/library.png" id="1_a1e6e"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_3p5jj"]
 [ext_resource type="PackedScene" uid="uid://bw3a75dc3scv6" path="res://World/Library/Objects/table.tscn" id="2_8limu"]
 [ext_resource type="PackedScene" uid="uid://5f4g1qkjhodv" path="res://World/Library/Objects/right_shelf.tscn" id="3_4rbke"]
 [ext_resource type="PackedScene" uid="uid://h7cdep1ctkdb" path="res://World/Library/Objects/couches.tscn" id="4_qi2u8"]
+[ext_resource type="Resource" path="res://World/Library/Timelines/chairs_timeline.dtl" id="5_ox4c0"]
 [ext_resource type="PackedScene" uid="uid://ci3o6gy32bxt1" path="res://World/Library/Objects/back_shelf.tscn" id="5_urmkl"]
 [ext_resource type="Resource" path="res://World/Library/Book/book_timeline.dtl" id="6_wqj5e"]
 [ext_resource type="PackedScene" uid="uid://bv8eacifliwlv" path="res://World/Library/Objects/middle_shelf.tscn" id="6_ysgya"]
@@ -55,6 +56,7 @@ timeline = null
 timeline = null
 
 [node name="Couches" parent="Furniture" instance=ExtResource("4_qi2u8")]
+timeline = ExtResource("5_ox4c0")
 
 [node name="Book" type="Node2D" parent="Furniture" node_paths=PackedStringArray("visual")]
 y_sort_enabled = true
